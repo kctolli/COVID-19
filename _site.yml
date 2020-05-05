@@ -2,11 +2,13 @@ name: "COVID-19"
 navbar:
   title: "COVID-19"
   left:
-    - text: ""   
-      menu:
+     - text: "Reports"
+       href:  https://byui-covid.github.io/Project-Reports/   
+     - text: ""   
+       menu:
         - text: ""
           href:  
-        - text: "---------------"             
+        - text: "---------------"        
 
           
 output_dir: '.'
