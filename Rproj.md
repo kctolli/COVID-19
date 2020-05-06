@@ -1,4 +1,4 @@
-# Senior Experience R Project
+# R Project
 
 Version: 1.0
 
