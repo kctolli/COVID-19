@@ -11,3 +11,6 @@ library(tidyverse)
 pic <- 'https://codinginfinite.com/wp-content/uploads/2019/05/documentation-where-were-going-we-dont-need-documentation.jpg'
 knitr::include_graphics(pic)
 ```
+
+
+© Copyright Kyle Tolliver, 2020
