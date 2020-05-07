@@ -3,7 +3,9 @@ navbar:
   title: "COVID-19"
   left:
      - text: "Reports"
-       href:  https://byui-covid.github.io/Project-Reports/   
+       href:  https://byui-covid.github.io/Project-Reports/ 
+     - text: "Contact Me"
+       href:  ./contact.html    
      - text: ""   
        menu:
         - text: ""

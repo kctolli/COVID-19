@@ -1,0 +1,14 @@
+---
+title: "Kyle Tolliver"
+---
+
+```{r pic, fig.align='left', out.width='30%'}
+me <- 'https://github.com/kctolli/kctolli.github.io/raw/master/images/me.png'
+knitr::include_graphics(me)
+```
+
+EPortfolio: https://kctolli.github.io/
+
+LinkedIn: https://www.linkedin.com/in/kctolli/
+
+Email: mrtengineer1@gmail.com
