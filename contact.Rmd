@@ -11,8 +11,6 @@ EPortfolio: https://kctolli.github.io/
 
 LinkedIn: https://www.linkedin.com/in/kctolli/
 
-Resume: https://kctolli.github.io/images/resume.pdf
-
 Email: kyle@tollivers.org
 
 Phone: [(805) 367-6723](tel:18053676723)
