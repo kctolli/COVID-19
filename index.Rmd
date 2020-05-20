@@ -5,11 +5,12 @@ author: "Kyle Tolliver"
 
 ```{r load_libraries, include=FALSE}
 library(tidyverse)
+library(knitr)
 ```
 
 ```{r pic, fig.align='center', out.width='50%'}
-pic <- 'https://codinginfinite.com/wp-content/uploads/2019/05/documentation-where-were-going-we-dont-need-documentation.jpg'
-knitr::include_graphics(pic)
+pic <- 'https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg'
+include_graphics(pic)
 ```
 
 

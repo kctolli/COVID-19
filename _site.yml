@@ -2,16 +2,12 @@ name: "COVID-19"
 navbar:
   title: "COVID-19"
   left:
+     - text: "Datasets"
+       href:  ./data.html
      - text: "Reports"
        href:  https://byui-covid.github.io/Project-Reports/ 
      - text: "Contact Me"
        href:  ./contact.html    
-     - text: ""   
-       menu:
-        - text: ""
-          href:  
-        - text: "---------------"        
-
           
 output_dir: '.'
 
@@ -20,9 +16,15 @@ output:
     css: ./site_libs/styles.css
     highlight: tango
     theme: readable
-    toc: true
-    toc_float: true
+    #toc: true
+    #toc_float: true
     fig_height: 6
     fig_width: 12
     fig_align: 'center'  
     code_folding: hide 
+
+     #- text: ""   
+     #  menu:
+     #   - text: ""
+     #     href:  
+     #   - text: "---------------"     
