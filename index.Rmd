@@ -1,6 +1,8 @@
 ---
-title: "Index"
+title: "Senior Thesis"
+subtitle: "Research and Consulting Project"
 author: "Kyle Tolliver"
+date: "BYUI - ECEN 490R"
 ---
 
 ```{r load_libraries, include=FALSE}
