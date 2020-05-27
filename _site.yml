@@ -2,6 +2,14 @@ name: "COVID-19"
 navbar:
   title: "COVID-19"
   left:
+     - text: "America (USA)"
+       menu:
+        - text: "...."
+          href: 
+     - text: "World"
+       menu:
+        - text: "...."
+          href:        
      - text: "Datasets"
        href:  ./data.html
      - text: "Reports"

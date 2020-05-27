@@ -1,8 +1,5 @@
 ---
 title: "Datasets"
-author: "Kyle Tolliver"
-date: "5/19/2020"
-output: html_document
 ---
 
-I used ... found from ...
+I found two useful dataset hosts; they are NYTimes and JHU. The datasets I used from nytimes are .... The datasets I used from JHU are .... 
