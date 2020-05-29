@@ -11,9 +11,10 @@ library(knitr)
 ```
 
 ```{r pic, fig.align='center', out.width='50%'}
-pic <- 'https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg'
-include_graphics(pic)
+include_graphics('https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg')
 ```
 
 
 © Copyright Kyle Tolliver, 2020
+
+###### *--- Licensed under [GNU General Public License v3.0](./LICENSE.txt) *

@@ -9,7 +9,7 @@ knitr::include_graphics(me)
 
 EPortfolio: https://kctolli.github.io/
 
-LinkedIn: https://www.linkedin.com/in/kctolli/
+LinkedIn: [kctolli](https://www.linkedin.com/in/kctolli/)
 
 Email: kyle@tollivers.org
 

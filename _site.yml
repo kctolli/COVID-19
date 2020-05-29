@@ -10,8 +10,6 @@ navbar:
        menu:
         - text: "...."
           href:        
-     - text: "Datasets"
-       href:  ./data.html
      - text: "Reports"
        href:  https://byui-covid.github.io/Project-Reports/ 
      - text: "Contact Me"

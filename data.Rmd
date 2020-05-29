@@ -1,5 +1,0 @@
----
-title: "Datasets"
----
-
-I found two useful dataset hosts; they are NYTimes and JHU. The datasets I used from nytimes are .... The datasets I used from JHU are .... 
