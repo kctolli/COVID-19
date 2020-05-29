@@ -17,4 +17,4 @@ include_graphics('https://images.newscientist.com/wp-content/uploads/2020/02/111
 
 © Copyright Kyle Tolliver, 2020
 
-###### *--- Licensed under [GNU General Public License v3.0](./LICENSE.txt) *
+###### *--- [Licensed](https://github.com/BYUI-COVID/BYUI-COVID.github.io/blob/master/LICENSE) under [GNU General Public License v3.0](./LICENSE.txt) *
