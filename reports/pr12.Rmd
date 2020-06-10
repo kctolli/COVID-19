@@ -1,0 +1,16 @@
+---
+title: "Progress Report"
+subtitle: "Week 12"
+author: "Kyle Tolliver"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+```
+
+```{r pic, fig.align='center', out.width='50%'}
+pic <- 'https://codinginfinite.com/wp-content/uploads/2019/05/documentation-where-were-going-we-dont-need-documentation.jpg'
+knitr::include_graphics(pic)
+```
+

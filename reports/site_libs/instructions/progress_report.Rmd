@@ -1,0 +1,83 @@
+---
+title: "Progress Report"
+author: "Kyle Tolliver"
+output: html_document
+---
+
+Write a report about your progress in completing your project. 
+
+It must have the following sections:
+
+## Work Schedule 
+
+Below I have divided the tasks in three-week interval which a line progress reports. 
+
+&emsp; I will use [clockify](https://clockify.me/) to track hours. 
+
+### Whole Semester
+
+Throughout the semester I will spend time gaining knowledge on the follow as it relates to my project:  
+
+&emsp; (Notes and Resources will be posted in the organizations github repos)
+
+* Ethics in Data
+* Consulting in Statistics and Data Science
+* Rstudio Connect
+* Analysis - Poor, [Good, Better, Best](https://www.churchofjesuschrist.org/study/general-conference/2007/10/good-better-best?lang=eng)
+* R packages
+* Making Inferences with Data
+* and more
+
+### Progress Report 1
+
+* Start Project
+  + Proposal
+* Do some data research
+* Find data sets to work with
+  + Such as [JHUs github](https://github.com/CSSEGISandData/COVID-19)
+  + Or [CDC](https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/whoAllregt_phl15.html) flu data
+* Create github organization
+* Host the website in main repo
+
+### Progress Report 2
+
+* Load in the data sets
+  + Look through the data set
+* Start wrangling
+* Make basic visualizations to see the data
+* Develop YML file 
+
+### Progress Report 3
+
+* Wrangle and Visualize data
+  + Non-interactive plots
+  + Interactive plots
+* Learn more about the 
+  + [ggplot](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0)
+  + [sf plots](https://r-spatial.github.io/sf/articles/sf1.html)
+  + [leaflet](https://leafletjs.com/)
+  + [dygraphs](https://rstudio.github.io/dygraphs/)
+  + other plot tools
+
+### Progress Report 4
+
+* Last steps website
+  + Finalize visualizations 
+  + Finalize YML
+  + Finalize tibbles
+* Start report
+
+### Final Delivery
+
+* Finish data presentation website
+* Peer reviewed 
+  + Make edits/modifications
+* Complete report
+
+## Accomplishments 
+
+* (This is a description of project tasks you completed during the last two weeks.)
+
+## Observations 
+
+* (Include comments and explanations about your progress here.)

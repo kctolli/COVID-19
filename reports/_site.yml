@@ -1,0 +1,46 @@
+name: "Project Report"
+navbar:
+  title: "Project Report"
+  left:
+    - text: "Methods"
+      href: ./methods.html
+    - text: "Results"
+      href: ./results.html
+    - text: "Conclusions"
+      href: ./conclusions.html  
+    - text: "References"   
+      menu:
+        - text: "Data"
+          href: ./ref_data.html 
+        - text: "---------------"  
+        - text: "Research & Development"
+          href: ./ref.html 
+    - text: "Project Proposal"
+      href: ./proposal-project.html                 
+    - text: "Progress Reports"   
+      menu:
+        - text: "Week 3"
+          href: ./pr03.html 
+        - text: "---------------"  
+        - text: "Week 6"
+          href: ./pr06.html 
+        - text: "---------------" 
+        - text: "Week 9"
+          href: ./pr09.html 
+        - text: "---------------" 
+        - text: "Week 12"
+          href: ./pr12.html 
+    - text: "Main"
+      href: ../index.html      
+
+output_dir: '.'
+
+output: 
+  html_document:
+    css: ./site_libs/styles.css
+    highlight: tango
+    theme: readable
+    fig_height: 6
+    fig_width: 12
+    fig_align: 'center'  
+    code_folding: hide 

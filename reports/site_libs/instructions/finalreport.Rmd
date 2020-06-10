@@ -1,0 +1,35 @@
+---
+title: "Final Project"
+subtitle: "Report"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+You have been working this semester on a significant hardware or software project related to your major. You have submitted bi-weekly progress reports to document that you have adhered to your schedule and worked at least 100 hours on your project.
+
+This week you will submit your Final Project Report. It must reflect the knowledge and skills expected from a senior-level student in your major. Those include writing skills as well as technical skills. In addtition to being graded on your technical project work, you will be graded on your organization, your spelling, your grammar, and how well you followed the instructions for preparing your report.
+
+Your Final Project Report must be at least six or eight single-spaced pages long, not including references. (It will take at least that much to adequately document your 100-hour project.) It must include the following sections and information.
+
+## Introduction
+
+What problem or need does your project address? What does your project do? How does it solve the problem or fulfill the need? What has been done in the past by others to solve the problem or fulfill the need? Why is your project a better solution than what already existed?
+
+## Methods and Procedures
+
+What research did you have to do? What are the project specifications? What tasks were required to implement your project? How long did they take? How close were your time estimates? What resources were needed? What was your test plan to verify that it worked correctly?
+
+## Results
+
+Include, as appropriate: schematics and wiring diagrams, assembly diagrams or photos, computer code, and results of the test plan (often including a screen shot or two, and a URL for a video).
+
+## Conclusions
+
+How well does your project satisfy its intended purpose? How can it be applied or used by others? How can it be improved in the future?
+
+## References
+
+Use APA format.

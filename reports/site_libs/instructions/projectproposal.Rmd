@@ -1,0 +1,50 @@
+---
+title: 'Project Proposal'
+---
+
+## Background
+
+This week you will submit a proposal for a significant hardware or software project related to your major. “Significant” is defined as requiring at least 100 hours of individual effort to complete. It might help to review the requirements for your Final Project Report.
+
+Your project must be approved by the instructor. 
+
+* If you are a CS or SWE major, your project must also be approved by the CS/SWE Internship Coordinator 
+* See the instructor for details before writing your proposal
+
+Your project must be unique to this course. It cannot be used in any other course you are currently taking or have taken in the past.   
+
+Your project and project reports must reflect the knowledge and skills expected from a senior-level student in your major. Those include writing skills as well as technical skills.
+
+The proposal for your project must be at least three pages long (single-spaced) and must have the following sections/headings.
+
+## Purpose
+
+* What problem or need will your project address? 
+* What will your project do to solve the problem or fulfill the need? 
+  + (This should be a brief project description.) 
+* What has been done in the past by others to solve the problem or fulfill the need? 
+* Why is your project a better solution than what already exists? 
+* What is your major and how is your proposed project related to it?
+
+## Methods and Procedures
+
+* How are you going to complete the project? 
+* What are the tasks involved? 
+  + Be specific. 
+  + "Write the software" is too vague. 
+* What research will you have to do? 
+* What resources will be required? 
+* What is your test plan to make sure it works?
+
+## Work Schedule
+
+* The overall project should take at least 100 hours to complete. 
+* It will consist of the tasks you described in Methods and Procedures. 
+* State how long each task will take to complete. If a task will take longer than five or ten hours, break it up into smaller tasks. 
+* Create a calendar or milestone chart that shows which tasks will be completed each week. 
+
+You will submit a short progress report every two weeks that describes what tasks were accomplished.
+
+## Results
+
+* What are the expected outcomes?

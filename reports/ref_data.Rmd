@@ -1,0 +1,23 @@
+---
+title: "Data"
+---
+
+```{r load_libraries, include=FALSE}
+library(tidyverse)
+library(knitr)
+```
+
+I found two useful dataset hosts; they are NYTimes and JHU. The datasets I used from nytimes are [nytimes US](https://github.com/nytimes/covid-19-data/raw/master/us.csv), [nytimes states](https://github.com/nytimes/covid-19-data/raw/master/us-states.csv), and [nytimes counties](https://github.com/nytimes/covid-19-data/raw/master/us-counties.csv). The datasets I used from JHU are [fips](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/UID_ISO_FIPS_LookUp_Table.csv), 
+[us deaths](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_US.csv), [us cases](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_US.csv)
+[global deaths](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_deaths_global.csv), [global cases](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_confirmed_global.csv), and [global recovered](https://github.com/CSSEGISandData/COVID-19/raw/master/csse_covid_19_data/csse_covid_19_time_series/time_series_covid19_recovered_global.csv). 
+
+<br /> <br />
+
+## References
+
+Nytimes. (2020). Nytimes/covid-19-data. Retrieved 2020,           
+&emsp; &emsp; from https://github.com/nytimes/covid-19-data
+
+
+CSSEGISandData. (2020). CSSEGISandData/COVID-19. Retrieved 2020,              
+&emsp; &emsp; from https://github.com/CSSEGISandData/COVID-19
