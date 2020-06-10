@@ -7,7 +7,7 @@ navbar:
      - text: "World"
        href: ./global/index.html    
      - text: "Reports"
-       href:  ./Project-Reports/index.html 
+       href:  ./reports/index.html 
      - text: "Contact Me"
        href:  ./contact.html    
           
