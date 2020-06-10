@@ -21,7 +21,7 @@ dat <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_us.cs
 ```
 
 ```{r map, out.width = "50%"}
-include_graphics("https://images-na.ssl-images-amazon.com/images/I/51VIOj8V7dL._SX466_.jpg")
+include_graphics("./site_libs/world.jpg")
 ```
 
 ## Current
@@ -34,6 +34,6 @@ kable(yesterday_data)
 
 <br /> <br />
 
-## USA Data
+## World Data
 
 The two [data sources](https://byui-covid.github.io/Project-Reports/ref_data.html) for COVID-19 in the USA are JHU and New York Times.

@@ -1,15 +1,9 @@
-name: "COVID-19"
+name: "World"
 navbar:
-  title: "COVID-19"
+  title: "World"
   left:
-     - text: "America (USA)"
-       href: ./usa/index.html
-     - text: "World"
-       href: ./global/index.html    
-     - text: "Reports"
-       href:  https://byui-covid.github.io/Project-Reports/index.html 
-     - text: "Contact Me"
-       href:  ./contact.html    
+     - text: "Main"
+       href: ../index.html
           
 output_dir: '.'
 
@@ -23,10 +17,4 @@ output:
     fig_height: 6
     fig_width: 12
     fig_align: 'center'  
-    code_folding: hide 
-
-#- text: ""   
-#  menu:
-#   - text: ""
-#     href:  
-#   - text: "---------------"     
+    code_folding: hide  
