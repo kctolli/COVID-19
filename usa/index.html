@@ -469,54 +469,49 @@ div.tocify {
 <p><img src="https://images-na.ssl-images-amazon.com/images/I/51VIOj8V7dL._SX466_.jpg" width="50%" /></p>
 <div id="current" class="section level2">
 <h2>Current</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">yesterday_data &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>(<span class="kw">Sys.Date</span>()<span class="op">-</span><span class="dv">1</span>)<span class="op">-</span><span class="dv">7</span>)</a>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">yesterday_data &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>(<span class="kw">Sys.Date</span>()<span class="op">-</span><span class="dv">1</span>)<span class="op">-</span><span class="dv">7</span>) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">rename</span>(<span class="dt">cases =</span> us_cases) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">rename</span>(<span class="dt">deaths =</span> us_deaths)</a>
 <a class="sourceLine" id="cb3-2" title="2"></a>
 <a class="sourceLine" id="cb3-3" title="3"><span class="kw">kable</span>(yesterday_data)</a></code></pre></div>
 <table>
 <thead>
 <tr class="header">
 <th align="left">date</th>
-<th align="right">us_cases</th>
-<th align="right">us_deaths</th>
+<th align="right">cases</th>
+<th align="right">deaths</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">2020-06-01</td>
-<td align="right">1820658</td>
-<td align="right">105113</td>
-</tr>
-<tr class="even">
 <td align="left">2020-06-02</td>
 <td align="right">1841442</td>
 <td align="right">106195</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">2020-06-03</td>
 <td align="right">1861419</td>
 <td align="right">107184</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">2020-06-04</td>
 <td align="right">1883031</td>
 <td align="right">108192</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">2020-06-05</td>
 <td align="right">1911723</td>
 <td align="right">109304</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">2020-06-06</td>
 <td align="right">1934241</td>
 <td align="right">110032</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td align="left">2020-06-07</td>
 <td align="right">1953138</td>
 <td align="right">110422</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td align="left">2020-06-08</td>
 <td align="right">1970613</td>
 <td align="right">110966</td>

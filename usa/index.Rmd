@@ -27,7 +27,7 @@ include_graphics("https://images-na.ssl-images-amazon.com/images/I/51VIOj8V7dL._
 ## Current
 
 ```{r current}
-yesterday_data <- dat %>% filter(date >= (Sys.Date()-1)-7)
+yesterday_data <- dat %>% filter(date >= (Sys.Date()-1)-7) %>% rename(cases = us_cases) %>% rename(deaths = us_deaths)
 
 kable(yesterday_data)
 ```

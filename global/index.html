@@ -12,7 +12,7 @@
 <meta name="author" content="Kyle Tolliver" />
 
 
-<title>Global</title>
+<title>World</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -458,76 +458,29 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">Global</h1>
+<h1 class="title toc-ignore">World</h1>
 <h4 class="author">Kyle Tolliver</h4>
 
 </div>
 
 
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">my_read &lt;-<span class="st"> </span><span class="cf">function</span>(df){<span class="kw">read_csv</span>(df) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">unique</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">na.omit</span>()}</a></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1"><span class="kw">include_graphics</span>(<span class="st">&quot;./site_libs/world.jpg&quot;</span>)</a></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" title="1">dat &lt;-<span class="st"> </span><span class="kw">my_read</span>(<span class="st">&quot;https://github.com/BYUI-COVID/read-data/raw/master/owid_data.csv&quot;</span>) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-2" title="2"><span class="st">  </span><span class="kw">group_by</span>(date) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-3" title="3"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">cases =</span> <span class="kw">sum</span>(total_cases)) <span class="op">%&gt;%</span><span class="st"> </span></a>
+<a class="sourceLine" id="cb2-4" title="4"><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">deaths =</span> <span class="kw">sum</span>(total_deaths))</a></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">include_graphics</span>(<span class="st">&quot;./site_libs/world.jpg&quot;</span>)</a></code></pre></div>
 <p><img src="site_libs/world.jpg" width="50%" /></p>
 <div id="current" class="section level2">
 <h2>Current</h2>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" title="1">yesterday_data &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>(<span class="kw">Sys.Date</span>()<span class="op">-</span><span class="dv">1</span>)<span class="op">-</span><span class="dv">7</span>)</a>
-<a class="sourceLine" id="cb3-2" title="2"></a>
-<a class="sourceLine" id="cb3-3" title="3"><span class="kw">kable</span>(yesterday_data)</a></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">date</th>
-<th align="right">us_cases</th>
-<th align="right">us_deaths</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">2020-06-01</td>
-<td align="right">1820658</td>
-<td align="right">105113</td>
-</tr>
-<tr class="even">
-<td align="left">2020-06-02</td>
-<td align="right">1841442</td>
-<td align="right">106195</td>
-</tr>
-<tr class="odd">
-<td align="left">2020-06-03</td>
-<td align="right">1861419</td>
-<td align="right">107184</td>
-</tr>
-<tr class="even">
-<td align="left">2020-06-04</td>
-<td align="right">1883031</td>
-<td align="right">108192</td>
-</tr>
-<tr class="odd">
-<td align="left">2020-06-05</td>
-<td align="right">1911723</td>
-<td align="right">109304</td>
-</tr>
-<tr class="even">
-<td align="left">2020-06-06</td>
-<td align="right">1934241</td>
-<td align="right">110032</td>
-</tr>
-<tr class="odd">
-<td align="left">2020-06-07</td>
-<td align="right">1953138</td>
-<td align="right">110422</td>
-</tr>
-<tr class="even">
-<td align="left">2020-06-08</td>
-<td align="right">1970613</td>
-<td align="right">110966</td>
-</tr>
-</tbody>
-</table>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" title="1">yesterday_data &lt;-<span class="st"> </span>dat <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>(<span class="kw">Sys.Date</span>()<span class="op">-</span><span class="dv">1</span>)<span class="op">-</span><span class="kw">weeks</span>(<span class="dv">2</span>))</a>
+<a class="sourceLine" id="cb4-2" title="2"></a>
+<a class="sourceLine" id="cb4-3" title="3"><span class="kw">kable</span>(yesterday_data)</a></code></pre></div>
 <p><br /> <br /></p>
 </div>
 <div id="world-data" class="section level2">
 <h2>World Data</h2>
-<p>The two <a href="https://byui-covid.github.io/Project-Reports/ref_data.html">data sources</a> for COVID-19 in the USA are JHU and New York Times.</p>
+<p>The two <a href="https://byui-covid.github.io/Project-Reports/ref_data.html">data sources</a> for COVID-19 in the USA are JHU and Our World In Data.</p>
 </div>
 
 
