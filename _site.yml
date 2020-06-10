@@ -3,15 +3,11 @@ navbar:
   title: "COVID-19"
   left:
      - text: "America (USA)"
-       menu:
-        - text: "...."
-          href: 
+       href: ./usa/index.html
      - text: "World"
-       menu:
-        - text: "...."
-          href:        
+       href: ./global/index.html    
      - text: "Reports"
-       href:  https://byui-covid.github.io/Project-Reports/ 
+       href:  ./Project-Reports/index.html 
      - text: "Contact Me"
        href:  ./contact.html    
           
@@ -21,16 +17,4 @@ output:
   html_document:
     css: ./site_libs/styles.css
     highlight: tango
-    theme: readable
-    #toc: true
-    #toc_float: true
-    fig_height: 6
-    fig_width: 12
-    fig_align: 'center'  
-    code_folding: hide 
-
-     #- text: ""   
-     #  menu:
-     #   - text: ""
-     #     href:  
-     #   - text: "---------------"     
+    theme: readable  

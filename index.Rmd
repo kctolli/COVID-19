@@ -1,5 +1,5 @@
 ---
-title: "Senior Thesis"
+title: "COVID-19"
 subtitle: "Research and Consulting Project"
 author: "Kyle Tolliver"
 date: "BYUI - ECEN 490R"
@@ -10,11 +10,12 @@ library(tidyverse)
 library(knitr)
 ```
 
-```{r pic, fig.align='center', out.width='50%'}
+```{r pic, fig.align='center', out.width='50%', echo=FALSE}
 include_graphics('https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg')
 ```
 
+<br /> <br />
 
 © Copyright Kyle Tolliver, 2020
 
-###### *--- [Licensed](https://github.com/BYUI-COVID/BYUI-COVID.github.io/blob/master/LICENSE) under [GNU General Public License v3.0](./LICENSE.txt) *
+###### *--- [Licensed](https://github.com/BYUI-COVID/BYUI-COVID.github.io/blob/master/LICENSE) under [GNU General Public License v3.0](./site_libs/LICENSE.txt) *
