@@ -5,14 +5,32 @@ author: "Kyle Tolliver"
 date: "BYUI - ECEN 490R"
 ---
 
-```{r load_libraries, include=FALSE}
-library(tidyverse)
-library(knitr)
+```{r setup, include=FALSE}
+pacman::p_load(pacman)
+p_load(knitr, tidyverse)
+p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs, data.table, DT)
+
+opts_chunk$set(echo = TRUE)
+options(scipen = 999)
+
+my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
+
+us <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_us.csv") %>% 
+  rename(cases = us_cases) %>% 
+  rename(deaths = us_deaths) %>% 
+  filter(date >= (Sys.Date()-1)-7)
 ```
 
-```{r pic, fig.align='center', out.width='50%', echo=FALSE}
+```{r pic, fig.align='center', out.width='50%'}
 include_graphics('https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg')
 ```
+
+## Current Cases and Deaths in the USA
+
+```{r current}
+kable(us)
+```
+
 
 <br /> <br />
 

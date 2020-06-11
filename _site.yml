@@ -2,11 +2,16 @@ name: "COVID-19"
 navbar:
   title: "COVID-19"
   left:
-     - text: "America (USA)"
-       href: ./usa/index.html
-     - text: "World"
-       href: ./global/index.html    
-     - text: "Reports"
+     - text: "New York Times"
+       menu:
+        - text: "Basic Plots"
+          href: ny_plots.html 
+        - text: "---------------" 
+        - text: "Basic Maps"
+        - text: "---------------"   
+        - text: "Interactive Graphs"
+        - text: "---------------" 
+        - text: "Interactive Maps"
        href:  ./reports/index.html 
      - text: "Contact Me"
        href:  ./contact.html    
@@ -17,4 +22,10 @@ output:
   html_document:
     css: ./site_libs/styles.css
     highlight: tango
-    theme: readable  
+    theme: readable
+    fig_height: 6
+    fig_width: 12
+    fig_align: 'center'  
+    code_folding: hide 
+    toc: true
+    toc_float: true

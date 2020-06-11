@@ -1,0 +1,73 @@
+---
+title: "NYTimes Plots"
+---
+
+```{r setup, include=FALSE}
+pacman::p_load(pacman)
+p_load(knitr, tidyverse)
+p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs, data.table, DT)
+
+opts_chunk$set(echo = TRUE)
+options(scipen = 999)
+
+my_read <- function(df){read_csv(df) %>% unique() %>% na.omit() %>% 
+    mutate(year = year(date), month = month(date), day = day(date))}
+
+us <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_us.csv") %>% 
+  rename(cases = us_cases) %>% rename(deaths = us_deaths)
+state <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_state_pop.csv") %>% 
+  mutate(`pop/mil` = pop/1000000)
+
+tops <- state %>% filter(state_abbr == c("NY", "NM", "MA", "RI", "CT"))
+
+topic <- state %>% filter(state_abbr == c("CA", "UT", "ID", "MA", "AZ"))
+```
+
+```{r date, eval=FALSE}
+ggplot(data = us, aes(x = date, y = cases)) +
+  geom_line() + 
+  geom_point() + 
+  theme_bw()
+
+ggplot(data = us, aes(x = date, y = deaths)) +
+  geom_line() + 
+  geom_point() + 
+  theme_bw() 
+```
+
+```{r find_top}
+ggplot(data = state) + 
+  geom_col(aes(x = state, y = cases/pop, color = `pop/mil`)) + 
+  coord_flip() + 
+  theme_bw()
+ 
+ggplot(data = state) + 
+  geom_col(aes(x = state, y = deaths/pop, color = `pop/mil`)) + 
+  coord_flip() + 
+  theme_bw()
+```
+
+```{r top_5}
+ggplot(data = tops, aes(x = date, y = cases/pop, color = state)) +
+  geom_line() + 
+  geom_point(aes(size = `pop/mil`)) + 
+  theme_bw()
+
+ggplot(data = tops, aes(x = date, y = deaths/pop, color = state)) +
+  geom_line() + 
+  geom_point(aes(size = `pop/mil`)) + 
+  theme_bw()
+```
+
+```{r topic}
+ggplot(data = topic, aes(x = date, y = cases, color = state))+
+  geom_line() + 
+  geom_point(aes(size = `pop/mil`)) + 
+  theme_bw()
+
+ggplot(data = topic, aes(x = date, y = deaths, color = state))+
+  geom_line() + 
+  geom_point(aes(size = `pop/mil`)) + 
+  theme_bw()
+```
+
