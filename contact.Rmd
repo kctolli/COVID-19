@@ -4,7 +4,7 @@ author: "Kyle Tolliver"
 ---
 
 ```{r pic, fig.align='left', out.width='30%', echo=FALSE}
-me <- 'https://github.com/kctolli/kctolli.github.io/raw/master/images/me.png'
+me <- 'https://github.com/kctolli/kctolli.github.io/raw/master/site_libs/images/me.png'
 knitr::include_graphics(me)
 ```
 
