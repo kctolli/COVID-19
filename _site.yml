@@ -12,6 +12,7 @@ navbar:
         - text: "Interactive Graphs"
         - text: "---------------" 
         - text: "Interactive Maps"
+     - text: "Reports"   
        href:  ./reports/index.html 
      - text: "Contact Me"
        href:  ./contact.html    

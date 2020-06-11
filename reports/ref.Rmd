@@ -1,7 +1,6 @@
 ---
 title: "References"
 subtitle: "Research and Development"
-author: "Kyle Tolliver"
 ---
 
 ```{r load_libraries, include=FALSE}
