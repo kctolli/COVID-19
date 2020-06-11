@@ -11,9 +11,11 @@ library(tidyverse)
 
 Roser, M., Ritchie, H., Ortiz-Ospina, E., &amp; Hasell, J. (2020). Coronavirus Pandemic (COVID-19) - Statistics and Research. Retrieved 2020, from https://ourworldindata.org/coronavirus
 
-Mapping COVID-19. (2020). Retrieved 2020, from https://systems.jhu.edu/research/public-health/ncov/
+Mapping COVID-19. (2020). Retrieved 2020,                                 
+&emsp; &emsp; from https://systems.jhu.edu/research/public-health/ncov/
 
 ## Consulting
 
-The Fallen of World War II - Data-driven documentary about war &amp; peace. (n.d.). Retrieved 2020, from http://www.fallen.io/ww2/
+The Fallen of World War II - Data-driven documentary about war &amp; peace. (n.d.). Retrieved 2020,                
+&emsp; &emsp; from http://www.fallen.io/ww2/
 
