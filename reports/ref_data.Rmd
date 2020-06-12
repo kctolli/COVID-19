@@ -9,10 +9,10 @@ library(knitr)
 
 ## Sources
 
-I found three useful dataset hosts; they are NYTimes, Our World in Data and JHU CSSEGIS. 
+I found three useful dataset hosts; they are NYTimes, Our World in Data and JHU CSSEGIS 
 
-* Nytimes' github is [nytimes/covid-19-data](https://github.com/nytimes/covid-19-data/). 
-* JHU CSSEGIS' github is [CSSEGISandData/COVID-19](https://github.com/CSSEGISandData/COVID-19/). 
+* Nytimes' github is [nytimes/covid-19-data](https://github.com/nytimes/covid-19-data/)
+* JHU CSSEGIS' github is [CSSEGISandData/COVID-19](https://github.com/CSSEGISandData/COVID-19/)
 * Our World in Data's github is [owid/covid-19-data](https://github.com/owid/covid-19-data)
 
 I also use USAboundaries R package which give state geometry and populations
@@ -22,7 +22,15 @@ I also use USAboundaries R package which give state geometry and populations
 
 <br /> <br />
 
-## References
+## Dashboards
+
+Coronavirus Pandemic (COVID-19) - Statistics and Research. (2020). Retrieved 2020,            
+&emsp; &emsp; from https://ourworldindata.org/coronavirus
+
+Mapping COVID-19. (2020). Retrieved 2020,                                 
+&emsp; &emsp; from https://systems.jhu.edu/research/public-health/ncov/
+
+## Data Set References
 
 CSSEGISandData. (2020). CSSEGISandData/COVID-19. Retrieved 2020,              
 &emsp; &emsp; from https://github.com/CSSEGISandData/COVID-19

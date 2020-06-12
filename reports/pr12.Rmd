@@ -1,7 +1,6 @@
 ---
 title: "Progress Report"
 subtitle: "Week 12"
-author: "Kyle Tolliver"
 ---
 
 ```{r setup, include=FALSE}
