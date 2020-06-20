@@ -1,0 +1,123 @@
+---
+title: "NYTimes"
+---
+
+```{r setup, include=FALSE}
+pacman::p_load(pacman)
+p_load(knitr, tidyverse)
+p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs, data.table, DT)
+
+opts_chunk$set(echo = TRUE)
+options(scipen = 999)
+options(warn = -1) 
+
+yesterday <- Sys.Date() - 1
+
+my_read <- function(df){read_csv(df) %>% unique() %>% na.omit() %>% 
+    mutate(year = year(date), month = month(date), day = day(date))}
+
+us <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_us.csv") %>% 
+  rename(cases = us_cases) %>% rename(deaths = us_deaths)
+
+state <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_state_pop.csv") %>% 
+  mutate(`pop/mil` = pop/1000000)
+
+tops <- state %>% filter(state_abbr == c("NY", "NJ", "MA", "RI", "CT"))
+
+state_prop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_state_proportions.csv")
+
+states <- us_states() %>% filter(!state_abbr %in% c("AK","HI","PR")) %>% 
+  rename(state = name)
+
+prop_state <- left_join(state_prop, states, by = c("state", "state_abbr")) %>% 
+  filter(date == yesterday) %>% 
+  select(- date, - year, - month, - day) %>% 
+  mutate(case_pop = round(as.numeric(case_pop),5)) %>% 
+  mutate(case_death = round(as.numeric(case_death),5)) %>% 
+  mutate(death_pop = round(as.numeric(death_pop),5)) %>% 
+  mutate(death_case = round(as.numeric(death_case),5))
+```
+
+## Find Distribution 
+
+```{r find_top_complete}
+ggplot(data = state) + 
+  geom_col(aes(x = state, y = cases/pop)) +  
+  coord_flip() + 
+  theme_bw()
+
+ggplot(data = state) + 
+  geom_col(aes(x = state, y = deaths/pop)) + 
+  coord_flip() + 
+  theme_bw()
+```
+
+These plots visualize the top five states with covid cases and deaths per population.
+
+## Top 5 states
+
+The top five states are Connecticut, Massachusetts, New Jersey, New York and Rhode Island.
+
+```{r top_5a}
+ggplot(data = tops, aes(x = date, y = cases, color = state)) +
+  geom_line() + 
+  geom_point(aes(size = `pop/mil`)) + 
+  theme_bw()
+```
+
+This plot shows cases with respect to date. It is colored by state and points are sized by million population. 
+
+```{r top_5b}
+ggplot(data = tops, aes(x = date, y = deaths, color = state)) +
+  geom_line() + 
+  geom_point(aes(size = `pop/mil`)) + 
+  theme_bw()
+```
+
+This plot shows deaths with respect to date. It is colored by state and points are sized by million population. 
+
+## Maps
+
+```{r mappinga}
+ggplot(data = prop_state) +
+  geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
+  guides(color = FALSE) + 
+  geom_text(aes(label = (as.numeric(case_pop)*100), geometry = geometry), stat = "sf_coordinates", color = "black", size = 2.5) +
+  theme_bw() +
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank())
+```
+
+This plot shows the percent of the population that has tested positive for COVID-19.
+
+```{r mappingb}
+ggplot(data = prop_state) +
+  geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
+  guides(color = FALSE) + 
+  geom_text(aes(label = (as.numeric(death_pop)*100), geometry = geometry), stat = "sf_coordinates", color = "black", size = 2.5) +
+  theme_bw() +
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank())
+```
+
+This plot shows the percent of the population that has died for COVID-19.
+
+```{r mappingc}
+ggplot(data = prop_state) +
+  geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
+  guides(color = FALSE) + 
+  geom_text(aes(label = (as.numeric(death_case)*100), geometry = geometry), stat = "sf_coordinates", color = "black", size = 2.5) +
+  theme_bw() +
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank())
+```
+
+This plot shows the percent of the people that test positive die from COVID-19.
+
+## Cases Per Death
+
+```{r case/death}
+ggplot(data = us, aes(x = cases/1000, y = deaths/1000)) + 
+  geom_smooth(color = "black", size = 1.5, method = "loess", formula = y ~ x) +
+  geom_jitter(aes(color = month)) +
+  theme_bw()
+```
+
+This plot shows how the cases and deaths relate and compare. I divided both cases and deaths by 1000 so its per thousand cases and per thousand deaths. 

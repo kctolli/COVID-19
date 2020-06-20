@@ -25,6 +25,7 @@
 <script src="site_libs/tocify-1.9.1/jquery.tocify.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
 
@@ -336,22 +337,55 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li class="dropdown">
+        <li>
+  <a href="ny.html">New York Times</a>
+</li>
+<li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    New York Times
+    Johns Hopkins
      
     <span class="caret"></span>
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="ny_plots.html">Basic Plots</a>
+      <a href="jhu_plot.html">Basic Plots</a>
     </li>
     <li class="divider"></li>
-    <li class="dropdown-header">Basic Maps</li>
+    <li>
+      <a href="jhu_map.html">Basic Maps</a>
+    </li>
     <li class="divider"></li>
-    <li class="dropdown-header">Interactive Graphs</li>
+    <li>
+      <a href="jhu_dygraph.html">Interactive Graphs</a>
+    </li>
     <li class="divider"></li>
-    <li class="dropdown-header">Interactive Maps</li>
+    <li>
+      <a href="jhu_leaflet.html">Interactive Maps</a>
+    </li>
+  </ul>
+</li>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Our World in Data
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="owid_plot.html">Basic Plots</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="owid_map.html">Basic Maps</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="owid_dygraph.html">Interactive Graphs</a>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="owid_leaflet.html">Interactive Maps</a>
+    </li>
   </ul>
 </li>
 <li>
@@ -447,7 +481,7 @@ $(document).ready(function ()  {
       theme: "bootstrap3",
       context: '.toc-content',
       hashGenerator: function (text) {
-        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_').toLowerCase();
+        return text.replace(/[.\\/?&!#<>]/g, '').replace(/\s/g, '_');
       },
       ignoreSelector: ".toc-ignore",
       scrollTo: 0
