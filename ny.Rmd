@@ -26,7 +26,8 @@ tops <- state %>% filter(state_abbr == c("NY", "NJ", "MA", "RI", "CT"))
 
 state_prop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_state_proportions.csv")
 
-states <- us_states() %>% filter(!state_abbr %in% c("AK","HI","PR")) %>% 
+states <- us_states() %>% 
+  filter(!state_abbr %in% c("AK","HI","PR")) %>% 
   rename(state = name)
 
 prop_state <- left_join(state_prop, states, by = c("state", "state_abbr")) %>% 
@@ -36,6 +37,23 @@ prop_state <- left_join(state_prop, states, by = c("state", "state_abbr")) %>%
   mutate(case_death = round(as.numeric(case_death),5)) %>% 
   mutate(death_pop = round(as.numeric(death_pop),5)) %>% 
   mutate(death_case = round(as.numeric(death_case),5))
+
+county_prop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_county_proportions.csv")
+
+ny_county_prop <- county_prop %>% filter(date == yesterday) %>% filter(state_abbr == "NY")
+
+ny_county <- us_counties() %>% 
+  rename(county = name) %>% 
+  filter(state_abbr == "NY") %>% 
+  select(- statefp, - jurisdiction_type) %>% 
+  rename(state = state_name)
+
+prop_county <- left_join(ny_county_prop, ny_county, by = c("state", "state_abbr", "county")) %>% 
+  select(- date, - year, - month, - day, - state, - state_abbr) %>% 
+  mutate(case_pop = round(as.numeric(case_pop),4)) %>% 
+  mutate(case_death = round(as.numeric(case_death),4)) %>% 
+  mutate(death_pop = round(as.numeric(death_pop),4)) %>% 
+  mutate(death_case = round(as.numeric(death_case),4))
 ```
 
 ## Find Distribution 
@@ -100,6 +118,8 @@ ggplot(data = prop_state) +
 
 This plot shows the percent of the population that has died for COVID-19.
 
+## Cases Per Death
+
 ```{r mappingc}
 ggplot(data = prop_state) +
   geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
@@ -111,8 +131,6 @@ ggplot(data = prop_state) +
 
 This plot shows the percent of the people that test positive die from COVID-19.
 
-## Cases Per Death
-
 ```{r case/death}
 ggplot(data = us, aes(x = cases/1000, y = deaths/1000)) + 
   geom_smooth(color = "black", size = 1.5, method = "loess", formula = y ~ x) +
@@ -121,3 +139,24 @@ ggplot(data = us, aes(x = cases/1000, y = deaths/1000)) +
 ```
 
 This plot shows how the cases and deaths relate and compare. I divided both cases and deaths by 1000 so its per thousand cases and per thousand deaths. 
+
+## New York 
+
+```{r newyorka}
+ggplot(data = prop_county) +
+  geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
+  guides(color = FALSE) + 
+  geom_text(aes(label = (as.numeric(case_pop)*100), geometry = geometry), stat = "sf_coordinates", color = "black", size = 2) +
+  theme_bw() +
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank())
+```
+
+
+
+<br /><br />
+
+```{r update}
+print(paste("Last updated:", 
+  format(Sys.Date(), "%b %d %Y")))
+```
+

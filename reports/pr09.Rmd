@@ -80,7 +80,9 @@ Throughout the semester I will spend time gaining knowledge on the follow as it 
 ### Hour Break Down
 
 ```{r display, echo=FALSE}
-kable(dt[,1:2])
+kable(dt)
 ```
 
 ## Observations 
+
+I was able to complete the framework of the YAML file. I was able to complete the visualizations for NYTimes and got started with both JHU and OWID. I did a mini project called tidy tuesday about sleep patterns. I was able to learn more about Tableau and get Data. I learned about the R package installr. I also learned more about data-driven learning and research. I believe still that I am on schedule to complete the project by the end of the week. 

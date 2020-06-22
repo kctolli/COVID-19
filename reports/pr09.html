@@ -21,107 +21,9 @@
 <script src="site_libs/bootstrap-3.3.5/shim/respond.min.js"></script>
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
+<script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
 
 
-<style type="text/css">code{white-space: pre;}</style>
-<style type="text/css" data-origin="pandoc">
-a.sourceLine { display: inline-block; line-height: 1.25; }
-a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
-a.sourceLine:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode { white-space: pre; position: relative; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-code.sourceCode { white-space: pre-wrap; }
-a.sourceLine { text-indent: -1em; padding-left: 1em; }
-}
-pre.numberSource a.sourceLine
-  { position: relative; left: -4em; }
-pre.numberSource a.sourceLine::before
-  { content: attr(title);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; pointer-events: all; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  { background-color: #f8f8f8; }
-@media screen {
-a.sourceLine::before { text-decoration: underline; }
-}
-code span.al { color: #ef2929; } /* Alert */
-code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #c4a000; } /* Attribute */
-code span.bn { color: #0000cf; } /* BaseN */
-code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4e9a06; } /* Char */
-code span.cn { color: #000000; } /* Constant */
-code span.co { color: #8f5902; font-style: italic; } /* Comment */
-code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
-code span.dt { color: #204a87; } /* DataType */
-code span.dv { color: #0000cf; } /* DecVal */
-code span.er { color: #a40000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #0000cf; } /* Float */
-code span.fu { color: #000000; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
-code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
-code span.ot { color: #8f5902; } /* Other */
-code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
-code span.sc { color: #000000; } /* SpecialChar */
-code span.ss { color: #4e9a06; } /* SpecialString */
-code span.st { color: #4e9a06; } /* String */
-code span.va { color: #000000; } /* Variable */
-code span.vs { color: #4e9a06; } /* VerbatimString */
-code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
-
-.sourceCode .row {
-  width: 100%;
-}
-.sourceCode {
-  overflow-x: auto;
-}
-.code-folding-btn {
-  margin-right: -30px;
-}
-</style>
-<script>
-// apply pandoc div.sourceCode style to pre.sourceCode instead
-(function() {
-  var sheets = document.styleSheets;
-  for (var i = 0; i < sheets.length; i++) {
-    if (sheets[i].ownerNode.dataset["origin"] !== "pandoc") continue;
-    try { var rules = sheets[i].cssRules; } catch (e) { continue; }
-    for (var j = 0; j < rules.length; j++) {
-      var rule = rules[j];
-      // check if there is a div.sourceCode rule
-      if (rule.type !== rule.STYLE_RULE || rule.selectorText !== "div.sourceCode") continue;
-      var style = rule.style.cssText;
-      // check if color or background-color is set
-      if (rule.style.color === '' && rule.style.backgroundColor === '') continue;
-      // replace div.sourceCode by a pre.sourceCode rule
-      sheets[i].deleteRule(j);
-      sheets[i].insertRule('pre.sourceCode{' + style + '}', j);
-    }
-  }
-})();
-</script>
-<style type="text/css">
-  pre:not([class]) {
-    background-color: white;
-  }
-</style>
 
 
 <style type="text/css">
@@ -439,9 +341,159 @@ $(document).ready(function () {
 </div>
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb1-1" title="1">pic &lt;-<span class="st"> &#39;https://codinginfinite.com/wp-content/uploads/2019/05/documentation-where-were-going-we-dont-need-documentation.jpg&#39;</span></a>
-<a class="sourceLine" id="cb1-2" title="2">knitr<span class="op">::</span><span class="kw">include_graphics</span>(pic)</a></code></pre></div>
-<p><img src="https://codinginfinite.com/wp-content/uploads/2019/05/documentation-where-were-going-we-dont-need-documentation.jpg" width="50%" style="display: block; margin: auto;" /></p>
+<div id="work-schedule-updated" class="section level2">
+<h2>Work Schedule — Updated</h2>
+<p>Below I have divided the tasks in three-week interval which a line progress reports.</p>
+<div id="progress-report-4-due-711" class="section level3">
+<h3>Progress Report 4 (Due 7/11)</h3>
+<ul>
+<li>Last steps website
+<ul>
+<li>Finalize visualizations</li>
+<li>Finalize YML</li>
+<li>Finalize tibbles</li>
+</ul></li>
+<li>Start report</li>
+</ul>
+</div>
+<div id="final-delivery-722" class="section level3">
+<h3>Final Delivery (7/22)</h3>
+<ul>
+<li>Finish data presentation website</li>
+<li>Peer reviewed
+<ul>
+<li>Make edits/modifications</li>
+</ul></li>
+<li>Complete report</li>
+</ul>
+</div>
+<div id="whole-semester-420---722" class="section level3">
+<h3>Whole Semester (4/20 - 7/22)</h3>
+<p>Throughout the semester I will spend time gaining knowledge on the follow as it relates to my project:</p>
+<p>  (Notes and Resources will be posted in the organizations github repos)</p>
+<ul>
+<li>Ethics in Data</li>
+<li>Consulting in Statistics and Data Science</li>
+<li>Analysis - Poor, <a href="https://www.churchofjesuschrist.org/study/general-conference/2007/10/good-better-best?lang=eng">Good, Better, Best</a></li>
+<li>R packages</li>
+<li>Making Inferences with Data</li>
+<li>Learn more about the
+<ul>
+<li><a href="https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0">ggplot</a></li>
+<li><a href="https://r-spatial.github.io/sf/articles/sf1.html">sf plots</a></li>
+<li><a href="https://leafletjs.com/">leaflet</a></li>
+<li><a href="https://rstudio.github.io/dygraphs/">dygraphs</a></li>
+<li>other plot tools</li>
+</ul></li>
+<li>and more</li>
+</ul>
+</div>
+</div>
+<div id="accomplishments" class="section level2">
+<h2>Accomplishments</h2>
+<div id="progress-report-1-due-59" class="section level3">
+<h3>Progress Report 1 (Due 5/9)</h3>
+<ul>
+<li>Start Project
+<ul>
+<li>Proposal</li>
+</ul></li>
+<li>Do some data research</li>
+<li>Find data sets to work with
+<ul>
+<li>Such as <a href="https://github.com/CSSEGISandData/COVID-19">JHUs github</a></li>
+<li>Or <a href="https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/whoAllregt_phl15.html">CDC</a> flu data</li>
+</ul></li>
+<li>Create github organization</li>
+<li>Host the website in main repo</li>
+</ul>
+</div>
+<div id="progress-report-2-due-530" class="section level3">
+<h3>Progress Report 2 (Due 5/30)</h3>
+<ul>
+<li>Load in the data sets
+<ul>
+<li>Look through the data set</li>
+</ul></li>
+<li>Data_Push R package (Data host repo)<br />
+</li>
+<li>Start wrangling</li>
+<li>Make basic visualizations to see the data</li>
+<li>Develop YML file</li>
+</ul>
+</div>
+<div id="progress-report-3-due-620" class="section level3">
+<h3>Progress Report 3 (Due 6/20)</h3>
+<ul>
+<li>Wrangle and Visualize data
+<ul>
+<li>Non-interactive plots</li>
+<li>Interactive plots</li>
+</ul></li>
+</ul>
+</div>
+<div id="hour-break-down" class="section level3">
+<h3>Hour Break Down</h3>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Description</th>
+<th align="right">Time (decimal)</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Progress Report</td>
+<td align="right">7.667</td>
+</tr>
+<tr class="even">
+<td align="left">Tidy Tuesday</td>
+<td align="right">5.500</td>
+</tr>
+<tr class="odd">
+<td align="left">Website</td>
+<td align="right">4.750</td>
+</tr>
+<tr class="even">
+<td align="left">Proposal</td>
+<td align="right">8.333</td>
+</tr>
+<tr class="odd">
+<td align="left">Data Driven</td>
+<td align="right">9.500</td>
+</tr>
+<tr class="even">
+<td align="left">Viz</td>
+<td align="right">13.667</td>
+</tr>
+<tr class="odd">
+<td align="left">Datasets</td>
+<td align="right">23.833</td>
+</tr>
+<tr class="even">
+<td align="left">Jobs</td>
+<td align="right">19.667</td>
+</tr>
+<tr class="odd">
+<td align="left">ePortfolio/Resume</td>
+<td align="right">12.083</td>
+</tr>
+<tr class="even">
+<td align="left">GitHub</td>
+<td align="right">0.583</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="right">105.583</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div id="observations" class="section level2">
+<h2>Observations</h2>
+<p>I was able to complete the framework of the YAML file. I was able to complete the visualizations for NYTimes and got started with both JHU and OWID. I did a mini project called tidy tuesday about sleep patterns. I was able to learn more about Tableau and get Data. I learned about the R package installr. I also learned more about data-driven learning and research. I believe still that I am on schedule to complete the project by the end of the week.</p>
+</div>
 
 
 
