@@ -1,0 +1,27 @@
+---
+title: "JHU Plots"
+---
+
+```{r setup, include=FALSE}
+pacman::p_load(pacman)
+p_load(knitr, tidyverse)
+p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs, data.table, DT)
+
+opts_chunk$set(echo = TRUE)
+options(scipen = 999)
+options(warn = -1) 
+
+yesterday <- Sys.Date() - 1
+
+my_read <- function(df){read_csv(df) %>% unique() %>% na.omit() %>% 
+    mutate(year = year(date), month = month(date), day = day(date))}
+
+states <- us_states() %>% 
+  filter(!state_abbr %in% c("AK","HI","PR")) %>% 
+  rename(state = name)
+```
+
+```{r data, include=FALSE}
+
+```
+

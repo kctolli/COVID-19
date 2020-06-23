@@ -1,5 +1,5 @@
 ---
-title: "NYTimes"
+title: "New York Times"
 ---
 
 ```{r setup, include=FALSE}
@@ -13,43 +13,46 @@ options(warn = -1)
 
 yesterday <- Sys.Date() - 1
 
-my_read <- function(df){read_csv(df) %>% unique() %>% na.omit() %>% 
-    mutate(year = year(date), month = month(date), day = day(date))}
-
-us <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_us.csv") %>% 
-  rename(cases = us_cases) %>% rename(deaths = us_deaths)
-
-state <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_state_pop.csv") %>% 
-  mutate(`pop/mil` = pop/1000000)
-
-tops <- state %>% filter(state_abbr == c("NY", "NJ", "MA", "RI", "CT"))
-
-state_prop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_state_proportions.csv")
+my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
 
 states <- us_states() %>% 
   filter(!state_abbr %in% c("AK","HI","PR")) %>% 
   rename(state = name)
-
-prop_state <- left_join(state_prop, states, by = c("state", "state_abbr")) %>% 
-  filter(date == yesterday) %>% 
-  select(- date, - year, - month, - day) %>% 
-  mutate(case_pop = round(as.numeric(case_pop),5)) %>% 
-  mutate(case_death = round(as.numeric(case_death),5)) %>% 
-  mutate(death_pop = round(as.numeric(death_pop),5)) %>% 
-  mutate(death_case = round(as.numeric(death_case),5))
-
-county_prop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes_county_proportions.csv")
-
-ny_county_prop <- county_prop %>% filter(date == yesterday) %>% filter(state_abbr == "NY")
 
 ny_county <- us_counties() %>% 
   rename(county = name) %>% 
   filter(state_abbr == "NY") %>% 
   select(- statefp, - jurisdiction_type) %>% 
   rename(state = state_name)
+```
+
+```{r data, include=FALSE}
+us <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes/nytimes_us.csv") %>% 
+  rename(cases = us_cases) %>% rename(deaths = us_deaths)
+
+state <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes/nytimes_state_pop.csv") %>% 
+  mutate(`pop/mil` = pop/1000000)
+
+state_prop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes/nytimes_state_proportions.csv")
+
+county_prop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes/nytimes_county_proportions.csv")
+```
+
+```{r Wrangling}
+tops <- state %>% filter(state_abbr == c("NY", "NJ", "MA", "RI", "CT"))
+
+prop_state <- left_join(state_prop, states, by = c("state", "state_abbr")) %>% 
+  filter(date == yesterday) %>% 
+  select(- date) %>% 
+  mutate(case_pop = round(as.numeric(case_pop),4)) %>% 
+  mutate(case_death = round(as.numeric(case_death),4)) %>% 
+  mutate(death_pop = round(as.numeric(death_pop),4)) %>% 
+  mutate(death_case = round(as.numeric(death_case),4))
+
+ny_county_prop <- county_prop %>% filter(date == yesterday) %>% filter(state_abbr == "NY")
 
 prop_county <- left_join(ny_county_prop, ny_county, by = c("state", "state_abbr", "county")) %>% 
-  select(- date, - year, - month, - day, - state, - state_abbr) %>% 
+  select(- date, - state_abbr) %>% 
   mutate(case_pop = round(as.numeric(case_pop),4)) %>% 
   mutate(case_death = round(as.numeric(case_death),4)) %>% 
   mutate(death_pop = round(as.numeric(death_pop),4)) %>% 
@@ -118,6 +121,32 @@ ggplot(data = prop_state) +
 
 This plot shows the percent of the population that has died for COVID-19.
 
+### New York 
+
+```{r newyorka}
+ggplot(data = prop_county) +
+  geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
+  guides(color = FALSE) + 
+  geom_text(aes(label = (as.numeric(case_pop)*100), geometry = geometry), 
+            stat = "sf_coordinates", color = "black", size = 2) +
+  theme_bw() + 
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank())
+```
+
+This plot shows the percent of the population that has tested positive for COVID-19 in the counties of New York.
+
+```{r newyorkb}
+ggplot(data = prop_county) +
+  geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
+  guides(color = FALSE) + 
+  geom_text(aes(label = (as.numeric(death_pop)*100), geometry = geometry), 
+            stat = "sf_coordinates", color = "black", size = 2) +
+  theme_bw() + 
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank())
+```
+
+This plot shows the percent of the population that has died for COVID-19 in the counties of New York.
+
 ## Cases Per Death
 
 ```{r mappingc}
@@ -132,26 +161,27 @@ ggplot(data = prop_state) +
 This plot shows the percent of the people that test positive die from COVID-19.
 
 ```{r case/death}
-ggplot(data = us, aes(x = cases/1000, y = deaths/1000)) + 
+ggplot(data=us, aes(x = cases/1000, y = deaths/1000)) + 
   geom_smooth(color = "black", size = 1.5, method = "loess", formula = y ~ x) +
-  geom_jitter(aes(color = month)) +
+  geom_jitter(color = "blue", size = .75) +
   theme_bw()
 ```
 
 This plot shows how the cases and deaths relate and compare. I divided both cases and deaths by 1000 so its per thousand cases and per thousand deaths. 
 
-## New York 
+### New York
 
-```{r newyorka}
+```{r newyorkc}
 ggplot(data = prop_county) +
   geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
   guides(color = FALSE) + 
-  geom_text(aes(label = (as.numeric(case_pop)*100), geometry = geometry), stat = "sf_coordinates", color = "black", size = 2) +
-  theme_bw() +
+  geom_text(aes(label = (as.numeric(death_case)*100), geometry = geometry), 
+            stat = "sf_coordinates", color = "black", size = 2) +
+  theme_bw() + 
   theme(axis.title.x=element_blank(), axis.title.y=element_blank())
 ```
 
-
+This plot shows the percent of the people that test positive die from COVID-19 in the counties of New York.
 
 <br /><br />
 
@@ -159,4 +189,3 @@ ggplot(data = prop_county) +
 print(paste("Last updated:", 
   format(Sys.Date(), "%b %d %Y")))
 ```
-
