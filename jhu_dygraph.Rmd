@@ -1,5 +1,5 @@
 ---
-title: "JHU Plots"
+title: "JHU Dy-Graphs"
 ---
 
 ```{r setup, include=FALSE}

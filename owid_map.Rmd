@@ -1,5 +1,5 @@
 ---
-title: "JHU Plots"
+title: "OWID Maps"
 ---
 
 ```{r setup, include=FALSE}
