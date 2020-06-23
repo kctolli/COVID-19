@@ -1,0 +1,180 @@
+---
+title: "Our World in Data"
+---
+
+```{r setup, include=FALSE}
+pacman::p_load(pacman)
+p_load(knitr, tidyverse)
+p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs, data.table, DT)
+
+opts_chunk$set(echo = TRUE)
+options(scipen = 999)
+options(warn = -1) 
+
+yesterday <- Sys.Date() - 1
+
+week <- yesterday - 14
+
+my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
+
+owid <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/OWID/owid_data.csv") 
+ecdc <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/OWID/owid_ecdc.csv") 
+```
+
+```{r function}
+my_wrangle <- function(df){
+  df %>% summarise(total_cases = sum(total_cases), 
+            total_deaths = sum(total_deaths), 
+            total_tests = sum(total_tests), 
+            new_cases = sum(new_cases),
+            new_deaths = sum(new_deaths),
+            new_tests = sum(new_tests),
+            median_age = median(median_age),
+            life_expectancy = round(as.numeric(mean(life_expectancy),4)), 
+            .groups = "keep")
+}
+```
+
+```{r wrangling}
+continent <- owid %>% 
+  group_by(continent, date) %>% 
+  my_wrangle()
+
+yesterday_continent <- continent %>% 
+  filter(date >= week) 
+
+world <- owid %>% 
+  group_by(date) %>% 
+  my_wrangle()
+
+yesterday_world <- world %>% 
+  filter(date >= week) 
+```
+
+## Relationship with Continents
+
+### Cases
+
+```{r casesa}
+ggplot(data = continent, aes(x = date, y = total_cases/1000, color = continent)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows how total cases have increased over time colored by continent. I divided total cases by one thousand so it's per one thousand cases. 
+
+```{r casesb}
+ggplot(data = continent, aes(x = continent, y = total_cases/1000000, fill = continent)) +
+  geom_col() + theme_bw()
+```
+
+This plot shows total over all cases by continent. I divided total cases by one million so it's per one million cases. 
+
+```{r casesc}
+ggplot(data = continent, aes(x = date, y = new_cases/1000, color = continent)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows new cases each day colored by continent. I divided new cases by one thousand so it's per one thousand cases.
+
+### Deaths
+
+```{r deathsa}
+ggplot(data = continent, aes(x = date, y = total_deaths/1000, color = continent)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows how total deaths have increased over time colored by continent. I divided total deaths by one thousand so it's per one thousand deaths. 
+
+```{r deathsb}
+ggplot(data = continent, aes(x = continent, y = total_deaths/1000, fill = continent)) +
+  geom_col() + theme_bw()
+```
+
+This plot shows total over all deaths by continent. I divided total deaths by one thousand so it's per one thousand deaths. 
+
+```{r deathsc}
+ggplot(data = continent, aes(x = date, y = new_deaths/100, color = continent)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows new deaths each day colored by continent. I divided new deaths by one hundred so it's per one hundred deaths.
+
+### Tests
+
+```{r testsa}
+ggplot(data = continent, aes(x = date, y = total_tests/1000000, color = continent)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows how total tests have increased over time colored by continent. I divided total tests by one million so it's per one million tests. 
+
+```{r testsb}
+ggplot(data = continent, aes(x = continent, y = total_tests/1000000, fill = continent)) +
+  geom_col() + theme_bw()
+```
+
+This plot shows total over all tests by continent. I divided total tests by one million so it's per one million tests. 
+
+```{r testsc}
+ggplot(data = continent, aes(x = date, y = new_tests/1000, color = continent)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows new tests each day colored by continent. I divided new tests by one thousand so it's per one thousand tests.
+
+## Relationship with the World
+
+### Cases
+
+```{r caseswa}
+ggplot(data = world, aes(x = date, y = total_cases/1000)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows how total cases have increased over time for the whole world. I divided total cases by one thousand so it's per one thousand cases. 
+
+```{r caseswb}
+ggplot(data = world, aes(x = date, y = new_cases/1000)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows new cases each day for the whole world. I divided new cases by one thousand so it's per one thousand cases.
+
+### Deaths
+
+```{r deathswa}
+ggplot(data = world, aes(x = date, y = total_deaths/1000)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows how total deaths have increased over time for the whole world. I divided total deaths by one thousand so it's per one thousand deaths. 
+
+```{r deathswb}
+ggplot(data = world, aes(x = date, y = new_deaths/100)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows new deaths each day for the whole world. I divided total deaths by one hundred so it's per one hundred deaths.
+
+### Tests
+
+```{r testswa}
+ggplot(data = world, aes(x = date, y = total_tests/1000000)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows how total tests have increased over time for the whole world. I divided total tests by one million so it's per one million cases. 
+
+```{r testswb}
+ggplot(data = world, aes(x = date, y = new_tests/1000)) +
+  geom_line() + theme_bw()
+```
+
+This plot shows new tests each day for the whole world. I divided total tests by one thousand so it's per one thousand tests.
+
+<br /><br />
+
+```{r update}
+print(paste("Last updated:", 
+  format(Sys.Date(), "%b %d %Y")))
+```

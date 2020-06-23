@@ -19,11 +19,8 @@ navbar:
         href: ./jhu_leaflet.html
     - text: "Our World in Data"
       menu:
-      - text: "Continents"
-        href: ./owid_continent.html
-      - text: "---------------" 
-      - text: "World"
-        href: ./owid_world.html      
+      - text: "Basic Plots"
+        href: ./owid.html
       - text: "---------------"   
       - text: "Tibbles"
         href: ./owid_tibbles.html                 
