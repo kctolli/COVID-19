@@ -3,33 +3,30 @@ navbar:
   title: "COVID-19"
   left:
     - text: "New York Times"
-      href: ny.html 
+      href: ./ny.html 
     - text: "Johns Hopkins"
       menu:
       - text: "Basic Plots"
-        href: jhu_plot.html
+        href: ./jhu_plot.html
       - text: "---------------" 
       - text: "Basic Maps"
-        href: jhu_map.html      
+        href: ./jhu_map.html      
       - text: "---------------"   
       - text: "Interactive Graphs"
-        href: jhu_dygraph.html      
+        href: ./jhu_dygraph.html      
       - text: "---------------" 
       - text: "Interactive Maps"
-        href: jhu_leaflet.html
+        href: ./jhu_leaflet.html
     - text: "Our World in Data"
       menu:
-      - text: "Basic Plots"
-        href: owid_plot.html
+      - text: "Continents"
+        href: ./owid_continent.html
       - text: "---------------" 
-      - text: "Basic Maps"
-        href: owid_map.html      
+      - text: "World"
+        href: ./owid_world.html      
       - text: "---------------"   
-      - text: "Interactive Graphs"
-        href: owid_dygraph.html      
-      - text: "---------------" 
-      - text: "Interactive Maps"
-        href: owid_leaflet.html                
+      - text: "Tibbles"
+        href: ./owid_tibbles.html                 
     - text: "Reports"   
       href:  ./reports/index.html 
     - text: "Contact Me"

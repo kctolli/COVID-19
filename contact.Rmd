@@ -8,7 +8,7 @@ me <- 'https://github.com/kctolli/kctolli.github.io/raw/master/site_libs/images/
 knitr::include_graphics(me)
 ```
 
-EPortfolio: https://kctolli.github.io/
+ePortfolio: https://kctolli.github.io/
 
 LinkedIn: [kctolli](https://www.linkedin.com/in/kctolli/)
 
