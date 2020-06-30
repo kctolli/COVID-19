@@ -2,7 +2,7 @@ basis <- "DAILY" #"once", "WEEKLY, "MONTHLY"
 
 task_name <- "git"
 
-loc <- "D:\\Project-490\\read-data\\Task-scheduler\\commit.sh" 
+loc <- "D:\\COVID-project\\Task-scheduler\\commit.sh" 
 
 time <- "02:30"
 

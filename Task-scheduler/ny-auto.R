@@ -2,7 +2,7 @@ basis <- "DAILY" #"once", "WEEKLY, "MONTHLY"
 
 task_name <- "nytimes"
 
-loc <- "D:\\Project-490\\read-data\\nytimes.R" 
+loc <- "D:\\COVID-project\\read-data\\nytimes.R" 
 
 time <- "01:15"
 
