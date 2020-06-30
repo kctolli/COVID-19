@@ -6,7 +6,7 @@ p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs)
 
 ## set working directory
 
-setwd("D:/Project-490/read-data/OWID")
+setwd("D:/COVID-project/read-data/OWID")
 
 ## turn off scientific notation 
 

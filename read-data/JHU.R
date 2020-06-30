@@ -6,7 +6,7 @@ p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs)
 
 ## set working directory
 
-setwd("D:/Project-490/read-data/JHU")
+setwd("D:/COVID-project/read-data/JHU")
 
 ## turn off scientific notation 
 
