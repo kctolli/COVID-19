@@ -438,10 +438,7 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="./ny.html">New York Times</a>
-</li>
-<li class="dropdown">
+        <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Johns Hopkins
      
@@ -465,21 +462,11 @@ div.tocify {
     </li>
   </ul>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Our World in Data
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="./owid.html">Basic Plots</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="./owid_tibbles.html">Tibbles</a>
-    </li>
-  </ul>
+<li>
+  <a href="./ny.html">New York Times</a>
+</li>
+<li>
+  <a href="./owid.html">Our World in Data</a>
 </li>
 <li>
   <a href="./reports/index.html">Reports</a>
@@ -515,11 +502,38 @@ div.tocify {
 </div>
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">include_graphics</span>(<span class="st">&#39;https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg&#39;</span>)</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>my_wrangle &lt;-<span class="st"> </span><span class="cf">function</span>(df){</span>
+<span id="cb1-2"><a href="#cb1-2"></a>  df <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">summarise</span>(<span class="dt">total_cases =</span> <span class="kw">sum</span>(total_cases), </span>
+<span id="cb1-3"><a href="#cb1-3"></a>            <span class="dt">total_deaths =</span> <span class="kw">sum</span>(total_deaths), </span>
+<span id="cb1-4"><a href="#cb1-4"></a>            <span class="dt">total_tests =</span> <span class="kw">sum</span>(total_tests), </span>
+<span id="cb1-5"><a href="#cb1-5"></a>            <span class="dt">new_cases =</span> <span class="kw">sum</span>(new_cases),</span>
+<span id="cb1-6"><a href="#cb1-6"></a>            <span class="dt">new_deaths =</span> <span class="kw">sum</span>(new_deaths),</span>
+<span id="cb1-7"><a href="#cb1-7"></a>            <span class="dt">new_tests =</span> <span class="kw">sum</span>(new_tests),</span>
+<span id="cb1-8"><a href="#cb1-8"></a>            <span class="dt">.groups =</span> <span class="st">&quot;keep&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a>}</span></code></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>continent &lt;-<span class="st"> </span>owid <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="st">  </span><span class="kw">group_by</span>(continent, date) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="st">  </span><span class="kw">my_wrangle</span>()</span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a>yesterday_continent &lt;-<span class="st"> </span>continent <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-6"><a href="#cb2-6"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>week) </span>
+<span id="cb2-7"><a href="#cb2-7"></a></span>
+<span id="cb2-8"><a href="#cb2-8"></a>world &lt;-<span class="st"> </span>owid <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-9"><a href="#cb2-9"></a><span class="st">  </span><span class="kw">group_by</span>(date) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-10"><a href="#cb2-10"></a><span class="st">  </span><span class="kw">my_wrangle</span>()</span>
+<span id="cb2-11"><a href="#cb2-11"></a></span>
+<span id="cb2-12"><a href="#cb2-12"></a>yesterday_world &lt;-<span class="st"> </span>world <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-13"><a href="#cb2-13"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>week) </span>
+<span id="cb2-14"><a href="#cb2-14"></a></span>
+<span id="cb2-15"><a href="#cb2-15"></a>yesterday_us &lt;-<span class="st"> </span>us <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-16"><a href="#cb2-16"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">cases =</span> us_cases) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">deaths =</span> us_deaths) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb2-18"><a href="#cb2-18"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>week) </span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">include_graphics</span>(<span class="st">&#39;https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg&#39;</span>)</span></code></pre></div>
 <p><img src="https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg" width="50%" style="display: block; margin: auto;" /></p>
 <div id="current-cases-and-deaths-in-the-usa" class="section level2">
 <h2>Current Cases and Deaths in the USA</h2>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">kable</span>(us)</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">kable</span>(yesterday_us)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
@@ -566,7 +580,352 @@ div.tocify {
 </tr>
 </tbody>
 </table>
+</div>
+<div id="current-cases-and-deaths-by-continents" class="section level2">
+<h2>Current Cases and Deaths by Continents</h2>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">kable</span>(yesterday_continent)</span></code></pre></div>
+<table>
+<colgroup>
+<col width="15%" />
+<col width="11%" />
+<col width="12%" />
+<col width="13%" />
+<col width="12%" />
+<col width="10%" />
+<col width="11%" />
+<col width="10%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">continent</th>
+<th align="left">date</th>
+<th align="right">total_cases</th>
+<th align="right">total_deaths</th>
+<th align="right">total_tests</th>
+<th align="right">new_cases</th>
+<th align="right">new_deaths</th>
+<th align="right">new_tests</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Africa</td>
+<td align="left">2020-06-22</td>
+<td align="right">25840</td>
+<td align="right">338</td>
+<td align="right">885250</td>
+<td align="right">785</td>
+<td align="right">4</td>
+<td align="right">11389</td>
+</tr>
+<tr class="even">
+<td align="left">Africa</td>
+<td align="left">2020-06-23</td>
+<td align="right">18817</td>
+<td align="right">160</td>
+<td align="right">506465</td>
+<td align="right">131</td>
+<td align="right">1</td>
+<td align="right">6783</td>
+</tr>
+<tr class="odd">
+<td align="left">Africa</td>
+<td align="left">2020-06-24</td>
+<td align="right">19416</td>
+<td align="right">170</td>
+<td align="right">513828</td>
+<td align="right">599</td>
+<td align="right">10</td>
+<td align="right">7363</td>
+</tr>
+<tr class="even">
+<td align="left">Africa</td>
+<td align="left">2020-06-25</td>
+<td align="right">15013</td>
+<td align="right">95</td>
+<td align="right">288465</td>
+<td align="right">445</td>
+<td align="right">0</td>
+<td align="right">2012</td>
+</tr>
+<tr class="odd">
+<td align="left">Asia</td>
+<td align="left">2020-06-22</td>
+<td align="right">764567</td>
+<td align="right">21218</td>
+<td align="right">9076491</td>
+<td align="right">23685</td>
+<td align="right">609</td>
+<td align="right">199354</td>
+</tr>
+<tr class="even">
+<td align="left">Asia</td>
+<td align="left">2020-06-23</td>
+<td align="right">556001</td>
+<td align="right">15513</td>
+<td align="right">7784727</td>
+<td align="right">18413</td>
+<td align="right">350</td>
+<td align="right">203515</td>
+</tr>
+<tr class="odd">
+<td align="left">Asia</td>
+<td align="left">2020-06-24</td>
+<td align="right">575381</td>
+<td align="right">16021</td>
+<td align="right">8016355</td>
+<td align="right">19380</td>
+<td align="right">508</td>
+<td align="right">231628</td>
+</tr>
+<tr class="even">
+<td align="left">Asia</td>
+<td align="left">2020-06-25</td>
+<td align="right">595765</td>
+<td align="right">16476</td>
+<td align="right">8242225</td>
+<td align="right">20384</td>
+<td align="right">455</td>
+<td align="right">225870</td>
+</tr>
+<tr class="odd">
+<td align="left">Asia</td>
+<td align="left">2020-06-26</td>
+<td align="right">617007</td>
+<td align="right">16922</td>
+<td align="right">8476169</td>
+<td align="right">21242</td>
+<td align="right">446</td>
+<td align="right">233944</td>
+</tr>
+<tr class="even">
+<td align="left">Asia</td>
+<td align="left">2020-06-27</td>
+<td align="right">508953</td>
+<td align="right">15685</td>
+<td align="right">7996707</td>
+<td align="right">18552</td>
+<td align="right">384</td>
+<td align="right">220479</td>
+</tr>
+<tr class="odd">
+<td align="left">Asia</td>
+<td align="left">2020-06-28</td>
+<td align="right">528859</td>
+<td align="right">16095</td>
+<td align="right">8227802</td>
+<td align="right">19906</td>
+<td align="right">410</td>
+<td align="right">231095</td>
+</tr>
+<tr class="even">
+<td align="left">North America</td>
+<td align="left">2020-06-22</td>
+<td align="right">6839</td>
+<td align="right">119</td>
+<td align="right">172517</td>
+<td align="right">86</td>
+<td align="right">9</td>
+<td align="right">2699</td>
+</tr>
+<tr class="odd">
+<td align="left">North America</td>
+<td align="left">2020-06-23</td>
+<td align="right">4808</td>
+<td align="right">107</td>
+<td align="right">147771</td>
+<td align="right">182</td>
+<td align="right">0</td>
+<td align="right">2430</td>
+</tr>
+<tr class="even">
+<td align="left">North America</td>
+<td align="left">2020-06-24</td>
+<td align="right">4973</td>
+<td align="right">113</td>
+<td align="right">150252</td>
+<td align="right">165</td>
+<td align="right">6</td>
+<td align="right">2481</td>
+</tr>
+<tr class="odd">
+<td align="left">North America</td>
+<td align="left">2020-06-25</td>
+<td align="right">5150</td>
+<td align="right">126</td>
+<td align="right">152729</td>
+<td align="right">177</td>
+<td align="right">13</td>
+<td align="right">2477</td>
+</tr>
+<tr class="even">
+<td align="left">North America</td>
+<td align="left">2020-06-26</td>
+<td align="right">5336</td>
+<td align="right">133</td>
+<td align="right">155301</td>
+<td align="right">186</td>
+<td align="right">7</td>
+<td align="right">2572</td>
+</tr>
+<tr class="odd">
+<td align="left">North America</td>
+<td align="left">2020-06-27</td>
+<td align="right">5517</td>
+<td align="right">143</td>
+<td align="right">157799</td>
+<td align="right">181</td>
+<td align="right">10</td>
+<td align="right">2498</td>
+</tr>
+<tr class="even">
+<td align="left">South America</td>
+<td align="left">2020-06-22</td>
+<td align="right">70031</td>
+<td align="right">2250</td>
+<td align="right">678183</td>
+<td align="right">3036</td>
+<td align="right">111</td>
+<td align="right">16918</td>
+</tr>
+<tr class="odd">
+<td align="left">South America</td>
+<td align="left">2020-06-23</td>
+<td align="right">72575</td>
+<td align="right">2323</td>
+<td align="right">694065</td>
+<td align="right">2544</td>
+<td align="right">73</td>
+<td align="right">15882</td>
+</tr>
+<tr class="even">
+<td align="left">South America</td>
+<td align="left">2020-06-24</td>
+<td align="right">74994</td>
+<td align="right">2417</td>
+<td align="right">712403</td>
+<td align="right">2419</td>
+<td align="right">94</td>
+<td align="right">18338</td>
+</tr>
+<tr class="odd">
+<td align="left">South America</td>
+<td align="left">2020-06-25</td>
+<td align="right">78641</td>
+<td align="right">2504</td>
+<td align="right">732477</td>
+<td align="right">3647</td>
+<td align="right">87</td>
+<td align="right">20074</td>
+</tr>
+<tr class="even">
+<td align="left">South America</td>
+<td align="left">2020-06-26</td>
+<td align="right">82168</td>
+<td align="right">2667</td>
+<td align="right">752933</td>
+<td align="right">3527</td>
+<td align="right">163</td>
+<td align="right">20456</td>
+</tr>
+<tr class="odd">
+<td align="left">South America</td>
+<td align="left">2020-06-27</td>
+<td align="right">86153</td>
+<td align="right">2824</td>
+<td align="right">773293</td>
+<td align="right">3985</td>
+<td align="right">157</td>
+<td align="right">20360</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="current-cases-and-deaths-for-the-world" class="section level2">
+<h2>Current Cases and Deaths for the World</h2>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">kable</span>(yesterday_world)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">date</th>
+<th align="right">total_cases</th>
+<th align="right">total_deaths</th>
+<th align="right">total_tests</th>
+<th align="right">new_cases</th>
+<th align="right">new_deaths</th>
+<th align="right">new_tests</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">2020-06-22</td>
+<td align="right">867277</td>
+<td align="right">23925</td>
+<td align="right">10812441</td>
+<td align="right">27592</td>
+<td align="right">733</td>
+<td align="right">230360</td>
+</tr>
+<tr class="even">
+<td align="left">2020-06-23</td>
+<td align="right">652201</td>
+<td align="right">18103</td>
+<td align="right">9133028</td>
+<td align="right">21270</td>
+<td align="right">424</td>
+<td align="right">228610</td>
+</tr>
+<tr class="odd">
+<td align="left">2020-06-24</td>
+<td align="right">674764</td>
+<td align="right">18721</td>
+<td align="right">9392838</td>
+<td align="right">22563</td>
+<td align="right">618</td>
+<td align="right">259810</td>
+</tr>
+<tr class="even">
+<td align="left">2020-06-25</td>
+<td align="right">694569</td>
+<td align="right">19201</td>
+<td align="right">9415896</td>
+<td align="right">24653</td>
+<td align="right">555</td>
+<td align="right">250433</td>
+</tr>
+<tr class="odd">
+<td align="left">2020-06-26</td>
+<td align="right">704511</td>
+<td align="right">19722</td>
+<td align="right">9384403</td>
+<td align="right">24955</td>
+<td align="right">616</td>
+<td align="right">256972</td>
+</tr>
+<tr class="even">
+<td align="left">2020-06-27</td>
+<td align="right">600623</td>
+<td align="right">18652</td>
+<td align="right">8927799</td>
+<td align="right">22718</td>
+<td align="right">551</td>
+<td align="right">243337</td>
+</tr>
+<tr class="odd">
+<td align="left">2020-06-28</td>
+<td align="right">528859</td>
+<td align="right">16095</td>
+<td align="right">8227802</td>
+<td align="right">19906</td>
+<td align="right">410</td>
+<td align="right">231095</td>
+</tr>
+</tbody>
+</table>
 <p><br /> <br /></p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Last updated:&quot;</span>, </span>
+<span id="cb7-2"><a href="#cb7-2"></a>  <span class="kw">format</span>(<span class="kw">Sys.Date</span>(), <span class="st">&quot;%b %d %Y&quot;</span>)))</span></code></pre></div>
+<pre><code>## [1] &quot;Last updated: Jun 30 2020&quot;</code></pre>
 <p>© Copyright Kyle Tolliver, 2020</p>
 <div id="licensed-under-gnu-general-public-license-v3.0" class="section level6">
 <h6><em>— <a href="https://github.com/BYUI-COVID/BYUI-COVID.github.io/blob/master/LICENSE">Licensed</a> under <a href="./site_libs/LICENSE.txt">GNU General Public License v3.0</a> </em></h6>

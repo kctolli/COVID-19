@@ -13,7 +13,7 @@
 
 <title>Our World in Data</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -25,6 +25,26 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.14/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/pdfmake-1.10.20/pdfmake.js"></script>
+<script src="site_libs/pdfmake-1.10.20/vfs_fonts.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -437,10 +457,7 @@ div.tocify {
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
-        <li>
-  <a href="./ny.html">New York Times</a>
-</li>
-<li class="dropdown">
+        <li class="dropdown">
   <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
     Johns Hopkins
      
@@ -464,21 +481,11 @@ div.tocify {
     </li>
   </ul>
 </li>
-<li class="dropdown">
-  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
-    Our World in Data
-     
-    <span class="caret"></span>
-  </a>
-  <ul class="dropdown-menu" role="menu">
-    <li>
-      <a href="./owid.html">Basic Plots</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="./owid_tibbles.html">Tibbles</a>
-    </li>
-  </ul>
+<li>
+  <a href="./ny.html">New York Times</a>
+</li>
+<li>
+  <a href="./owid.html">Our World in Data</a>
 </li>
 <li>
   <a href="./reports/index.html">Reports</a>
@@ -518,10 +525,8 @@ div.tocify {
 <span id="cb1-5"><a href="#cb1-5"></a>            <span class="dt">new_cases =</span> <span class="kw">sum</span>(new_cases),</span>
 <span id="cb1-6"><a href="#cb1-6"></a>            <span class="dt">new_deaths =</span> <span class="kw">sum</span>(new_deaths),</span>
 <span id="cb1-7"><a href="#cb1-7"></a>            <span class="dt">new_tests =</span> <span class="kw">sum</span>(new_tests),</span>
-<span id="cb1-8"><a href="#cb1-8"></a>            <span class="dt">median_age =</span> <span class="kw">median</span>(median_age),</span>
-<span id="cb1-9"><a href="#cb1-9"></a>            <span class="dt">life_expectancy =</span> <span class="kw">round</span>(<span class="kw">as.numeric</span>(<span class="kw">mean</span>(life_expectancy),<span class="dv">4</span>)), </span>
-<span id="cb1-10"><a href="#cb1-10"></a>            <span class="dt">.groups =</span> <span class="st">&quot;keep&quot;</span>)</span>
-<span id="cb1-11"><a href="#cb1-11"></a>}</span></code></pre></div>
+<span id="cb1-8"><a href="#cb1-8"></a>            <span class="dt">.groups =</span> <span class="st">&quot;keep&quot;</span>)</span>
+<span id="cb1-9"><a href="#cb1-9"></a>}</span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a>continent &lt;-<span class="st"> </span>owid <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb2-2"><a href="#cb2-2"></a><span class="st">  </span><span class="kw">group_by</span>(continent, date) <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb2-3"><a href="#cb2-3"></a><span class="st">  </span><span class="kw">my_wrangle</span>()</span>
@@ -618,8 +623,42 @@ div.tocify {
 <p><img src="owid_files/figure-html/testswb-1.png" width="1152" /></p>
 <p>This plot shows new tests each day for the whole world. I divided total tests by one thousand so it’s per one thousand tests.</p>
 <p><br /><br /></p>
-<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Last updated:&quot;</span>, </span>
-<span id="cb18-2"><a href="#cb18-2"></a>  <span class="kw">format</span>(<span class="kw">Sys.Date</span>(), <span class="st">&quot;%b %d %Y&quot;</span>)))</span></code></pre></div>
+</div>
+</div>
+<div id="data-tables" class="section level2">
+<h2>Data Tables</h2>
+<div id="continents" class="section level3">
+<h3>Continents</h3>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1"></a>yesterday_continent <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb18-2"><a href="#cb18-2"></a><span class="kw">datatable</span>(<span class="dt">caption =</span> <span class="st">&#39;This Tibble shows COVID-19 data by continents for the last 2 weeks&#39;</span>,</span>
+<span id="cb18-3"><a href="#cb18-3"></a>          <span class="dt">class =</span> <span class="st">&#39;cell-border stripe&#39;</span>, </span>
+<span id="cb18-4"><a href="#cb18-4"></a>          <span class="dt">rownames =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb18-5"><a href="#cb18-5"></a>          <span class="dt">filter =</span> <span class="st">&#39;top&#39;</span>, </span>
+<span id="cb18-6"><a href="#cb18-6"></a>          <span class="dt">extensions =</span> <span class="st">&#39;Buttons&#39;</span>,</span>
+<span id="cb18-7"><a href="#cb18-7"></a>          <span class="dt">options =</span> <span class="kw">list</span>(<span class="dt">buttons =</span> <span class="kw">c</span>(<span class="st">&#39;copy&#39;</span>, <span class="st">&#39;csv&#39;</span>, <span class="st">&#39;pdf&#39;</span>), </span>
+<span id="cb18-8"><a href="#cb18-8"></a>                         <span class="dt">pageLength =</span> <span class="dv">5</span>, </span>
+<span id="cb18-9"><a href="#cb18-9"></a>                         <span class="dt">autoWidth =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb18-10"><a href="#cb18-10"></a>                         <span class="dt">dom =</span> <span class="st">&#39;Bfrtip&#39;</span>))</span></code></pre></div>
+<div id="htmlwidget-cc531129c40250379677" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-cc531129c40250379677">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"date\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1592784000000\" data-max=\"1593302400000\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"4808\" data-max=\"764567\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"95\" data-max=\"21218\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"147771\" data-max=\"9076491\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"86\" data-max=\"23685\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0\" data-max=\"609\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"2012\" data-max=\"233944\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption>This Tibble shows COVID-19 data by continents for the last 2 weeks<\/caption>","data":[["Africa","Africa","Africa","Africa","Asia","Asia","Asia","Asia","Asia","Asia","Asia","North America","North America","North America","North America","North America","North America","South America","South America","South America","South America","South America","South America"],["2020-06-22","2020-06-23","2020-06-24","2020-06-25","2020-06-22","2020-06-23","2020-06-24","2020-06-25","2020-06-26","2020-06-27","2020-06-28","2020-06-22","2020-06-23","2020-06-24","2020-06-25","2020-06-26","2020-06-27","2020-06-22","2020-06-23","2020-06-24","2020-06-25","2020-06-26","2020-06-27"],[25840,18817,19416,15013,764567,556001,575381,595765,617007,508953,528859,6839,4808,4973,5150,5336,5517,70031,72575,74994,78641,82168,86153],[338,160,170,95,21218,15513,16021,16476,16922,15685,16095,119,107,113,126,133,143,2250,2323,2417,2504,2667,2824],[885250,506465,513828,288465,9076491,7784727,8016355,8242225,8476169,7996707,8227802,172517,147771,150252,152729,155301,157799,678183,694065,712403,732477,752933,773293],[785,131,599,445,23685,18413,19380,20384,21242,18552,19906,86,182,165,177,186,181,3036,2544,2419,3647,3527,3985],[4,1,10,0,609,350,508,455,446,384,410,9,0,6,13,7,10,111,73,94,87,163,157],[11389,6783,7363,2012,199354,203515,231628,225870,233944,220479,231095,2699,2430,2481,2477,2572,2498,16918,15882,18338,20074,20456,20360]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th>continent<\/th>\n      <th>date<\/th>\n      <th>total_cases<\/th>\n      <th>total_deaths<\/th>\n      <th>total_tests<\/th>\n      <th>new_cases<\/th>\n      <th>new_deaths<\/th>\n      <th>new_tests<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"buttons":["copy","csv","pdf"],"pageLength":5,"autoWidth":true,"dom":"Bfrtip","columnDefs":[{"className":"dt-right","targets":[2,3,4,5,6,7]}],"order":[],"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="world" class="section level3">
+<h3>World</h3>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1"></a>yesterday_world <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb19-2"><a href="#cb19-2"></a><span class="kw">datatable</span>(<span class="dt">caption =</span> <span class="st">&#39;This Tibble shows COVID-19 data for the last 2 weeks in the world&#39;</span>,</span>
+<span id="cb19-3"><a href="#cb19-3"></a>          <span class="dt">class =</span> <span class="st">&#39;cell-border stripe&#39;</span>, </span>
+<span id="cb19-4"><a href="#cb19-4"></a>          <span class="dt">rownames =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb19-5"><a href="#cb19-5"></a>          <span class="dt">filter =</span> <span class="st">&#39;top&#39;</span>, </span>
+<span id="cb19-6"><a href="#cb19-6"></a>          <span class="dt">extensions =</span> <span class="st">&#39;Buttons&#39;</span>,</span>
+<span id="cb19-7"><a href="#cb19-7"></a>          <span class="dt">options =</span> <span class="kw">list</span>(<span class="dt">buttons =</span> <span class="kw">c</span>(<span class="st">&#39;copy&#39;</span>, <span class="st">&#39;csv&#39;</span>, <span class="st">&#39;pdf&#39;</span>), </span>
+<span id="cb19-8"><a href="#cb19-8"></a>                         <span class="dt">pageLength =</span> <span class="dv">5</span>, </span>
+<span id="cb19-9"><a href="#cb19-9"></a>                         <span class="dt">autoWidth =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb19-10"><a href="#cb19-10"></a>                         <span class="dt">dom =</span> <span class="st">&#39;Bfrtip&#39;</span>))</span></code></pre></div>
+<div id="htmlwidget-318a2866e3d2e15cb761" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-318a2866e3d2e15cb761">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"date\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1592784000000\" data-max=\"1593302400000\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"528859\" data-max=\"867277\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"16095\" data-max=\"23925\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"8227802\" data-max=\"10812441\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"19906\" data-max=\"27592\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"410\" data-max=\"733\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"228610\" data-max=\"259810\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption>This Tibble shows COVID-19 data for the last 2 weeks in the world<\/caption>","data":[["2020-06-22","2020-06-23","2020-06-24","2020-06-25","2020-06-26","2020-06-27","2020-06-28"],[867277,652201,674764,694569,704511,600623,528859],[23925,18103,18721,19201,19722,18652,16095],[10812441,9133028,9392838,9415896,9384403,8927799,8227802],[27592,21270,22563,24653,24955,22718,19906],[733,424,618,555,616,551,410],[230360,228610,259810,250433,256972,243337,231095]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th>date<\/th>\n      <th>total_cases<\/th>\n      <th>total_deaths<\/th>\n      <th>total_tests<\/th>\n      <th>new_cases<\/th>\n      <th>new_deaths<\/th>\n      <th>new_tests<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"buttons":["copy","csv","pdf"],"pageLength":5,"autoWidth":true,"dom":"Bfrtip","columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6]}],"order":[],"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+<p><br /><br /></p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Last updated:&quot;</span>, </span>
+<span id="cb20-2"><a href="#cb20-2"></a>  <span class="kw">format</span>(<span class="kw">Sys.Date</span>(), <span class="st">&quot;%b %d %Y&quot;</span>)))</span></code></pre></div>
 <pre><code>## [1] &quot;Last updated: Jun 30 2020&quot;</code></pre>
 </div>
 </div>

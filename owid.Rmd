@@ -13,7 +13,9 @@ options(warn = -1)
 
 yesterday <- Sys.Date() - 1
 
-week <- yesterday - 14
+week <- yesterday - 7
+
+biweek <- yesterday - 14
 
 my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
 
@@ -29,8 +31,6 @@ my_wrangle <- function(df){
             new_cases = sum(new_cases),
             new_deaths = sum(new_deaths),
             new_tests = sum(new_tests),
-            median_age = median(median_age),
-            life_expectancy = round(as.numeric(mean(life_expectancy),4)), 
             .groups = "keep")
 }
 ```
@@ -171,6 +171,40 @@ ggplot(data = world, aes(x = date, y = new_tests/1000)) +
 ```
 
 This plot shows new tests each day for the whole world. I divided total tests by one thousand so it's per one thousand tests.
+
+<br /><br />
+
+## Data Tables
+
+### Continents
+
+```{r tibblea}
+yesterday_continent %>% 
+datatable(caption = 'This Tibble shows COVID-19 data by continents for the last 2 weeks',
+          class = 'cell-border stripe', 
+          rownames = FALSE, 
+          filter = 'top', 
+          extensions = 'Buttons',
+          options = list(buttons = c('copy', 'csv', 'pdf'), 
+                         pageLength = 5, 
+                         autoWidth = TRUE, 
+                         dom = 'Bfrtip'))
+```
+
+### World
+
+```{r tibbleb}
+yesterday_world %>% 
+datatable(caption = 'This Tibble shows COVID-19 data for the last 2 weeks in the world',
+          class = 'cell-border stripe', 
+          rownames = FALSE, 
+          filter = 'top', 
+          extensions = 'Buttons',
+          options = list(buttons = c('copy', 'csv', 'pdf'), 
+                         pageLength = 5, 
+                         autoWidth = TRUE, 
+                         dom = 'Bfrtip'))
+```
 
 <br /><br />
 
