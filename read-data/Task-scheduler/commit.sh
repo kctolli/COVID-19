@@ -1,5 +1,5 @@
 #!/bin/sh
-cd D:/BYUI-COVID.github.io
+cd D:/COVID-project
 git add --all
 timestamp() {
   date +"at %H:%M on %m/%d/%Y"
