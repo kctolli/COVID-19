@@ -11,7 +11,7 @@ opts_chunk$set(echo = TRUE)
 options(scipen = 999)
 options(warn = -1) 
 
-yesterday <- Sys.Date() - 1
+yesterday <- Sys.Date() - 2
 
 my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
 
