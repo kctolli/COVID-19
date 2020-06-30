@@ -15,9 +15,9 @@ options(scipen = 999)
 
 my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
 
-pop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/USA/population_2018.csv")
+pop <- my_read("./read-data/USA/population_2018.csv")
 
-us <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes/nytimes_us.csv") %>% 
+us <- my_read("./read-data/nytimes/nytimes_us.csv") %>% 
   rename(cases = us_cases) %>% 
   rename(deaths = us_deaths) %>% 
   filter(date >= (Sys.Date()-1)-7) 

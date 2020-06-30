@@ -27,15 +27,15 @@ ny_county <- us_counties() %>%
 ```
 
 ```{r data, include=FALSE}
-us <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes/nytimes_us.csv") %>% 
+us <- my_read("./read-data/nytimes/nytimes_us.csv") %>% 
   rename(cases = us_cases) %>% rename(deaths = us_deaths)
 
-state <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes/nytimes_state_pop.csv") %>% 
+state <- my_read("./read-data/nytimes/nytimes_state_pop.csv") %>% 
   mutate(`pop/mil` = pop/1000000)
 
-state_prop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes/nytimes_state_proportions.csv")
+state_prop <- my_read("./read-data/nytimes/nytimes_state_proportions.csv")
 
-county_prop <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/nytimes/nytimes_county_proportions.csv")
+county_prop <- my_read("./read-data/nytimes/nytimes_county_proportions.csv")
 ```
 
 ```{r Wrangling}

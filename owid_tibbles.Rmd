@@ -18,8 +18,8 @@ week <- yesterday - 14
 
 my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
 
-owid <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/OWID/owid_data.csv") 
-ecdc <- my_read("https://github.com/BYUI-COVID/read-data/raw/master/OWID/owid_ecdc.csv") 
+owid <- my_read("./read-data/OWID/owid_data.csv") 
+ecdc <- my_read("./read-data/OWID/owid_ecdc.csv") 
 ```
 
 ```{r function}
