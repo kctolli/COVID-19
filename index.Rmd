@@ -73,12 +73,6 @@ include_graphics('https://images.newscientist.com/wp-content/uploads/2020/02/111
 kable(yesterday_us)
 ```
 
-## Current Cases and Deaths by Continents
-
-```{r continent}
-kable(yesterday_continent)
-```
-
 ## Current Cases and Deaths for the World
 
 ```{r world}
