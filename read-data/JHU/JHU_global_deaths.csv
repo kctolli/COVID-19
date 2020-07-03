@@ -159,6 +159,8 @@ Australian Capital Territory,Australia,6/26/20,3
 Australian Capital Territory,Australia,6/27/20,3
 Australian Capital Territory,Australia,6/28/20,3
 Australian Capital Territory,Australia,6/29/20,3
+Australian Capital Territory,Australia,6/30/20,3
+Australian Capital Territory,Australia,7/1/20,3
 New South Wales,Australia,1/22/20,0
 New South Wales,Australia,1/23/20,0
 New South Wales,Australia,1/24/20,0
@@ -319,6 +321,8 @@ New South Wales,Australia,6/26/20,49
 New South Wales,Australia,6/27/20,49
 New South Wales,Australia,6/28/20,49
 New South Wales,Australia,6/29/20,49
+New South Wales,Australia,6/30/20,49
+New South Wales,Australia,7/1/20,49
 Northern Territory,Australia,1/22/20,0
 Northern Territory,Australia,1/23/20,0
 Northern Territory,Australia,1/24/20,0
@@ -479,6 +483,8 @@ Northern Territory,Australia,6/26/20,0
 Northern Territory,Australia,6/27/20,0
 Northern Territory,Australia,6/28/20,0
 Northern Territory,Australia,6/29/20,0
+Northern Territory,Australia,6/30/20,0
+Northern Territory,Australia,7/1/20,0
 Queensland,Australia,1/22/20,0
 Queensland,Australia,1/23/20,0
 Queensland,Australia,1/24/20,0
@@ -639,6 +645,8 @@ Queensland,Australia,6/26/20,6
 Queensland,Australia,6/27/20,6
 Queensland,Australia,6/28/20,6
 Queensland,Australia,6/29/20,6
+Queensland,Australia,6/30/20,6
+Queensland,Australia,7/1/20,6
 South Australia,Australia,1/22/20,0
 South Australia,Australia,1/23/20,0
 South Australia,Australia,1/24/20,0
@@ -799,6 +807,8 @@ South Australia,Australia,6/26/20,4
 South Australia,Australia,6/27/20,4
 South Australia,Australia,6/28/20,4
 South Australia,Australia,6/29/20,4
+South Australia,Australia,6/30/20,4
+South Australia,Australia,7/1/20,4
 Tasmania,Australia,1/22/20,0
 Tasmania,Australia,1/23/20,0
 Tasmania,Australia,1/24/20,0
@@ -959,6 +969,8 @@ Tasmania,Australia,6/26/20,13
 Tasmania,Australia,6/27/20,13
 Tasmania,Australia,6/28/20,13
 Tasmania,Australia,6/29/20,13
+Tasmania,Australia,6/30/20,13
+Tasmania,Australia,7/1/20,13
 Victoria,Australia,1/22/20,0
 Victoria,Australia,1/23/20,0
 Victoria,Australia,1/24/20,0
@@ -1119,6 +1131,8 @@ Victoria,Australia,6/26/20,20
 Victoria,Australia,6/27/20,20
 Victoria,Australia,6/28/20,20
 Victoria,Australia,6/29/20,20
+Victoria,Australia,6/30/20,20
+Victoria,Australia,7/1/20,20
 Western Australia,Australia,1/22/20,0
 Western Australia,Australia,1/23/20,0
 Western Australia,Australia,1/24/20,0
@@ -1279,6 +1293,8 @@ Western Australia,Australia,6/26/20,9
 Western Australia,Australia,6/27/20,9
 Western Australia,Australia,6/28/20,9
 Western Australia,Australia,6/29/20,9
+Western Australia,Australia,6/30/20,9
+Western Australia,Australia,7/1/20,9
 Alberta,Canada,1/22/20,0
 Alberta,Canada,1/23/20,0
 Alberta,Canada,1/24/20,0
@@ -1439,6 +1455,8 @@ Alberta,Canada,6/26/20,154
 Alberta,Canada,6/27/20,154
 Alberta,Canada,6/28/20,154
 Alberta,Canada,6/29/20,154
+Alberta,Canada,6/30/20,154
+Alberta,Canada,7/1/20,154
 British Columbia,Canada,1/22/20,0
 British Columbia,Canada,1/23/20,0
 British Columbia,Canada,1/24/20,0
@@ -1599,6 +1617,8 @@ British Columbia,Canada,6/26/20,174
 British Columbia,Canada,6/27/20,174
 British Columbia,Canada,6/28/20,174
 British Columbia,Canada,6/29/20,174
+British Columbia,Canada,6/30/20,174
+British Columbia,Canada,7/1/20,174
 Grand Princess,Canada,1/22/20,0
 Grand Princess,Canada,1/23/20,0
 Grand Princess,Canada,1/24/20,0
@@ -1759,6 +1779,8 @@ Grand Princess,Canada,6/26/20,0
 Grand Princess,Canada,6/27/20,0
 Grand Princess,Canada,6/28/20,0
 Grand Princess,Canada,6/29/20,0
+Grand Princess,Canada,6/30/20,0
+Grand Princess,Canada,7/1/20,0
 Manitoba,Canada,1/22/20,0
 Manitoba,Canada,1/23/20,0
 Manitoba,Canada,1/24/20,0
@@ -1919,6 +1941,8 @@ Manitoba,Canada,6/26/20,7
 Manitoba,Canada,6/27/20,7
 Manitoba,Canada,6/28/20,7
 Manitoba,Canada,6/29/20,7
+Manitoba,Canada,6/30/20,7
+Manitoba,Canada,7/1/20,7
 New Brunswick,Canada,1/22/20,0
 New Brunswick,Canada,1/23/20,0
 New Brunswick,Canada,1/24/20,0
@@ -2079,6 +2103,8 @@ New Brunswick,Canada,6/26/20,2
 New Brunswick,Canada,6/27/20,2
 New Brunswick,Canada,6/28/20,2
 New Brunswick,Canada,6/29/20,2
+New Brunswick,Canada,6/30/20,2
+New Brunswick,Canada,7/1/20,2
 Newfoundland and Labrador,Canada,1/22/20,0
 Newfoundland and Labrador,Canada,1/23/20,0
 Newfoundland and Labrador,Canada,1/24/20,0
@@ -2239,6 +2265,8 @@ Newfoundland and Labrador,Canada,6/26/20,3
 Newfoundland and Labrador,Canada,6/27/20,3
 Newfoundland and Labrador,Canada,6/28/20,3
 Newfoundland and Labrador,Canada,6/29/20,3
+Newfoundland and Labrador,Canada,6/30/20,3
+Newfoundland and Labrador,Canada,7/1/20,3
 Nova Scotia,Canada,1/22/20,0
 Nova Scotia,Canada,1/23/20,0
 Nova Scotia,Canada,1/24/20,0
@@ -2399,6 +2427,8 @@ Nova Scotia,Canada,6/26/20,63
 Nova Scotia,Canada,6/27/20,63
 Nova Scotia,Canada,6/28/20,63
 Nova Scotia,Canada,6/29/20,63
+Nova Scotia,Canada,6/30/20,63
+Nova Scotia,Canada,7/1/20,63
 Ontario,Canada,1/22/20,0
 Ontario,Canada,1/23/20,0
 Ontario,Canada,1/24/20,0
@@ -2559,6 +2589,8 @@ Ontario,Canada,6/26/20,2706
 Ontario,Canada,6/27/20,2711
 Ontario,Canada,6/28/20,2717
 Ontario,Canada,6/29/20,2726
+Ontario,Canada,6/30/20,2730
+Ontario,Canada,7/1/20,2734
 Prince Edward Island,Canada,1/22/20,0
 Prince Edward Island,Canada,1/23/20,0
 Prince Edward Island,Canada,1/24/20,0
@@ -2719,6 +2751,8 @@ Prince Edward Island,Canada,6/26/20,0
 Prince Edward Island,Canada,6/27/20,0
 Prince Edward Island,Canada,6/28/20,0
 Prince Edward Island,Canada,6/29/20,0
+Prince Edward Island,Canada,6/30/20,0
+Prince Edward Island,Canada,7/1/20,0
 Quebec,Canada,1/22/20,0
 Quebec,Canada,1/23/20,0
 Quebec,Canada,1/24/20,0
@@ -2879,6 +2913,8 @@ Quebec,Canada,6/26/20,5448
 Quebec,Canada,6/27/20,5448
 Quebec,Canada,6/28/20,5448
 Quebec,Canada,6/29/20,5485
+Quebec,Canada,6/30/20,5503
+Quebec,Canada,7/1/20,5527
 Saskatchewan,Canada,1/22/20,0
 Saskatchewan,Canada,1/23/20,0
 Saskatchewan,Canada,1/24/20,0
@@ -3039,6 +3075,8 @@ Saskatchewan,Canada,6/26/20,13
 Saskatchewan,Canada,6/27/20,13
 Saskatchewan,Canada,6/28/20,13
 Saskatchewan,Canada,6/29/20,13
+Saskatchewan,Canada,6/30/20,13
+Saskatchewan,Canada,7/1/20,13
 Anhui,China,1/22/20,0
 Anhui,China,1/23/20,0
 Anhui,China,1/24/20,0
@@ -3199,6 +3237,8 @@ Anhui,China,6/26/20,6
 Anhui,China,6/27/20,6
 Anhui,China,6/28/20,6
 Anhui,China,6/29/20,6
+Anhui,China,6/30/20,6
+Anhui,China,7/1/20,6
 Beijing,China,1/22/20,0
 Beijing,China,1/23/20,0
 Beijing,China,1/24/20,0
@@ -3359,6 +3399,8 @@ Beijing,China,6/26/20,9
 Beijing,China,6/27/20,9
 Beijing,China,6/28/20,9
 Beijing,China,6/29/20,9
+Beijing,China,6/30/20,9
+Beijing,China,7/1/20,9
 Chongqing,China,1/22/20,0
 Chongqing,China,1/23/20,0
 Chongqing,China,1/24/20,0
@@ -3519,6 +3561,8 @@ Chongqing,China,6/26/20,6
 Chongqing,China,6/27/20,6
 Chongqing,China,6/28/20,6
 Chongqing,China,6/29/20,6
+Chongqing,China,6/30/20,6
+Chongqing,China,7/1/20,6
 Fujian,China,1/22/20,0
 Fujian,China,1/23/20,0
 Fujian,China,1/24/20,0
@@ -3679,6 +3723,8 @@ Fujian,China,6/26/20,1
 Fujian,China,6/27/20,1
 Fujian,China,6/28/20,1
 Fujian,China,6/29/20,1
+Fujian,China,6/30/20,1
+Fujian,China,7/1/20,1
 Gansu,China,1/22/20,0
 Gansu,China,1/23/20,0
 Gansu,China,1/24/20,0
@@ -3839,6 +3885,8 @@ Gansu,China,6/26/20,2
 Gansu,China,6/27/20,2
 Gansu,China,6/28/20,2
 Gansu,China,6/29/20,2
+Gansu,China,6/30/20,2
+Gansu,China,7/1/20,2
 Guangdong,China,1/22/20,0
 Guangdong,China,1/23/20,0
 Guangdong,China,1/24/20,0
@@ -3999,6 +4047,8 @@ Guangdong,China,6/26/20,8
 Guangdong,China,6/27/20,8
 Guangdong,China,6/28/20,8
 Guangdong,China,6/29/20,8
+Guangdong,China,6/30/20,8
+Guangdong,China,7/1/20,8
 Guangxi,China,1/22/20,0
 Guangxi,China,1/23/20,0
 Guangxi,China,1/24/20,0
@@ -4159,6 +4209,8 @@ Guangxi,China,6/26/20,2
 Guangxi,China,6/27/20,2
 Guangxi,China,6/28/20,2
 Guangxi,China,6/29/20,2
+Guangxi,China,6/30/20,2
+Guangxi,China,7/1/20,2
 Guizhou,China,1/22/20,0
 Guizhou,China,1/23/20,0
 Guizhou,China,1/24/20,0
@@ -4319,6 +4371,8 @@ Guizhou,China,6/26/20,2
 Guizhou,China,6/27/20,2
 Guizhou,China,6/28/20,2
 Guizhou,China,6/29/20,2
+Guizhou,China,6/30/20,2
+Guizhou,China,7/1/20,2
 Hainan,China,1/22/20,0
 Hainan,China,1/23/20,0
 Hainan,China,1/24/20,0
@@ -4479,6 +4533,8 @@ Hainan,China,6/26/20,6
 Hainan,China,6/27/20,6
 Hainan,China,6/28/20,6
 Hainan,China,6/29/20,6
+Hainan,China,6/30/20,6
+Hainan,China,7/1/20,6
 Hebei,China,1/22/20,0
 Hebei,China,1/23/20,1
 Hebei,China,1/24/20,1
@@ -4639,6 +4695,8 @@ Hebei,China,6/26/20,6
 Hebei,China,6/27/20,6
 Hebei,China,6/28/20,6
 Hebei,China,6/29/20,6
+Hebei,China,6/30/20,6
+Hebei,China,7/1/20,6
 Heilongjiang,China,1/22/20,0
 Heilongjiang,China,1/23/20,0
 Heilongjiang,China,1/24/20,1
@@ -4799,6 +4857,8 @@ Heilongjiang,China,6/26/20,13
 Heilongjiang,China,6/27/20,13
 Heilongjiang,China,6/28/20,13
 Heilongjiang,China,6/29/20,13
+Heilongjiang,China,6/30/20,13
+Heilongjiang,China,7/1/20,13
 Henan,China,1/22/20,0
 Henan,China,1/23/20,0
 Henan,China,1/24/20,0
@@ -4959,6 +5019,8 @@ Henan,China,6/26/20,22
 Henan,China,6/27/20,22
 Henan,China,6/28/20,22
 Henan,China,6/29/20,22
+Henan,China,6/30/20,22
+Henan,China,7/1/20,22
 Hong Kong,China,1/22/20,0
 Hong Kong,China,1/23/20,0
 Hong Kong,China,1/24/20,0
@@ -5119,6 +5181,8 @@ Hong Kong,China,6/26/20,7
 Hong Kong,China,6/27/20,7
 Hong Kong,China,6/28/20,7
 Hong Kong,China,6/29/20,7
+Hong Kong,China,6/30/20,7
+Hong Kong,China,7/1/20,7
 Hubei,China,1/22/20,17
 Hubei,China,1/23/20,17
 Hubei,China,1/24/20,24
@@ -5279,6 +5343,8 @@ Hubei,China,6/26/20,4512
 Hubei,China,6/27/20,4512
 Hubei,China,6/28/20,4512
 Hubei,China,6/29/20,4512
+Hubei,China,6/30/20,4512
+Hubei,China,7/1/20,4512
 Hunan,China,1/22/20,0
 Hunan,China,1/23/20,0
 Hunan,China,1/24/20,0
@@ -5439,6 +5505,8 @@ Hunan,China,6/26/20,4
 Hunan,China,6/27/20,4
 Hunan,China,6/28/20,4
 Hunan,China,6/29/20,4
+Hunan,China,6/30/20,4
+Hunan,China,7/1/20,4
 Inner Mongolia,China,1/22/20,0
 Inner Mongolia,China,1/23/20,0
 Inner Mongolia,China,1/24/20,0
@@ -5599,6 +5667,8 @@ Inner Mongolia,China,6/26/20,1
 Inner Mongolia,China,6/27/20,1
 Inner Mongolia,China,6/28/20,1
 Inner Mongolia,China,6/29/20,1
+Inner Mongolia,China,6/30/20,1
+Inner Mongolia,China,7/1/20,1
 Jiangsu,China,1/22/20,0
 Jiangsu,China,1/23/20,0
 Jiangsu,China,1/24/20,0
@@ -5759,6 +5829,8 @@ Jiangsu,China,6/26/20,0
 Jiangsu,China,6/27/20,0
 Jiangsu,China,6/28/20,0
 Jiangsu,China,6/29/20,0
+Jiangsu,China,6/30/20,0
+Jiangsu,China,7/1/20,0
 Jiangxi,China,1/22/20,0
 Jiangxi,China,1/23/20,0
 Jiangxi,China,1/24/20,0
@@ -5919,6 +5991,8 @@ Jiangxi,China,6/26/20,1
 Jiangxi,China,6/27/20,1
 Jiangxi,China,6/28/20,1
 Jiangxi,China,6/29/20,1
+Jiangxi,China,6/30/20,1
+Jiangxi,China,7/1/20,1
 Jilin,China,1/22/20,0
 Jilin,China,1/23/20,0
 Jilin,China,1/24/20,0
@@ -6079,6 +6153,8 @@ Jilin,China,6/26/20,2
 Jilin,China,6/27/20,2
 Jilin,China,6/28/20,2
 Jilin,China,6/29/20,2
+Jilin,China,6/30/20,2
+Jilin,China,7/1/20,2
 Liaoning,China,1/22/20,0
 Liaoning,China,1/23/20,0
 Liaoning,China,1/24/20,0
@@ -6239,6 +6315,8 @@ Liaoning,China,6/26/20,2
 Liaoning,China,6/27/20,2
 Liaoning,China,6/28/20,2
 Liaoning,China,6/29/20,2
+Liaoning,China,6/30/20,2
+Liaoning,China,7/1/20,2
 Macau,China,1/22/20,0
 Macau,China,1/23/20,0
 Macau,China,1/24/20,0
@@ -6399,6 +6477,8 @@ Macau,China,6/26/20,0
 Macau,China,6/27/20,0
 Macau,China,6/28/20,0
 Macau,China,6/29/20,0
+Macau,China,6/30/20,0
+Macau,China,7/1/20,0
 Ningxia,China,1/22/20,0
 Ningxia,China,1/23/20,0
 Ningxia,China,1/24/20,0
@@ -6559,6 +6639,8 @@ Ningxia,China,6/26/20,0
 Ningxia,China,6/27/20,0
 Ningxia,China,6/28/20,0
 Ningxia,China,6/29/20,0
+Ningxia,China,6/30/20,0
+Ningxia,China,7/1/20,0
 Qinghai,China,1/22/20,0
 Qinghai,China,1/23/20,0
 Qinghai,China,1/24/20,0
@@ -6719,6 +6801,8 @@ Qinghai,China,6/26/20,0
 Qinghai,China,6/27/20,0
 Qinghai,China,6/28/20,0
 Qinghai,China,6/29/20,0
+Qinghai,China,6/30/20,0
+Qinghai,China,7/1/20,0
 Shaanxi,China,1/22/20,0
 Shaanxi,China,1/23/20,0
 Shaanxi,China,1/24/20,0
@@ -6879,6 +6963,8 @@ Shaanxi,China,6/26/20,3
 Shaanxi,China,6/27/20,3
 Shaanxi,China,6/28/20,3
 Shaanxi,China,6/29/20,3
+Shaanxi,China,6/30/20,3
+Shaanxi,China,7/1/20,3
 Shandong,China,1/22/20,0
 Shandong,China,1/23/20,0
 Shandong,China,1/24/20,0
@@ -7039,6 +7125,8 @@ Shandong,China,6/26/20,7
 Shandong,China,6/27/20,7
 Shandong,China,6/28/20,7
 Shandong,China,6/29/20,7
+Shandong,China,6/30/20,7
+Shandong,China,7/1/20,7
 Shanghai,China,1/22/20,0
 Shanghai,China,1/23/20,0
 Shanghai,China,1/24/20,0
@@ -7199,6 +7287,8 @@ Shanghai,China,6/26/20,7
 Shanghai,China,6/27/20,7
 Shanghai,China,6/28/20,7
 Shanghai,China,6/29/20,7
+Shanghai,China,6/30/20,7
+Shanghai,China,7/1/20,7
 Shanxi,China,1/22/20,0
 Shanxi,China,1/23/20,0
 Shanxi,China,1/24/20,0
@@ -7359,6 +7449,8 @@ Shanxi,China,6/26/20,0
 Shanxi,China,6/27/20,0
 Shanxi,China,6/28/20,0
 Shanxi,China,6/29/20,0
+Shanxi,China,6/30/20,0
+Shanxi,China,7/1/20,0
 Sichuan,China,1/22/20,0
 Sichuan,China,1/23/20,0
 Sichuan,China,1/24/20,0
@@ -7519,6 +7611,8 @@ Sichuan,China,6/26/20,3
 Sichuan,China,6/27/20,3
 Sichuan,China,6/28/20,3
 Sichuan,China,6/29/20,3
+Sichuan,China,6/30/20,3
+Sichuan,China,7/1/20,3
 Tianjin,China,1/22/20,0
 Tianjin,China,1/23/20,0
 Tianjin,China,1/24/20,0
@@ -7679,6 +7773,8 @@ Tianjin,China,6/26/20,3
 Tianjin,China,6/27/20,3
 Tianjin,China,6/28/20,3
 Tianjin,China,6/29/20,3
+Tianjin,China,6/30/20,3
+Tianjin,China,7/1/20,3
 Tibet,China,1/22/20,0
 Tibet,China,1/23/20,0
 Tibet,China,1/24/20,0
@@ -7839,6 +7935,8 @@ Tibet,China,6/26/20,0
 Tibet,China,6/27/20,0
 Tibet,China,6/28/20,0
 Tibet,China,6/29/20,0
+Tibet,China,6/30/20,0
+Tibet,China,7/1/20,0
 Xinjiang,China,1/22/20,0
 Xinjiang,China,1/23/20,0
 Xinjiang,China,1/24/20,0
@@ -7999,6 +8097,8 @@ Xinjiang,China,6/26/20,3
 Xinjiang,China,6/27/20,3
 Xinjiang,China,6/28/20,3
 Xinjiang,China,6/29/20,3
+Xinjiang,China,6/30/20,3
+Xinjiang,China,7/1/20,3
 Yunnan,China,1/22/20,0
 Yunnan,China,1/23/20,0
 Yunnan,China,1/24/20,0
@@ -8159,6 +8259,8 @@ Yunnan,China,6/26/20,2
 Yunnan,China,6/27/20,2
 Yunnan,China,6/28/20,2
 Yunnan,China,6/29/20,2
+Yunnan,China,6/30/20,2
+Yunnan,China,7/1/20,2
 Zhejiang,China,1/22/20,0
 Zhejiang,China,1/23/20,0
 Zhejiang,China,1/24/20,0
@@ -8319,6 +8421,8 @@ Zhejiang,China,6/26/20,1
 Zhejiang,China,6/27/20,1
 Zhejiang,China,6/28/20,1
 Zhejiang,China,6/29/20,1
+Zhejiang,China,6/30/20,1
+Zhejiang,China,7/1/20,1
 Faroe Islands,Denmark,1/22/20,0
 Faroe Islands,Denmark,1/23/20,0
 Faroe Islands,Denmark,1/24/20,0
@@ -8479,6 +8583,8 @@ Faroe Islands,Denmark,6/26/20,0
 Faroe Islands,Denmark,6/27/20,0
 Faroe Islands,Denmark,6/28/20,0
 Faroe Islands,Denmark,6/29/20,0
+Faroe Islands,Denmark,6/30/20,0
+Faroe Islands,Denmark,7/1/20,0
 Greenland,Denmark,1/22/20,0
 Greenland,Denmark,1/23/20,0
 Greenland,Denmark,1/24/20,0
@@ -8639,6 +8745,8 @@ Greenland,Denmark,6/26/20,0
 Greenland,Denmark,6/27/20,0
 Greenland,Denmark,6/28/20,0
 Greenland,Denmark,6/29/20,0
+Greenland,Denmark,6/30/20,0
+Greenland,Denmark,7/1/20,0
 French Guiana,France,1/22/20,0
 French Guiana,France,1/23/20,0
 French Guiana,France,1/24/20,0
@@ -8799,6 +8907,8 @@ French Guiana,France,6/26/20,11
 French Guiana,France,6/27/20,12
 French Guiana,France,6/28/20,12
 French Guiana,France,6/29/20,15
+French Guiana,France,6/30/20,15
+French Guiana,France,7/1/20,16
 French Polynesia,France,1/22/20,0
 French Polynesia,France,1/23/20,0
 French Polynesia,France,1/24/20,0
@@ -8959,6 +9069,8 @@ French Polynesia,France,6/26/20,0
 French Polynesia,France,6/27/20,0
 French Polynesia,France,6/28/20,0
 French Polynesia,France,6/29/20,0
+French Polynesia,France,6/30/20,0
+French Polynesia,France,7/1/20,0
 Guadeloupe,France,1/22/20,0
 Guadeloupe,France,1/23/20,0
 Guadeloupe,France,1/24/20,0
@@ -9119,6 +9231,8 @@ Guadeloupe,France,6/26/20,14
 Guadeloupe,France,6/27/20,14
 Guadeloupe,France,6/28/20,14
 Guadeloupe,France,6/29/20,14
+Guadeloupe,France,6/30/20,14
+Guadeloupe,France,7/1/20,14
 Mayotte,France,1/22/20,0
 Mayotte,France,1/23/20,0
 Mayotte,France,1/24/20,0
@@ -9279,6 +9393,8 @@ Mayotte,France,6/26/20,32
 Mayotte,France,6/27/20,32
 Mayotte,France,6/28/20,32
 Mayotte,France,6/29/20,32
+Mayotte,France,6/30/20,35
+Mayotte,France,7/1/20,35
 New Caledonia,France,1/22/20,0
 New Caledonia,France,1/23/20,0
 New Caledonia,France,1/24/20,0
@@ -9439,6 +9555,8 @@ New Caledonia,France,6/26/20,0
 New Caledonia,France,6/27/20,0
 New Caledonia,France,6/28/20,0
 New Caledonia,France,6/29/20,0
+New Caledonia,France,6/30/20,0
+New Caledonia,France,7/1/20,0
 Reunion,France,1/22/20,0
 Reunion,France,1/23/20,0
 Reunion,France,1/24/20,0
@@ -9599,6 +9717,8 @@ Reunion,France,6/26/20,2
 Reunion,France,6/27/20,2
 Reunion,France,6/28/20,2
 Reunion,France,6/29/20,2
+Reunion,France,6/30/20,2
+Reunion,France,7/1/20,2
 Saint Barthelemy,France,1/22/20,0
 Saint Barthelemy,France,1/23/20,0
 Saint Barthelemy,France,1/24/20,0
@@ -9759,6 +9879,8 @@ Saint Barthelemy,France,6/26/20,0
 Saint Barthelemy,France,6/27/20,0
 Saint Barthelemy,France,6/28/20,0
 Saint Barthelemy,France,6/29/20,0
+Saint Barthelemy,France,6/30/20,0
+Saint Barthelemy,France,7/1/20,0
 St Martin,France,1/22/20,0
 St Martin,France,1/23/20,0
 St Martin,France,1/24/20,0
@@ -9919,6 +10041,8 @@ St Martin,France,6/26/20,3
 St Martin,France,6/27/20,3
 St Martin,France,6/28/20,3
 St Martin,France,6/29/20,3
+St Martin,France,6/30/20,3
+St Martin,France,7/1/20,3
 Martinique,France,1/22/20,0
 Martinique,France,1/23/20,0
 Martinique,France,1/24/20,0
@@ -10079,6 +10203,8 @@ Martinique,France,6/26/20,14
 Martinique,France,6/27/20,14
 Martinique,France,6/28/20,14
 Martinique,France,6/29/20,14
+Martinique,France,6/30/20,14
+Martinique,France,7/1/20,14
 Aruba,Netherlands,1/22/20,0
 Aruba,Netherlands,1/23/20,0
 Aruba,Netherlands,1/24/20,0
@@ -10239,6 +10365,8 @@ Aruba,Netherlands,6/26/20,3
 Aruba,Netherlands,6/27/20,3
 Aruba,Netherlands,6/28/20,3
 Aruba,Netherlands,6/29/20,3
+Aruba,Netherlands,6/30/20,3
+Aruba,Netherlands,7/1/20,3
 Curacao,Netherlands,1/22/20,0
 Curacao,Netherlands,1/23/20,0
 Curacao,Netherlands,1/24/20,0
@@ -10399,6 +10527,8 @@ Curacao,Netherlands,6/26/20,1
 Curacao,Netherlands,6/27/20,1
 Curacao,Netherlands,6/28/20,1
 Curacao,Netherlands,6/29/20,1
+Curacao,Netherlands,6/30/20,1
+Curacao,Netherlands,7/1/20,1
 Sint Maarten,Netherlands,1/22/20,0
 Sint Maarten,Netherlands,1/23/20,0
 Sint Maarten,Netherlands,1/24/20,0
@@ -10559,6 +10689,8 @@ Sint Maarten,Netherlands,6/26/20,15
 Sint Maarten,Netherlands,6/27/20,15
 Sint Maarten,Netherlands,6/28/20,15
 Sint Maarten,Netherlands,6/29/20,15
+Sint Maarten,Netherlands,6/30/20,15
+Sint Maarten,Netherlands,7/1/20,15
 Bermuda,United Kingdom,1/22/20,0
 Bermuda,United Kingdom,1/23/20,0
 Bermuda,United Kingdom,1/24/20,0
@@ -10719,6 +10851,8 @@ Bermuda,United Kingdom,6/26/20,9
 Bermuda,United Kingdom,6/27/20,9
 Bermuda,United Kingdom,6/28/20,9
 Bermuda,United Kingdom,6/29/20,9
+Bermuda,United Kingdom,6/30/20,9
+Bermuda,United Kingdom,7/1/20,9
 Cayman Islands,United Kingdom,1/22/20,0
 Cayman Islands,United Kingdom,1/23/20,0
 Cayman Islands,United Kingdom,1/24/20,0
@@ -10879,6 +11013,8 @@ Cayman Islands,United Kingdom,6/26/20,1
 Cayman Islands,United Kingdom,6/27/20,1
 Cayman Islands,United Kingdom,6/28/20,1
 Cayman Islands,United Kingdom,6/29/20,1
+Cayman Islands,United Kingdom,6/30/20,1
+Cayman Islands,United Kingdom,7/1/20,1
 Channel Islands,United Kingdom,1/22/20,0
 Channel Islands,United Kingdom,1/23/20,0
 Channel Islands,United Kingdom,1/24/20,0
@@ -11039,6 +11175,8 @@ Channel Islands,United Kingdom,6/26/20,47
 Channel Islands,United Kingdom,6/27/20,47
 Channel Islands,United Kingdom,6/28/20,47
 Channel Islands,United Kingdom,6/29/20,47
+Channel Islands,United Kingdom,6/30/20,47
+Channel Islands,United Kingdom,7/1/20,47
 Gibraltar,United Kingdom,1/22/20,0
 Gibraltar,United Kingdom,1/23/20,0
 Gibraltar,United Kingdom,1/24/20,0
@@ -11199,6 +11337,8 @@ Gibraltar,United Kingdom,6/26/20,0
 Gibraltar,United Kingdom,6/27/20,0
 Gibraltar,United Kingdom,6/28/20,0
 Gibraltar,United Kingdom,6/29/20,0
+Gibraltar,United Kingdom,6/30/20,0
+Gibraltar,United Kingdom,7/1/20,0
 Isle of Man,United Kingdom,1/22/20,0
 Isle of Man,United Kingdom,1/23/20,0
 Isle of Man,United Kingdom,1/24/20,0
@@ -11359,6 +11499,8 @@ Isle of Man,United Kingdom,6/26/20,24
 Isle of Man,United Kingdom,6/27/20,24
 Isle of Man,United Kingdom,6/28/20,24
 Isle of Man,United Kingdom,6/29/20,24
+Isle of Man,United Kingdom,6/30/20,24
+Isle of Man,United Kingdom,7/1/20,24
 Montserrat,United Kingdom,1/22/20,0
 Montserrat,United Kingdom,1/23/20,0
 Montserrat,United Kingdom,1/24/20,0
@@ -11519,6 +11661,8 @@ Montserrat,United Kingdom,6/26/20,1
 Montserrat,United Kingdom,6/27/20,1
 Montserrat,United Kingdom,6/28/20,1
 Montserrat,United Kingdom,6/29/20,1
+Montserrat,United Kingdom,6/30/20,1
+Montserrat,United Kingdom,7/1/20,1
 Diamond Princess,Canada,1/22/20,0
 Diamond Princess,Canada,1/23/20,0
 Diamond Princess,Canada,1/24/20,0
@@ -11679,6 +11823,8 @@ Diamond Princess,Canada,6/26/20,1
 Diamond Princess,Canada,6/27/20,1
 Diamond Princess,Canada,6/28/20,1
 Diamond Princess,Canada,6/29/20,1
+Diamond Princess,Canada,6/30/20,1
+Diamond Princess,Canada,7/1/20,1
 Northwest Territories,Canada,1/22/20,0
 Northwest Territories,Canada,1/23/20,0
 Northwest Territories,Canada,1/24/20,0
@@ -11839,6 +11985,8 @@ Northwest Territories,Canada,6/26/20,0
 Northwest Territories,Canada,6/27/20,0
 Northwest Territories,Canada,6/28/20,0
 Northwest Territories,Canada,6/29/20,0
+Northwest Territories,Canada,6/30/20,0
+Northwest Territories,Canada,7/1/20,0
 Yukon,Canada,1/22/20,0
 Yukon,Canada,1/23/20,0
 Yukon,Canada,1/24/20,0
@@ -11999,6 +12147,8 @@ Yukon,Canada,6/26/20,0
 Yukon,Canada,6/27/20,0
 Yukon,Canada,6/28/20,0
 Yukon,Canada,6/29/20,0
+Yukon,Canada,6/30/20,0
+Yukon,Canada,7/1/20,0
 Anguilla,United Kingdom,1/22/20,0
 Anguilla,United Kingdom,1/23/20,0
 Anguilla,United Kingdom,1/24/20,0
@@ -12159,6 +12309,8 @@ Anguilla,United Kingdom,6/26/20,0
 Anguilla,United Kingdom,6/27/20,0
 Anguilla,United Kingdom,6/28/20,0
 Anguilla,United Kingdom,6/29/20,0
+Anguilla,United Kingdom,6/30/20,0
+Anguilla,United Kingdom,7/1/20,0
 British Virgin Islands,United Kingdom,1/22/20,0
 British Virgin Islands,United Kingdom,1/23/20,0
 British Virgin Islands,United Kingdom,1/24/20,0
@@ -12319,6 +12471,8 @@ British Virgin Islands,United Kingdom,6/26/20,1
 British Virgin Islands,United Kingdom,6/27/20,1
 British Virgin Islands,United Kingdom,6/28/20,1
 British Virgin Islands,United Kingdom,6/29/20,1
+British Virgin Islands,United Kingdom,6/30/20,1
+British Virgin Islands,United Kingdom,7/1/20,1
 Turks and Caicos Islands,United Kingdom,1/22/20,0
 Turks and Caicos Islands,United Kingdom,1/23/20,0
 Turks and Caicos Islands,United Kingdom,1/24/20,0
@@ -12479,6 +12633,8 @@ Turks and Caicos Islands,United Kingdom,6/26/20,1
 Turks and Caicos Islands,United Kingdom,6/27/20,1
 Turks and Caicos Islands,United Kingdom,6/28/20,1
 Turks and Caicos Islands,United Kingdom,6/29/20,1
+Turks and Caicos Islands,United Kingdom,6/30/20,2
+Turks and Caicos Islands,United Kingdom,7/1/20,2
 "Bonaire, Sint Eustatius and Saba",Netherlands,1/22/20,0
 "Bonaire, Sint Eustatius and Saba",Netherlands,1/23/20,0
 "Bonaire, Sint Eustatius and Saba",Netherlands,1/24/20,0
@@ -12639,6 +12795,8 @@ Turks and Caicos Islands,United Kingdom,6/29/20,1
 "Bonaire, Sint Eustatius and Saba",Netherlands,6/27/20,0
 "Bonaire, Sint Eustatius and Saba",Netherlands,6/28/20,0
 "Bonaire, Sint Eustatius and Saba",Netherlands,6/29/20,0
+"Bonaire, Sint Eustatius and Saba",Netherlands,6/30/20,0
+"Bonaire, Sint Eustatius and Saba",Netherlands,7/1/20,0
 Falkland Islands (Malvinas),United Kingdom,1/22/20,0
 Falkland Islands (Malvinas),United Kingdom,1/23/20,0
 Falkland Islands (Malvinas),United Kingdom,1/24/20,0
@@ -12799,6 +12957,8 @@ Falkland Islands (Malvinas),United Kingdom,6/26/20,0
 Falkland Islands (Malvinas),United Kingdom,6/27/20,0
 Falkland Islands (Malvinas),United Kingdom,6/28/20,0
 Falkland Islands (Malvinas),United Kingdom,6/29/20,0
+Falkland Islands (Malvinas),United Kingdom,6/30/20,0
+Falkland Islands (Malvinas),United Kingdom,7/1/20,0
 Saint Pierre and Miquelon,France,1/22/20,0
 Saint Pierre and Miquelon,France,1/23/20,0
 Saint Pierre and Miquelon,France,1/24/20,0
@@ -12959,3 +13119,5 @@ Saint Pierre and Miquelon,France,6/26/20,0
 Saint Pierre and Miquelon,France,6/27/20,0
 Saint Pierre and Miquelon,France,6/28/20,0
 Saint Pierre and Miquelon,France,6/29/20,0
+Saint Pierre and Miquelon,France,6/30/20,0
+Saint Pierre and Miquelon,France,7/1/20,0
