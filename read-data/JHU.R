@@ -57,7 +57,7 @@ us_cases <- us_read(us_cases_url)
 
 # Save
 
-write_csv(us_fips <- us_read(fips_url), "JHU_us_fips.csv")
+write_csv(us_read(fips_url), "JHU_us_fips.csv")
 
 write_csv(global_deaths, "JHU_global_deaths_wide.csv")
 write_csv(global_cases, "JHU_global_cases_wide.csv")
@@ -101,4 +101,5 @@ us_pop <- left_join(left_join(us_cases_long, us_deaths_long), counties) %>%
   select(date, county, state, state_abbr, cases, deaths, pop) %>% 
   write_csv("JHU_us_pop.csv")
 
-us <- us_pop %>% select(- pop) %>% write_csv("JHU_us.csv")
+us <- us_pop %>% select(- pop) %>% 
+  write_csv("JHU_us.csv")

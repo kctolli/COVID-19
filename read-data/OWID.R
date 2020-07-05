@@ -29,7 +29,8 @@ covid <- my_read("https://github.com/owid/covid-19-data/raw/master/public/data/o
 full <- my_read("https://github.com/owid/covid-19-data/raw/master/public/data/ecdc/full_data.csv") %>% 
   rename(country = location)
 
-covid_data <- full_join(covid, full) %>% write_csv("owid_data.csv")
+covid_data <- full_join(covid, full) %>% 
+  write_csv("owid_data.csv")
 
 ecdc <- my_read("https://github.com/owid/covid-19-data/raw/master/public/data/ecdc/COVID-2019%20-%20ECDC%20(2020).csv") %>% 
   rename(country = Country) %>% rename(day = Year) %>% 

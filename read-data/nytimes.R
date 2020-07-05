@@ -31,13 +31,17 @@ nytimes_counties <- "https://github.com/nytimes/covid-19-data/raw/master/us-coun
 
 us_df <- my_read(nytimes_US) %>% 
   rename(us_cases = cases) %>% 
-  rename(us_deaths = deaths)
+  rename(us_deaths = deaths) %>% 
+  write_csv("nytimes_us.csv")
 
 states_df <- my_read(nytimes_states) %>% 
-  select(- fips)
+  select(- fips) %>% 
+  write_csv("nytimes_states.csv")
+  
 
 counties_df <- my_read(nytimes_counties) %>% 
-  select(- fips)
+  select(- fips) %>% 
+  write_csv("nytimes_counties.csv")
 
 ## Joins 
 
@@ -65,11 +69,6 @@ state_proportions <- state_pop %>%
   mutate(death_case = 1 / case_death)
 
 # Save
-
-write_csv(us_df, "nytimes_us.csv")
-write_csv(states_df, "nytimes_states.csv")
-write_csv(counties_df, "nytimes_counties.csv")
-
 write_csv(county_pop, "nytimes_county_pop.csv")
 write_csv(county, "nytimes_county.csv")
 write_csv(county_proportions, "nytimes_county_proportions.csv")
