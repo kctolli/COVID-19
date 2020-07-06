@@ -2,6 +2,12 @@
 title: "JHU Leaflets"
 ---
 
+```{r setwd, eval=FALSE, include=FALSE}
+here <- "D:/COVID-project/" 
+setwd(here)
+getwd()
+```
+
 ```{r setup, include=FALSE}
 pacman::p_load(pacman)
 p_load(knitr, tidyverse)

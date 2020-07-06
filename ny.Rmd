@@ -2,6 +2,12 @@
 title: "New York Times"
 ---
 
+```{r setwd, eval=FALSE, include=FALSE}
+here <- "D:/COVID-project/" 
+setwd(here)
+getwd()
+```
+
 ```{r setup, include=FALSE}
 pacman::p_load(pacman)
 p_load(knitr, tidyverse)
@@ -36,6 +42,13 @@ state <- my_read("./read-data/nytimes/nytimes_state_pop.csv") %>%
 state_prop <- my_read("./read-data/nytimes/nytimes_state_proportions.csv")
 
 county_prop <- my_read("./read-data/nytimes/nytimes_county_proportions.csv")
+```
+
+```{r view-data, eval=False, include=False}
+View(us)
+View(state)
+View(state_prop)
+View(county_prop)
 ```
 
 ```{r Wrangling}

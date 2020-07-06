@@ -2,6 +2,12 @@
 title: "JHU Plots"
 ---
 
+```{r setwd, eval=FALSE, include=FALSE}
+here <- "D:/COVID-project/" 
+setwd(here)
+getwd()
+```
+
 ```{r setup, include=FALSE}
 pacman::p_load(pacman)
 p_load(knitr, tidyverse)
@@ -27,7 +33,15 @@ ny_county <- us_counties() %>%
 ```
 
 ```{r data, include=FALSE}
+global <- my_read("./read-data/JHU/JHU_global.csv") 
+us_pop <- my_read("./read-data/JHU/JHU_us_pop.csv")
+us <- my_read("./read-data/JHU/JHU_us.csv")
+```
 
+```{r view-data, eval=False, include=False}
+View(global)
+View(us_pop)
+View(us)
 ```
 
 ```{r wrangling}

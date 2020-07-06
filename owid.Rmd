@@ -2,6 +2,12 @@
 title: "Our World in Data"
 ---
 
+```{r setwd, eval=FALSE, include=FALSE}
+here <- "D:/COVID-project/" 
+setwd(here)
+getwd()
+```
+
 ```{r setup, include=FALSE}
 pacman::p_load(pacman)
 p_load(knitr, tidyverse)
@@ -21,6 +27,11 @@ my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
 
 owid <- my_read("./read-data/OWID/owid_data.csv") 
 ecdc <- my_read("./read-data/OWID/owid_ecdc.csv") 
+```
+
+```{r view-data, eval=False, include=False}
+View(owid)
+View(ecdc)
 ```
 
 ```{r function}
