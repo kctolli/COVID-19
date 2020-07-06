@@ -2,32 +2,20 @@
 title: "New York Times"
 ---
 
-```{r setwd, eval=FALSE, include=FALSE}
-here <- "D:/COVID-project/" 
-setwd(here)
-getwd()
-```
-
 ```{r setup, include=FALSE}
-pacman::p_load(pacman)
-p_load(knitr, tidyverse)
-p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs, data.table, DT)
+pacman::p_load(pacman, package)
 
-opts_chunk$set(echo = TRUE)
-options(scipen = 999)
-options(warn = -1) 
+libraries()
 
-yesterday <- Sys.Date() - 1
-
-my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
+wdset("D:/COVID-project/")
 
 states <- us_states() %>% 
-  filter(!state_abbr %in% c("AK","HI","PR")) %>% 
+  my_continent %>% 
   rename(state = name)
 
 ny_county <- us_counties() %>% 
   rename(county = name) %>% 
-  filter(state_abbr == "NY") %>% 
+  newyork %>% 
   select(- statefp, - jurisdiction_type) %>% 
   rename(state = state_name)
 ```
@@ -44,25 +32,18 @@ state_prop <- my_read("./read-data/nytimes/nytimes_state_proportions.csv")
 county_prop <- my_read("./read-data/nytimes/nytimes_county_proportions.csv")
 ```
 
-```{r view-data, eval=False, include=False}
-View(us)
-View(state)
-View(state_prop)
-View(county_prop)
-```
-
 ```{r Wrangling}
 tops <- state %>% filter(state_abbr == c("NY", "NJ", "MA", "RI", "CT"))
 
 prop_state <- left_join(state_prop, states, by = c("state", "state_abbr")) %>% 
-  filter(date == yesterday) %>% 
+  filter(date == Sys.Yesterday) %>% 
   select(- date) %>% 
   mutate(case_pop = round(as.numeric(case_pop),4)) %>% 
   mutate(case_death = round(as.numeric(case_death),4)) %>% 
   mutate(death_pop = round(as.numeric(death_pop),4)) %>% 
   mutate(death_case = round(as.numeric(death_case),4))
 
-ny_county_prop <- county_prop %>% filter(date == yesterday) %>% filter(state_abbr == "NY")
+ny_county_prop <- county_prop %>% filter(date == Sys.Yesterday) %>% filter(state_abbr == "NY")
 
 prop_county <- left_join(ny_county_prop, ny_county, by = c("state", "state_abbr", "county")) %>% 
   select(- date, - state_abbr) %>% 

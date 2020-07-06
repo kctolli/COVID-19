@@ -1,10 +1,12 @@
 wdset <- function(here){setwd(here); getwd()}
 
-herewd <- function(){here <- here::here(); setwd(); getwd()}
+#herewd <- function(){here <- here::here(); setwd(); getwd()}
 
-my_read <- function(df){tidyverse::read_csv(df) %>% unique() %>% na.omit()}
+my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
 
 my_continent <- function(df){df %>% filter(!state_abbr %in% c("AK","HI","PR"))}
+
+newyork <- function(df){df %>% filter(state_abbr == "NY")}
 
 my_owid_wrangle <- function(df){
   summarise(df,
