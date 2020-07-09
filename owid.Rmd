@@ -19,14 +19,14 @@ continent <- owid %>%
   my_owid_wrangle()
 
 yesterday_continent <- continent %>% 
-  filter(date >= Sys.Week) 
+  filter(date >= Sys.Week()) 
 
 world <- owid %>% 
   group_by(date) %>% 
   my_owid_wrangle()
 
 yesterday_world <- world %>% 
-  filter(date >= Sys.Week) 
+  filter(date >= Sys.Week()) 
 ```
 
 ## Relationship with Continents

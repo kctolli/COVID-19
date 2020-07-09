@@ -15,3 +15,5 @@
 hello <- function() {
   print("Hello, world!")
 }
+
+update <- print(paste("Last updated:", format(Sys.Date(), "%b %d %Y")))

@@ -26,19 +26,19 @@ continent <- owid %>%
   my_owid_wrangle()
 
 yesterday_continent <- continent %>% 
-  filter(date >= Sys.Week) 
+  filter(date >= Sys.Week()) 
 
 world <- owid %>% 
   group_by(date) %>% 
   my_owid_wrangle()
 
 yesterday_world <- world %>% 
-  filter(date >= Sys.Week) 
+  filter(date >= Sys.Week()) 
 
 yesterday_us <- us %>% 
   rename(cases = us_cases) %>% 
   rename(deaths = us_deaths) %>% 
-  filter(date >= Sys.Week) 
+  filter(date >= Sys.Week()) 
 ```
 
 ```{r pic, fig.align='center', out.width='50%'}

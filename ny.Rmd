@@ -36,14 +36,14 @@ county_prop <- my_read("./read-data/nytimes/nytimes_county_proportions.csv")
 tops <- state %>% filter(state_abbr == c("NY", "NJ", "MA", "RI", "CT"))
 
 prop_state <- left_join(state_prop, states, by = c("state", "state_abbr")) %>% 
-  filter(date == Sys.Yesterday) %>% 
+  filter(date == Sys.Yesterday()) %>% 
   select(- date) %>% 
   mutate(case_pop = round(as.numeric(case_pop),4)) %>% 
   mutate(case_death = round(as.numeric(case_death),4)) %>% 
   mutate(death_pop = round(as.numeric(death_pop),4)) %>% 
   mutate(death_case = round(as.numeric(death_case),4))
 
-ny_county_prop <- county_prop %>% filter(date == Sys.Yesterday) %>% filter(state_abbr == "NY")
+ny_county_prop <- county_prop %>% filter(date == Sys.Yesterday()) %>% filter(state_abbr == "NY")
 
 prop_county <- left_join(ny_county_prop, ny_county, by = c("state", "state_abbr", "county")) %>% 
   select(- date, - state_abbr) %>% 

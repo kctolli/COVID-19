@@ -1,7 +1,5 @@
 wdset <- function(here){setwd(here); getwd()}
 
-#herewd <- function(){here <- here::here(); setwd(); getwd()}
-
 my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
 
 my_continent <- function(df){df %>% filter(!state_abbr %in% c("AK","HI","PR"))}
