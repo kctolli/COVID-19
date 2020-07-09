@@ -1,20 +1,10 @@
 # Libraries
 
-pacman::p_load(pacman)
-p_load(tidyverse)
-p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs)
+package::libraries()
 
 ## set working directory
 
-setwd("D:/COVID-project/read-data/nytimes")
-
-## turn off scientific notation 
-
-options(scipen = 999)
-
-# Functions
-
-my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
+wdset("D:/COVID-project/read-data/nytimes")
 
 # Get Data 
 
@@ -38,7 +28,6 @@ states_df <- my_read(nytimes_states) %>%
   select(- fips) %>% 
   write_csv("nytimes_states.csv")
   
-
 counties_df <- my_read(nytimes_counties) %>% 
   select(- fips) %>% 
   write_csv("nytimes_counties.csv")

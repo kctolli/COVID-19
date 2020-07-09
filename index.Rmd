@@ -6,34 +6,24 @@ date: "BYUI - ECEN 490R"
 ---
 
 ```{r setup, include=FALSE}
-pacman::p_load(pacman, package)
-
-libraries()
+package::libraries()
 
 wdset("D:/COVID-project/")
 
 pop <- my_read("./read-data/USA/population_2018.csv")
 
-owid <- my_read("./read-data/OWID/owid_data.csv") 
-ecdc <- my_read("./read-data/OWID/owid_ecdc.csv")
+owid <- my_read("./read-data/OWID/owid_data.csv")
+world <- my_read("./read-data/OWID/owid_world.csv")
 
 us <- my_read("./read-data/nytimes/nytimes_us.csv")
 ```
 
 ```{r wrangling}
-continent <- owid %>% 
-  group_by(continent, date) %>% 
-  my_owid_wrangle()
+continent <- owid %>% group_by(date, continent) %>% my_owid_wrangle()
+world <- owid %>% group_by(date) %>% my_owid_wrangle() 
 
-yesterday_continent <- continent %>% 
-  filter(date >= Sys.Week()) 
-
-world <- owid %>% 
-  group_by(date) %>% 
-  my_owid_wrangle()
-
-yesterday_world <- world %>% 
-  filter(date >= Sys.Week()) 
+yesterday_continent <- continent %>% filter(date >= Sys.Week()) 
+yesterday_world <- world %>% filter(date >= Sys.Week()) 
 
 yesterday_us <- us %>% 
   rename(cases = us_cases) %>% 
@@ -60,7 +50,7 @@ kable(yesterday_world)
 <br /> <br />
 
 ```{r update}
-update
+update()
 ```
 
 © Copyright Kyle Tolliver, 2020

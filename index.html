@@ -502,24 +502,16 @@ div.tocify {
 </div>
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>continent &lt;-<span class="st"> </span>owid <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="st">  </span><span class="kw">group_by</span>(continent, date) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="st">  </span><span class="kw">my_owid_wrangle</span>()</span>
-<span id="cb1-4"><a href="#cb1-4"></a></span>
-<span id="cb1-5"><a href="#cb1-5"></a>yesterday_continent &lt;-<span class="st"> </span>continent <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>Sys.Week) </span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a>world &lt;-<span class="st"> </span>owid <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="st">  </span><span class="kw">group_by</span>(date) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-10"><a href="#cb1-10"></a><span class="st">  </span><span class="kw">my_owid_wrangle</span>()</span>
-<span id="cb1-11"><a href="#cb1-11"></a></span>
-<span id="cb1-12"><a href="#cb1-12"></a>yesterday_world &lt;-<span class="st"> </span>world <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-13"><a href="#cb1-13"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>Sys.Week) </span>
-<span id="cb1-14"><a href="#cb1-14"></a></span>
-<span id="cb1-15"><a href="#cb1-15"></a>yesterday_us &lt;-<span class="st"> </span>us <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">cases =</span> us_cases) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">deaths =</span> us_deaths) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span>Sys.Week) </span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>continent &lt;-<span class="st"> </span>owid <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(date, continent) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">my_owid_wrangle</span>()</span>
+<span id="cb1-2"><a href="#cb1-2"></a>world &lt;-<span class="st"> </span>owid <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">group_by</span>(date) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">my_owid_wrangle</span>() </span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>yesterday_continent &lt;-<span class="st"> </span>continent <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span><span class="kw">Sys.Week</span>()) </span>
+<span id="cb1-5"><a href="#cb1-5"></a>yesterday_world &lt;-<span class="st"> </span>world <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span><span class="kw">Sys.Week</span>()) </span>
+<span id="cb1-6"><a href="#cb1-6"></a></span>
+<span id="cb1-7"><a href="#cb1-7"></a>yesterday_us &lt;-<span class="st"> </span>us <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">cases =</span> us_cases) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-9"><a href="#cb1-9"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">deaths =</span> us_deaths) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span><span class="kw">Sys.Week</span>()) </span></code></pre></div>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">include_graphics</span>(<span class="st">&#39;https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg&#39;</span>)</span></code></pre></div>
 <p><img src="https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg" width="50%" style="display: block; margin: auto;" /></p>
 <div id="current-cases-and-deaths-in-the-usa" class="section level2">
@@ -535,34 +527,39 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">2020-06-28</td>
-<td align="right">2565015</td>
-<td align="right">125814</td>
-</tr>
-<tr class="even">
-<td align="left">2020-06-29</td>
-<td align="right">2604915</td>
-<td align="right">126161</td>
-</tr>
-<tr class="odd">
-<td align="left">2020-06-30</td>
-<td align="right">2653280</td>
-<td align="right">127461</td>
-</tr>
-<tr class="even">
-<td align="left">2020-07-01</td>
-<td align="right">2703212</td>
-<td align="right">128103</td>
-</tr>
-<tr class="odd">
 <td align="left">2020-07-02</td>
 <td align="right">2758807</td>
-<td align="right">128825</td>
+<td align="right">128826</td>
 </tr>
 <tr class="even">
 <td align="left">2020-07-03</td>
-<td align="right">2812147</td>
-<td align="right">129407</td>
+<td align="right">2815374</td>
+<td align="right">129415</td>
+</tr>
+<tr class="odd">
+<td align="left">2020-07-04</td>
+<td align="right">2866013</td>
+<td align="right">129679</td>
+</tr>
+<tr class="even">
+<td align="left">2020-07-05</td>
+<td align="right">2910780</td>
+<td align="right">129941</td>
+</tr>
+<tr class="odd">
+<td align="left">2020-07-06</td>
+<td align="right">2958080</td>
+<td align="right">130332</td>
+</tr>
+<tr class="even">
+<td align="left">2020-07-07</td>
+<td align="right">3012210</td>
+<td align="right">131289</td>
+</tr>
+<tr class="odd">
+<td align="left">2020-07-08</td>
+<td align="right">3070996</td>
+<td align="right">132218</td>
 </tr>
 </tbody>
 </table>
@@ -584,46 +581,55 @@ div.tocify {
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">2020-06-28</td>
-<td align="right">963675</td>
-<td align="right">25758</td>
-<td align="right">12048645</td>
-<td align="right">36152</td>
-<td align="right">705</td>
-<td align="right">317278</td>
+<td align="left">2020-07-02</td>
+<td align="right">234124</td>
+<td align="right">6743</td>
+<td align="right">1698242</td>
+<td align="right">6323</td>
+<td align="right">96</td>
+<td align="right">32241</td>
 </tr>
 <tr class="even">
-<td align="left">2020-06-29</td>
-<td align="right">446121</td>
-<td align="right">9922</td>
-<td align="right">3827633</td>
-<td align="right">13247</td>
-<td align="right">274</td>
-<td align="right">73756</td>
+<td align="left">2020-07-03</td>
+<td align="right">214264</td>
+<td align="right">6572</td>
+<td align="right">1153984</td>
+<td align="right">5251</td>
+<td align="right">101</td>
+<td align="right">22567</td>
 </tr>
 <tr class="odd">
-<td align="left">2020-06-30</td>
-<td align="right">354244</td>
-<td align="right">6847</td>
-<td align="right">2943881</td>
-<td align="right">8956</td>
-<td align="right">210</td>
-<td align="right">54350</td>
+<td align="left">2020-07-04</td>
+<td align="right">157927</td>
+<td align="right">1975</td>
+<td align="right">1048916</td>
+<td align="right">3131</td>
+<td align="right">42</td>
+<td align="right">17563</td>
 </tr>
 <tr class="even">
-<td align="left">2020-07-01</td>
-<td align="right">213470</td>
-<td align="right">4395</td>
-<td align="right">1305510</td>
-<td align="right">4133</td>
-<td align="right">91</td>
-<td align="right">22418</td>
+<td align="left">2020-07-05</td>
+<td align="right">161304</td>
+<td align="right">2005</td>
+<td align="right">1066418</td>
+<td align="right">3377</td>
+<td align="right">30</td>
+<td align="right">17502</td>
+</tr>
+<tr class="odd">
+<td align="left">2020-07-06</td>
+<td align="right">162417</td>
+<td align="right">2052</td>
+<td align="right">863307</td>
+<td align="right">2738</td>
+<td align="right">55</td>
+<td align="right">14245</td>
 </tr>
 </tbody>
 </table>
 <p><br /> <br /></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>update</span></code></pre></div>
-<pre><code>## [1] &quot;Last updated: Jul 05 2020&quot;</code></pre>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">update</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;Last updated: Jul 09 2020&quot;</code></pre>
 <p>© Copyright Kyle Tolliver, 2020</p>
 <div id="licensed-under-gnu-general-public-license-v3.0" class="section level6">
 <h6><em>— <a href="https://github.com/BYUI-COVID/BYUI-COVID.github.io/blob/master/LICENSE">Licensed</a> under <a href="./site_libs/LICENSE.txt">GNU General Public License v3.0</a> </em></h6>

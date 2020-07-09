@@ -1,36 +1,10 @@
 # Libraries
 
-pacman::p_load(pacman)
-p_load(tidyverse)
-p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs)
+package::libraries()
 
 ## set working directory
 
-setwd("D:/COVID-project/read-data/JHU")
-
-## turn off scientific notation 
-
-options(scipen = 999)
-
-# Functions
-
-my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
-
-us_read <- function(df){
-  dat <- my_read(df) %>% 
-    select(- UID, - iso2, - iso3, - code3, - FIPS, -Lat, - Long_, - Combined_Key, - Country_Region) %>% 
-    rename(county = Admin2) %>% 
-    rename(state = Province_State)
-  dat
-}
-
-global_read <- function(df){
-  dat <- my_read(df) %>% 
-    select(-Lat, - Long) %>%  
-    rename(state = `Province/State`) %>% 
-    rename(country = `Country/Region`)
-  dat
-}
+wdset("D:/COVID-project/read-data/JHU")
 
 # Get Data 
 

@@ -1,20 +1,10 @@
 # Libraries
 
-pacman::p_load(pacman)
-p_load(tidyverse)
-p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs)
+package::libraries()
 
 ## set working directory
 
-setwd("D:/COVID-project/read-data/OWID")
-
-## turn off scientific notation 
-
-options(scipen = 999)
-
-# Functions 
-
-my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
+wdset("D:/COVID-project/read-data/OWID")
 
 # Get Data & Wrangling
 
@@ -29,9 +19,12 @@ covid <- my_read("https://github.com/owid/covid-19-data/raw/master/public/data/o
 full <- my_read("https://github.com/owid/covid-19-data/raw/master/public/data/ecdc/full_data.csv") %>% 
   rename(country = location)
 
-covid_data <- full_join(covid, full) %>% 
-  write_csv("owid_data.csv")
+owid <- full_join(covid, full) %>% write_csv("owid_data.csv")
 
 ecdc <- my_read("https://github.com/owid/covid-19-data/raw/master/public/data/ecdc/COVID-2019%20-%20ECDC%20(2020).csv") %>% 
   rename(country = Country) %>% rename(day = Year) %>% 
   write_csv("owid_ecdc.csv")
+
+continent <- owid %>% group_by(date, continent) %>% my_owid_wrangle()
+
+world <- owid %>% group_by(date) %>% my_owid_wrangle()

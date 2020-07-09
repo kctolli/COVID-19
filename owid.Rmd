@@ -3,30 +3,20 @@ title: "Our World in Data"
 ---
 
 ```{r setup, include=FALSE}
-pacman::p_load(pacman, package)
-
-libraries()
+package::libraries()
 
 wdset("D:/COVID-project/")
 
-owid <- my_read("./read-data/OWID/owid_data.csv") 
+owid <- my_read("./read-data/OWID/owid_data.csv")
 ecdc <- my_read("./read-data/OWID/owid_ecdc.csv") 
 ```
 
 ```{r wrangling}
-continent <- owid %>% 
-  group_by(continent, date) %>% 
-  my_owid_wrangle()
+continent <- owid %>% group_by(date, continent) %>% my_owid_wrangle()
+world <- owid %>% group_by(date) %>% my_owid_wrangle() 
 
-yesterday_continent <- continent %>% 
-  filter(date >= Sys.Week()) 
-
-world <- owid %>% 
-  group_by(date) %>% 
-  my_owid_wrangle()
-
-yesterday_world <- world %>% 
-  filter(date >= Sys.Week()) 
+yesterday_continent <- continent %>% filter(date >= Sys.Week()) 
+yesterday_world <- world %>% filter(date >= Sys.Week())  
 ```
 
 ## Relationship with Continents

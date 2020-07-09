@@ -1,22 +1,10 @@
 # Libraries
 
-pacman::p_load(pacman)
-p_load(tidyverse)
-p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs)
+package::libraries()
 
 ## set working directory
 
-setwd("D:/COVID-project/read-data/USA")
-
-## turn off scientific notation 
-
-options(scipen = 999)
-
-# Functions
-
-my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
-
-my_continent <- function(df){df %>% unique() %>% filter(!state_abbr %in% c("AK","HI","PR"))}
+wdset("D:/COVID-project/read-data/USA")
 
 # Get Data
 
@@ -53,7 +41,6 @@ county <- left_join(continental_county, county_pop) %>%
 us <- sum(pop$population)
 
 # Save
-
 
 write_csv(continental_state, "state.csv")
 write_csv(county, "county.csv")
