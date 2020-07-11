@@ -1,49 +1,121 @@
 ---
-title: "JHU Dy-Graphs"
+title: "JHU Dygraphs"
 ---
 
-```{r setwd, eval=FALSE, include=FALSE}
-here <- "D:/COVID-project/" 
-setwd(here)
-getwd()
-```
-
 ```{r setup, include=FALSE}
-pacman::p_load(pacman)
-p_load(knitr, tidyverse)
-p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs, data.table, DT)
+package::libraries()
 
-opts_chunk$set(echo = TRUE)
-options(scipen = 999)
-options(warn = -1) 
+wdset("D:/COVID-project/")
 
-yesterday <- Sys.Date() - 1
+states <- states()
+county <- county()
+ny_county <- county() %>% newyork()
 
-my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
+global <- my_read("./read-data/JHU/JHU_global.csv") 
+us_pop <- my_read("./read-data/JHU/JHU_us_pop.csv")
+us <- my_read("./read-data/JHU/JHU_us.csv")
 
-states <- us_states() %>% 
-  filter(!state_abbr %in% c("AK","HI","PR")) %>% 
-  rename(state = name)
-
-ny_county <- us_counties() %>% 
-  rename(county = name) %>% 
-  filter(state_abbr == "NY") %>% 
-  select(- statefp, - jurisdiction_type) %>% 
-  rename(state = state_name)
-```
-
-```{r data, include=FALSE}
-
+global$date <- as.Date(global$date, "%m/%d/%y")
 ```
 
 ```{r wrangling}
+china_state <- global %>% 
+  filter(country == "China") %>% 
+  group_by(state, date) %>% 
+  my_jhu_wrangle() 
 
+china <- global %>% 
+  filter(country == "China") %>% 
+  group_by(date) %>% 
+  my_jhu_wrangle()
+
+world <- global %>% 
+  group_by(country, date) %>% 
+  my_jhu_wrangle()
 ```
 
+```{r china}
+wide_china_cases <- china_state %>% 
+  select(- deaths, - recovered, - active) %>% 
+  pivot_wider(names_from = state, values_from = cases) %>% 
+  tk_xts(., date_var = date)
+
+wide_china_deaths <- china_state %>% 
+  select(- cases, - recovered, - active) %>% 
+  pivot_wider(names_from = state, values_from = deaths) %>% 
+  tk_xts(., date_var = date)
+
+wide_china_recovered <- china_state %>% 
+  select(- deaths, - cases, - active) %>% 
+  pivot_wider(names_from = state, values_from = recovered) %>% 
+  tk_xts(., date_var = date)
+
+wide_china_active <- china_state %>% 
+  select(- cases, - recovered, - deaths) %>% 
+  pivot_wider(names_from = state, values_from = active) %>% 
+  tk_xts(., date_var = date)
+```
+
+```{r world}
+wide_world_cases <- world %>% 
+  select(- deaths, - recovered, - active) %>% 
+  pivot_wider(names_from = country, values_from = cases) %>% 
+  tk_xts(., date_var = date)
+
+wide_world_deaths <- world %>% 
+  select(- cases, - recovered, - active) %>% 
+  pivot_wider(names_from = country, values_from = deaths) %>% 
+  tk_xts(., date_var = date)
+
+wide_world_recovered <- world %>% 
+  select(- deaths, - cases, - active) %>% 
+  pivot_wider(names_from = country, values_from = recovered) %>% 
+  tk_xts(., date_var = date)
+
+wide_world_active <- world %>% 
+  select(- cases, - recovered, - deaths) %>% 
+  pivot_wider(names_from = country, values_from = active) %>% 
+  tk_xts(., date_var = date)
+```
+
+## China
+
+```{r china_dya}
+dygraph(wide_china_cases) %>% dyRangeSelector(height = 20, strokeColor = "") %>% dyAxis("y", label = "cases")
+```
+
+```{r china_dyb}
+dygraph(wide_china_deaths) %>% dyRangeSelector(height = 20, strokeColor = "") %>% dyAxis("y", label = "deaths")
+```
+
+```{r china_dyc}
+dygraph(wide_china_recovered) %>% dyRangeSelector(height = 20, strokeColor = "") %>% dyAxis("y", label = "recovered")
+```
+
+```{r china_dyd}
+dygraph(wide_china_active) %>% dyRangeSelector(height = 20, strokeColor = "") %>% dyAxis("y", label = "active")
+```
+
+## World
+
+```{r world_dya}
+dygraph(wide_world_cases) %>% dyRangeSelector(height = 20, strokeColor = "") %>% dyAxis("y", label = "cases")
+```
+
+```{r world_dyb}
+dygraph(wide_world_deaths) %>% dyRangeSelector(height = 20, strokeColor = "") %>% dyAxis("y", label = "deaths")
+```
+
+```{r world_dyc}
+dygraph(wide_world_recovered) %>% dyRangeSelector(height = 20, strokeColor = "") %>% dyAxis("y", label = "recovered")
+```
+
+```{r world_dyd}
+dygraph(wide_world_active) %>% dyRangeSelector(height = 20, strokeColor = "") %>% dyAxis("y", label = "active")
+```
 
 <br /><br />
 
 ```{r update}
-print(paste("Last updated:", 
-  format(Sys.Date(), "%b %d %Y")))
+update()
 ```

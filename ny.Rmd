@@ -3,26 +3,15 @@ title: "New York Times"
 ---
 
 ```{r setup, include=FALSE}
-pacman::p_load(pacman, package)
-
-libraries()
+package::libraries()
 
 wdset("D:/COVID-project/")
 
-states <- us_states() %>% 
-  my_continent %>% 
-  rename(state = name)
+states <- states()
+county <- county()
+ny_county <- county() %>% newyork()
 
-ny_county <- us_counties() %>% 
-  rename(county = name) %>% 
-  newyork %>% 
-  select(- statefp, - jurisdiction_type) %>% 
-  rename(state = state_name)
-```
-
-```{r data, include=FALSE}
-us <- my_read("./read-data/nytimes/nytimes_us.csv") %>% 
-  rename(cases = us_cases) %>% rename(deaths = us_deaths)
+us <- my_read("./read-data/nytimes/nytimes_us.csv") %>% short_name()
 
 state <- my_read("./read-data/nytimes/nytimes_state_pop.csv") %>% 
   mutate(`pop/mil` = pop/1000000)
@@ -36,21 +25,15 @@ county_prop <- my_read("./read-data/nytimes/nytimes_county_proportions.csv")
 tops <- state %>% filter(state_abbr == c("NY", "NJ", "MA", "RI", "CT"))
 
 prop_state <- left_join(state_prop, states, by = c("state", "state_abbr")) %>% 
-  filter(date == Sys.Yesterday()) %>% 
+  filter_yesterday() %>% 
   select(- date) %>% 
-  mutate(case_pop = round(as.numeric(case_pop),4)) %>% 
-  mutate(case_death = round(as.numeric(case_death),4)) %>% 
-  mutate(death_pop = round(as.numeric(death_pop),4)) %>% 
-  mutate(death_case = round(as.numeric(death_case),4))
+  covid_prop()
 
-ny_county_prop <- county_prop %>% filter(date == Sys.Yesterday()) %>% filter(state_abbr == "NY")
+ny_county_prop <- county_prop %>% filter_yesterday() %>% newyork()
 
-prop_county <- left_join(ny_county_prop, ny_county, by = c("state", "state_abbr", "county")) %>% 
+prop_county_ny <- left_join(ny_county_prop, ny_county, by = c("state", "state_abbr", "county")) %>% 
   select(- date, - state_abbr) %>% 
-  mutate(case_pop = round(as.numeric(case_pop),4)) %>% 
-  mutate(case_death = round(as.numeric(case_death),4)) %>% 
-  mutate(death_pop = round(as.numeric(death_pop),4)) %>% 
-  mutate(death_case = round(as.numeric(death_case),4))
+  covid_prop()
 ```
 
 ## Find Distribution 
@@ -118,7 +101,7 @@ This plot shows the percent of the population that has died for COVID-19.
 ### New York 
 
 ```{r newyorka}
-ggplot(data = prop_county) +
+ggplot(data = prop_county_ny) +
   geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
   guides(color = FALSE) + 
   geom_text(aes(label = (as.numeric(case_pop)*100), geometry = geometry), 
@@ -130,7 +113,7 @@ ggplot(data = prop_county) +
 This plot shows the percent of the population that has tested positive for COVID-19 in the counties of New York.
 
 ```{r newyorkb}
-ggplot(data = prop_county) +
+ggplot(data = prop_county_ny) +
   geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
   guides(color = FALSE) + 
   geom_text(aes(label = (as.numeric(death_pop)*100), geometry = geometry), 
@@ -166,7 +149,7 @@ This plot shows how the cases and deaths relate and compare. I divided both case
 ### New York
 
 ```{r newyorkc}
-ggplot(data = prop_county) +
+ggplot(data = prop_county_ny) +
   geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
   guides(color = FALSE) + 
   geom_text(aes(label = (as.numeric(death_case)*100), geometry = geometry), 
@@ -180,6 +163,5 @@ This plot shows the percent of the people that test positive die from COVID-19 i
 <br /><br />
 
 ```{r update}
-print(paste("Last updated:", 
-  format(Sys.Date(), "%b %d %Y")))
+update()
 ```

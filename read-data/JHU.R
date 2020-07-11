@@ -67,13 +67,52 @@ us_deaths_long <- us_deaths %>%
 
 ## Joining
 
-global <- left_join(left_join(global_cases_long, global_deaths_long), global_recovered_long) %>% 
-  mutate(active = cases - (deaths + recovered))  %>% 
+global <- left_join(left_join(global_cases_long, global_deaths_long), global_recovered_long) 
+
+global$date <- as.Date(global$date, "%m/%d/%y")    
+  
+global <- global %>% mutate(active = cases - (deaths + recovered))  %>% 
   write_csv("JHU_global.csv")
 
-us_pop <- left_join(left_join(us_cases_long, us_deaths_long), counties) %>% 
-  select(date, county, state, state_abbr, cases, deaths, pop) %>% 
+us_pop <- left_join(left_join(us_cases_long, us_deaths_long), counties)
+
+us_pop$date <- as.Date(us_pop$date, "%m/%d/%y") 
+
+us_pop <- us_pop %>% select(date, county, state, state_abbr, cases, deaths, pop) %>% 
   write_csv("JHU_us_pop.csv")
 
-us <- us_pop %>% select(- pop) %>% 
-  write_csv("JHU_us.csv")
+us <- us_pop %>% select(- pop) %>% write_csv("JHU_us.csv")
+
+# Wrangling, & Save
+
+us_state <- us %>% 
+  group_by(state, date) %>% 
+  summarise(cases = sum(cases), deaths = sum(deaths)) %>% 
+  write_csv("JHU_us_state.csv") 
+
+china_state <- global %>% 
+  filter(country == "China") %>% 
+  group_by(state, date) %>% 
+  my_jhu_wrangle() %>% 
+  write_csv("JHU_china_state.csv")
+
+china <- global %>% 
+  filter(country == "China") %>% 
+  group_by(date) %>% 
+  my_jhu_wrangle() %>% 
+  write_csv("JHU_china.csv")
+
+world <- global %>% 
+  group_by(country, date) %>% 
+  my_jhu_wrangle() %>% 
+  write_csv("JHU_world.csv")
+
+earth <- global %>% 
+  group_by(date) %>% 
+  my_jhu_wrangle() %>% 
+  write_csv("JHU_earth.csv")
+
+usa <- us %>% 
+  group_by(date) %>% 
+  summarise(cases = sum(cases), deaths = sum(deaths)) %>% 
+  write_csv("JHU_usa.csv")

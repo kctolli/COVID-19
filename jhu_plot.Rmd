@@ -2,56 +2,220 @@
 title: "JHU Plots"
 ---
 
-```{r setwd, eval=FALSE, include=FALSE}
-here <- "D:/COVID-project/" 
-setwd(here)
-getwd()
-```
-
 ```{r setup, include=FALSE}
-pacman::p_load(pacman)
-p_load(knitr, tidyverse)
-p_load(lubridate, sf, USAboundaries, ggrepel, maps, leaflet, dygraphs, data.table, DT)
+package::libraries()
 
-opts_chunk$set(echo = TRUE)
-options(scipen = 999)
-options(warn = -1) 
+wdset("D:/COVID-project/")
 
-yesterday <- Sys.Date() - 1
+states <- states()
+county <- county()
+ny_county <- county() %>% newyork()
 
-my_read <- function(df){read_csv(df) %>% unique() %>% na.omit()}
-
-states <- us_states() %>% 
-  filter(!state_abbr %in% c("AK","HI","PR")) %>% 
-  rename(state = name)
-
-ny_county <- us_counties() %>% 
-  rename(county = name) %>% 
-  filter(state_abbr == "NY") %>% 
-  select(- statefp, - jurisdiction_type) %>% 
-  rename(state = state_name)
-```
-
-```{r data, include=FALSE}
 global <- my_read("./read-data/JHU/JHU_global.csv") 
 us_pop <- my_read("./read-data/JHU/JHU_us_pop.csv")
-us <- my_read("./read-data/JHU/JHU_us.csv")
+us <- my_read("./read-data/JHU/JHU_usa.csv") 
+
+us_state <- my_read("./read-data/JHU/JHU_us_state.csv") 
+china_state <- my_read("./read-data/JHU/JHU_china_state.csv")
+china <- my_read("./read-data/JHU/JHU_china.csv")
+world <- my_read("./read-data/JHU/JHU_world.csv")
+earth <- my_read("./read-data/JHU/JHU_earth.csv")
 ```
 
-```{r view-data, eval=False, include=False}
-View(global)
-View(us_pop)
-View(us)
+```{r us}
+wide_us_cases <- us_state %>% select(- deaths) %>% 
+  pivot_wider(names_from = state, values_from = cases) %>% 
+  tk_xts(., date_var = date)
+
+wide_us_deaths <- us_state %>% select(- cases) %>% 
+  pivot_wider(names_from = state, values_from = deaths) %>% 
+  tk_xts(., date_var = date)
 ```
 
-```{r wrangling}
+```{r china}
+wide_china_cases <- china_state %>% 
+  select(- deaths, - recovered, - active) %>% 
+  pivot_wider(names_from = state, values_from = cases) %>% 
+  tk_xts(., date_var = date)
 
+wide_china_deaths <- china_state %>% 
+  select(- cases, - recovered, - active) %>% 
+  pivot_wider(names_from = state, values_from = deaths) %>% 
+  tk_xts(., date_var = date)
+
+wide_china_recovered <- china_state %>% 
+  select(- deaths, - cases, - active) %>% 
+  pivot_wider(names_from = state, values_from = recovered) %>% 
+  tk_xts(., date_var = date)
+
+wide_china_active <- china_state %>% 
+  select(- cases, - recovered, - deaths) %>% 
+  pivot_wider(names_from = state, values_from = active) %>% 
+  tk_xts(., date_var = date)
 ```
 
+```{r world}
+wide_world_cases <- world %>% 
+  select(- deaths, - recovered, - active) %>% 
+  pivot_wider(names_from = country, values_from = cases) %>% 
+  tk_xts(., date_var = date)
+
+wide_world_deaths <- world %>% 
+  select(- cases, - recovered, - active) %>% 
+  pivot_wider(names_from = country, values_from = deaths) %>% 
+  tk_xts(., date_var = date)
+
+wide_world_recovered <- world %>% 
+  select(- deaths, - cases, - active) %>% 
+  pivot_wider(names_from = country, values_from = recovered) %>% 
+  tk_xts(., date_var = date)
+
+wide_world_active <- world %>% 
+  select(- cases, - recovered, - deaths) %>% 
+  pivot_wider(names_from = country, values_from = active) %>% 
+  tk_xts(., date_var = date)
+```
+
+## USA
+
+### ggplots
+
+```{r usa}
+ggplot(data = us, aes(x = date, y = cases)) +
+  geom_line() + 
+  theme_bw()
+```
+
+```{r usb}
+ggplot(data = us, aes(x = date, y = deaths)) +
+  geom_line() + 
+  theme_bw()
+```
+
+### dygraphs
+
+```{r us_dya}
+dygraph(wide_us_cases) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "cases")
+```
+
+```{r us_dyb}
+dygraph(wide_us_deaths) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "deaths")
+```
+
+## China
+
+### ggplots
+
+```{r chinaa}
+ggplot(data = china, aes(x = date, y = cases)) +
+  geom_line() + 
+  theme_bw()
+```
+
+```{r chinab}
+ggplot(data = china, aes(x = date, y = deaths)) +
+  geom_line() + 
+  theme_bw()
+```
+
+```{r chinad}
+ggplot(data = china, aes(x = date, y = recovered)) +
+  geom_line() + 
+  theme_bw()
+```
+
+```{r chinac}
+ggplot(data = china, aes(x = date, y = active)) +
+  geom_line() + 
+  theme_bw()
+```
+
+### dygraphs
+
+```{r china_dya}
+dygraph(wide_china_cases) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "cases")
+```
+
+```{r china_dyb}
+dygraph(wide_china_deaths) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "deaths")
+```
+
+```{r china_dyc}
+dygraph(wide_china_recovered) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "recovered")
+```
+
+```{r china_dyd}
+dygraph(wide_china_active) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "active")
+```
+
+## World
+
+### ggplots
+
+```{r worlda}
+ggplot(data = world, aes(x = date, y = cases, fill = country)) +
+  geom_col() + facet_wrap(~country) +
+  theme_bw()
+```
+
+```{r worldb}
+ggplot(data = world, aes(x = date, y = deaths, fill = country)) +
+  geom_col() + facet_wrap(~country) + 
+  theme_bw()
+```
+
+```{r worldd}
+ggplot(data = world, aes(x = date, y = recovered, fill = country)) +
+  geom_col() + facet_wrap(~country) +
+  theme_bw()
+```
+
+```{r worldc}
+ggplot(data = world, aes(x = date, y = active, fill = country)) +
+  geom_col() + facet_wrap(~country) + 
+  theme_bw()
+```
+
+### dygraphs
+
+```{r world_dya}
+dygraph(wide_world_cases) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "cases")
+```
+
+```{r world_dyb}
+dygraph(wide_world_deaths) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "deaths")
+```
+
+```{r world_dyc}
+dygraph(wide_world_recovered) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "recovered")
+```
+
+```{r world_dyd}
+dygraph(wide_world_active) %>% 
+  dyRangeSelector(height = 20, strokeColor = "") %>% 
+  dyAxis("y", label = "active")
+```
 
 <br /><br />
 
 ```{r update}
-print(paste("Last updated:", 
-  format(Sys.Date(), "%b %d %Y")))
+update()
 ```

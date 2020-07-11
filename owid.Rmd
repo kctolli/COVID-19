@@ -15,8 +15,8 @@ ecdc <- my_read("./read-data/OWID/owid_ecdc.csv")
 continent <- owid %>% group_by(date, continent) %>% my_owid_wrangle()
 world <- owid %>% group_by(date) %>% my_owid_wrangle() 
 
-yesterday_continent <- continent %>% filter(date >= Sys.Week()) 
-yesterday_world <- world %>% filter(date >= Sys.Week())  
+yesterday_continent <- continent %>% filter_week()
+yesterday_world <- world %>% filter_week()
 ```
 
 ## Relationship with Continents
@@ -177,5 +177,5 @@ datatable(caption = 'This Tibble shows COVID-19 data for the last 2 weeks in the
 <br /><br />
 
 ```{r update}
-update
+update()
 ```

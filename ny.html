@@ -501,21 +501,15 @@ div.tocify {
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>tops &lt;-<span class="st"> </span>state <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(state_abbr <span class="op">==</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>, <span class="st">&quot;NJ&quot;</span>, <span class="st">&quot;MA&quot;</span>, <span class="st">&quot;RI&quot;</span>, <span class="st">&quot;CT&quot;</span>))</span>
 <span id="cb1-2"><a href="#cb1-2"></a></span>
 <span id="cb1-3"><a href="#cb1-3"></a>prop_state &lt;-<span class="st"> </span><span class="kw">left_join</span>(state_prop, states, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;state&quot;</span>, <span class="st">&quot;state_abbr&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Yesterday</span>()) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="st">  </span><span class="kw">filter_yesterday</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
 <span id="cb1-5"><a href="#cb1-5"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="st"> </span>date) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">case_pop =</span> <span class="kw">round</span>(<span class="kw">as.numeric</span>(case_pop),<span class="dv">4</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">case_death =</span> <span class="kw">round</span>(<span class="kw">as.numeric</span>(case_death),<span class="dv">4</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">death_pop =</span> <span class="kw">round</span>(<span class="kw">as.numeric</span>(death_pop),<span class="dv">4</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-9"><a href="#cb1-9"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">death_case =</span> <span class="kw">round</span>(<span class="kw">as.numeric</span>(death_case),<span class="dv">4</span>))</span>
-<span id="cb1-10"><a href="#cb1-10"></a></span>
-<span id="cb1-11"><a href="#cb1-11"></a>ny_county_prop &lt;-<span class="st"> </span>county_prop <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(date <span class="op">==</span><span class="st"> </span><span class="kw">Sys.Yesterday</span>()) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(state_abbr <span class="op">==</span><span class="st"> &quot;NY&quot;</span>)</span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a>prop_county &lt;-<span class="st"> </span><span class="kw">left_join</span>(ny_county_prop, ny_county, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;state&quot;</span>, <span class="st">&quot;state_abbr&quot;</span>, <span class="st">&quot;county&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-14"><a href="#cb1-14"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="st"> </span>date, <span class="op">-</span><span class="st"> </span>state_abbr) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-15"><a href="#cb1-15"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">case_pop =</span> <span class="kw">round</span>(<span class="kw">as.numeric</span>(case_pop),<span class="dv">4</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-16"><a href="#cb1-16"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">case_death =</span> <span class="kw">round</span>(<span class="kw">as.numeric</span>(case_death),<span class="dv">4</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-17"><a href="#cb1-17"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">death_pop =</span> <span class="kw">round</span>(<span class="kw">as.numeric</span>(death_pop),<span class="dv">4</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-18"><a href="#cb1-18"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">death_case =</span> <span class="kw">round</span>(<span class="kw">as.numeric</span>(death_case),<span class="dv">4</span>))</span></code></pre></div>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="st">  </span><span class="kw">covid_prop</span>()</span>
+<span id="cb1-7"><a href="#cb1-7"></a></span>
+<span id="cb1-8"><a href="#cb1-8"></a>ny_county_prop &lt;-<span class="st"> </span>county_prop <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter_yesterday</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">newyork</span>()</span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a>prop_county_ny &lt;-<span class="st"> </span><span class="kw">left_join</span>(ny_county_prop, ny_county, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;state&quot;</span>, <span class="st">&quot;state_abbr&quot;</span>, <span class="st">&quot;county&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-11"><a href="#cb1-11"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="st"> </span>date, <span class="op">-</span><span class="st"> </span>state_abbr) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-12"><a href="#cb1-12"></a><span class="st">  </span><span class="kw">covid_prop</span>()</span></code></pre></div>
 <div id="find-distribution" class="section level2">
 <h2>Find Distribution</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> state) <span class="op">+</span><span class="st"> </span></span>
@@ -566,7 +560,7 @@ div.tocify {
 <p>This plot shows the percent of the population that has died for COVID-19.</p>
 <div id="new-york" class="section level3">
 <h3>New York</h3>
-<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_county) <span class="op">+</span></span>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_county_ny) <span class="op">+</span></span>
 <span id="cb8-2"><a href="#cb8-2"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">geometry =</span> geometry), <span class="dt">fill =</span> <span class="ot">NA</span>,  <span class="dt">color =</span> <span class="st">&quot;Black&quot;</span>) <span class="op">+</span></span>
 <span id="cb8-3"><a href="#cb8-3"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb8-4"><a href="#cb8-4"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(case_pop)<span class="op">*</span><span class="dv">100</span>), <span class="dt">geometry =</span> geometry), </span>
@@ -575,7 +569,7 @@ div.tocify {
 <span id="cb8-7"><a href="#cb8-7"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="ny_files/figure-html/newyorka-1.png" width="1152" /></p>
 <p>This plot shows the percent of the population that has tested positive for COVID-19 in the counties of New York.</p>
-<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_county) <span class="op">+</span></span>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_county_ny) <span class="op">+</span></span>
 <span id="cb9-2"><a href="#cb9-2"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">geometry =</span> geometry), <span class="dt">fill =</span> <span class="ot">NA</span>,  <span class="dt">color =</span> <span class="st">&quot;Black&quot;</span>) <span class="op">+</span></span>
 <span id="cb9-3"><a href="#cb9-3"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb9-4"><a href="#cb9-4"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(death_pop)<span class="op">*</span><span class="dv">100</span>), <span class="dt">geometry =</span> geometry), </span>
@@ -604,7 +598,7 @@ div.tocify {
 <p>This plot shows how the cases and deaths relate and compare. I divided both cases and deaths by 1000 so its per thousand cases and per thousand deaths.</p>
 <div id="new-york-1" class="section level3">
 <h3>New York</h3>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_county) <span class="op">+</span></span>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_county_ny) <span class="op">+</span></span>
 <span id="cb12-2"><a href="#cb12-2"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">geometry =</span> geometry), <span class="dt">fill =</span> <span class="ot">NA</span>,  <span class="dt">color =</span> <span class="st">&quot;Black&quot;</span>) <span class="op">+</span></span>
 <span id="cb12-3"><a href="#cb12-3"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb12-4"><a href="#cb12-4"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(death_case)<span class="op">*</span><span class="dv">100</span>), <span class="dt">geometry =</span> geometry), </span>
@@ -614,9 +608,8 @@ div.tocify {
 <p><img src="ny_files/figure-html/newyorkc-1.png" width="1152" /></p>
 <p>This plot shows the percent of the people that test positive die from COVID-19 in the counties of New York.</p>
 <p><br /><br /></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Last updated:&quot;</span>, </span>
-<span id="cb13-2"><a href="#cb13-2"></a>  <span class="kw">format</span>(<span class="kw">Sys.Date</span>(), <span class="st">&quot;%b %d %Y&quot;</span>)))</span></code></pre></div>
-<pre><code>## [1] &quot;Last updated: Jul 09 2020&quot;</code></pre>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">update</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;Last updated: Jul 10 2020&quot;</code></pre>
 </div>
 </div>
 
