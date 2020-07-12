@@ -25,15 +25,19 @@ pal <- colorNumeric("viridis", NULL)
 us_cases <- state_us %>% 
   filter_yesterday() %>%
   select(state, cases, pop, geometry) %>% 
+  filter(!(state %in% c("Alaska", "Hawaii"))) %>% 
   group_by(state) %>% 
   mutate(percent = as.numeric((cases/pop)*100)) %>% 
-  select(-cases, -pop)
+  ungroup() %>% 
+  select(-cases, -pop) 
 
 us_deaths <- state_us %>% 
   filter_yesterday() %>%
   select(state, deaths, pop, geometry) %>% 
+  filter(!(state %in% c("Alaska", "Hawaii"))) %>% 
   group_by(state) %>% 
   mutate(percent = as.numeric((deaths/pop)*100)) %>% 
+  ungroup() %>% 
   select(-deaths, -pop)
 ```
 
