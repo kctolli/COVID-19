@@ -4,16 +4,10 @@ navbar:
   left:
     - text: "Johns Hopkins"
       menu:
-      - text: "Basic Plots"
+      - text: "Plots"
         href: ./jhu_plot.html
       - text: "---------------" 
-      - text: "Basic Maps"
-        href: ./jhu_map.html      
-      - text: "---------------"   
-      - text: "Interactive Graphs"
-        href: ./jhu_dygraph.html      
-      - text: "---------------" 
-      - text: "Interactive Maps"
+      - text: "Maps"
         href: ./jhu_leaflet.html
     - text: "New York Times"
       href: ./ny.html     
