@@ -11,8 +11,8 @@ navbar:
         href: ./jhu_leaflet.html
     - text: "New York Times"
       href: ./ny.html     
-    - text: "Our World in Data"
-      href: ./owid.html                
+    #- text: "Our World in Data"
+      #href: ./owid.html                
     - text: "Reports"   
       href:  ./reports/index.html 
     - text: "Contact Me"

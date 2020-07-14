@@ -12,39 +12,45 @@ wdset("D:/COVID-project/")
 
 pop <- my_read("./read-data/USA/population_2018.csv")
 
-owid <- my_read("./read-data/OWID/owid_data.csv")
-world <- my_read("./read-data/OWID/owid_world.csv")
-
 us <- my_read("./read-data/nytimes/nytimes_us.csv")
+
+jhu <- my_read("./read-data/JHU/JHU_global.csv")
 ```
 
 ```{r wrangling}
-continent <- owid %>% group_by(date, continent) %>% my_owid_wrangle()
-world <- owid %>% group_by(date) %>% my_owid_wrangle() 
-
-yesterday_continent <- continent %>% filter(date >= Sys.Week()) 
-yesterday_world <- world %>% filter(date >= Sys.Week()) 
-
 yesterday_us <- us %>% 
   rename(cases = us_cases) %>% 
   rename(deaths = us_deaths) %>% 
   filter(date >= Sys.Week()) 
+
+jhu_world <- jhu %>% 
+  group_by(date) %>% 
+  summarize(cases = sum(cases), 
+            deaths = sum(deaths), 
+            active = sum(active), 
+            recovered = sum(recovered))
+
+yesterday_jhu_world <- jhu_world %>% filter(date >= Sys.Week())
 ```
 
 ```{r pic, fig.align='center', out.width='50%'}
 include_graphics('https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg')
 ```
 
-## Current Cases and Deaths in the USA
+## Current Data in the USA
+
+Below is a table of current data from the last week in the US using New York Times data.
 
 ```{r us}
 kable(yesterday_us)
 ```
 
-## Current Cases and Deaths for the World
+## Current Data for the World
+
+Below is a table of current data from the last week for the whole world using JHU data.
 
 ```{r world}
-kable(yesterday_world)
+kable(yesterday_jhu_world)
 ```
 
 <br /> <br />

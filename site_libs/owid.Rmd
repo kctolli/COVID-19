@@ -124,22 +124,6 @@ ggplot(data = world, aes(x = date, y = new_deaths/100)) +
 
 This plot shows new deaths each day for the whole world. I divided total deaths by one hundred so it's per one hundred deaths.
 
-### Tests
-
-```{r testswa}
-ggplot(data = world, aes(x = date, y = total_tests/1000000)) +
-  geom_line() + theme_bw()
-```
-
-This plot shows how total tests have increased over time for the whole world. I divided total tests by one million so it's per one million cases. 
-
-```{r testswb}
-ggplot(data = world, aes(x = date, y = new_tests/1000)) +
-  geom_line() + theme_bw()
-```
-
-This plot shows new tests each day for the whole world. I divided total tests by one thousand so it's per one thousand tests.
-
 <br /><br />
 
 ## Data Tables
