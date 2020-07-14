@@ -445,19 +445,11 @@ div.tocify {
   </a>
   <ul class="dropdown-menu" role="menu">
     <li>
-      <a href="./jhu_plot.html">Basic Plots</a>
+      <a href="./jhu_plot.html">Plots</a>
     </li>
     <li class="divider"></li>
     <li>
-      <a href="./jhu_map.html">Basic Maps</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="./jhu_dygraph.html">Interactive Graphs</a>
-    </li>
-    <li class="divider"></li>
-    <li>
-      <a href="./jhu_leaflet.html">Interactive Maps</a>
+      <a href="./jhu_leaflet.html">Maps</a>
     </li>
   </ul>
 </li>
@@ -498,18 +490,13 @@ div.tocify {
 </div>
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>tops &lt;-<span class="st"> </span>state <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(state_abbr <span class="op">==</span><span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;NY&quot;</span>, <span class="st">&quot;NJ&quot;</span>, <span class="st">&quot;MA&quot;</span>, <span class="st">&quot;RI&quot;</span>, <span class="st">&quot;CT&quot;</span>))</span>
-<span id="cb1-2"><a href="#cb1-2"></a></span>
-<span id="cb1-3"><a href="#cb1-3"></a>prop_state &lt;-<span class="st"> </span><span class="kw">left_join</span>(state_prop, states, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;state&quot;</span>, <span class="st">&quot;state_abbr&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="st">  </span><span class="kw">filter_yesterday</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-5"><a href="#cb1-5"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="st"> </span>date) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-6"><a href="#cb1-6"></a><span class="st">  </span><span class="kw">covid_prop</span>()</span>
-<span id="cb1-7"><a href="#cb1-7"></a></span>
-<span id="cb1-8"><a href="#cb1-8"></a>ny_county_prop &lt;-<span class="st"> </span>county_prop <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter_yesterday</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">newyork</span>()</span>
-<span id="cb1-9"><a href="#cb1-9"></a></span>
-<span id="cb1-10"><a href="#cb1-10"></a>prop_county_ny &lt;-<span class="st"> </span><span class="kw">left_join</span>(ny_county_prop, ny_county, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;state&quot;</span>, <span class="st">&quot;state_abbr&quot;</span>, <span class="st">&quot;county&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-11"><a href="#cb1-11"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="st"> </span>date, <span class="op">-</span><span class="st"> </span>state_abbr) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-12"><a href="#cb1-12"></a><span class="st">  </span><span class="kw">covid_prop</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>prop_state &lt;-<span class="st"> </span><span class="kw">left_join</span>(state_prop, states, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;state&quot;</span>, <span class="st">&quot;state_abbr&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="st">  </span><span class="kw">filter_yesterday</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">select</span>(<span class="op">-</span><span class="st"> </span>date) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">covid_prop</span>()</span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a>ny_county_prop &lt;-<span class="st"> </span>county_prop <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter_yesterday</span>() <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">newyork</span>()</span>
+<span id="cb1-5"><a href="#cb1-5"></a></span>
+<span id="cb1-6"><a href="#cb1-6"></a>prop_county_ny &lt;-<span class="st"> </span><span class="kw">left_join</span>(ny_county_prop, ny_county, <span class="dt">by =</span> <span class="kw">c</span>(<span class="st">&quot;state&quot;</span>, <span class="st">&quot;state_abbr&quot;</span>, <span class="st">&quot;county&quot;</span>)) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-7"><a href="#cb1-7"></a><span class="st">  </span><span class="kw">select</span>(<span class="op">-</span><span class="st"> </span>date, <span class="op">-</span><span class="st"> </span>state_abbr) <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">covid_prop</span>()</span></code></pre></div>
 <div id="find-distribution" class="section level2">
 <h2>Find Distribution</h2>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> state) <span class="op">+</span><span class="st"> </span></span>
@@ -524,40 +511,36 @@ div.tocify {
 <p><img src="ny_files/figure-html/find_top_complete-2.png" width="1152" /></p>
 <p>These plots visualize the top five states with covid cases and deaths per population.</p>
 </div>
-<div id="top-5-states" class="section level2">
-<h2>Top 5 states</h2>
-<p>The top five states are Connecticut, Massachusetts, New Jersey, New York and Rhode Island.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> tops, <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> cases, <span class="dt">color =</span> state)) <span class="op">+</span></span>
-<span id="cb4-2"><a href="#cb4-2"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb4-3"><a href="#cb4-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">size =</span> <span class="st">`</span><span class="dt">pop/mil</span><span class="st">`</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb4-4"><a href="#cb4-4"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
-<p><img src="ny_files/figure-html/top_5a-1.png" width="1152" /></p>
-<p>This plot shows cases with respect to date. It is colored by state and points are sized by million population.</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> tops, <span class="kw">aes</span>(<span class="dt">x =</span> date, <span class="dt">y =</span> deaths, <span class="dt">color =</span> state)) <span class="op">+</span></span>
-<span id="cb5-2"><a href="#cb5-2"></a><span class="st">  </span><span class="kw">geom_line</span>() <span class="op">+</span><span class="st"> </span></span>
-<span id="cb5-3"><a href="#cb5-3"></a><span class="st">  </span><span class="kw">geom_point</span>(<span class="kw">aes</span>(<span class="dt">size =</span> <span class="st">`</span><span class="dt">pop/mil</span><span class="st">`</span>)) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb5-4"><a href="#cb5-4"></a><span class="st">  </span><span class="kw">theme_bw</span>()</span></code></pre></div>
-<p><img src="ny_files/figure-html/top_5b-1.png" width="1152" /></p>
-<p>This plot shows deaths with respect to date. It is colored by state and points are sized by million population.</p>
-</div>
 <div id="maps" class="section level2">
 <h2>Maps</h2>
-<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_state) <span class="op">+</span></span>
-<span id="cb6-2"><a href="#cb6-2"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">geometry =</span> geometry), <span class="dt">fill =</span> <span class="ot">NA</span>,  <span class="dt">color =</span> <span class="st">&quot;Black&quot;</span>) <span class="op">+</span></span>
-<span id="cb6-3"><a href="#cb6-3"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb6-4"><a href="#cb6-4"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(case_pop)<span class="op">*</span><span class="dv">100</span>), <span class="dt">geometry =</span> geometry), <span class="dt">stat =</span> <span class="st">&quot;sf_coordinates&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
-<span id="cb6-5"><a href="#cb6-5"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
-<span id="cb6-6"><a href="#cb6-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_state) <span class="op">+</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">geometry =</span> geometry), <span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">color =</span> <span class="st">&quot;Black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb4-3"><a href="#cb4-3"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(cases)), <span class="dt">geometry =</span> geometry), <span class="dt">stat =</span> <span class="st">&quot;sf_coordinates&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="ny_files/figure-html/mappingc-1.png" width="1152" /></p>
+<p>This plot shows the exact value of cases from COVID-19.</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_state) <span class="op">+</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">geometry =</span> geometry), <span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">color =</span> <span class="st">&quot;Black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(case_pop)<span class="op">*</span><span class="dv">100</span>), <span class="dt">geometry =</span> geometry), <span class="dt">stat =</span> <span class="st">&quot;sf_coordinates&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="ny_files/figure-html/mappinga-1.png" width="1152" /></p>
-<p>This plot shows the percent of the population that has tested positive for COVID-19.</p>
+<p>This plot shows the percent of the population that has tested positive from COVID-19.</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_state) <span class="op">+</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">geometry =</span> geometry), <span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">color =</span> <span class="st">&quot;Black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb6-3"><a href="#cb6-3"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(deaths)), <span class="dt">geometry =</span> geometry), <span class="dt">stat =</span> <span class="st">&quot;sf_coordinates&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
+<span id="cb6-4"><a href="#cb6-4"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb6-5"><a href="#cb6-5"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
+<p><img src="ny_files/figure-html/mappingd-1.png" width="1152" /></p>
+<p>This plot shows the exact value of deaths from COVID-19.</p>
 <div class="sourceCode" id="cb7"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_state) <span class="op">+</span></span>
-<span id="cb7-2"><a href="#cb7-2"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">geometry =</span> geometry), <span class="dt">fill =</span> <span class="ot">NA</span>,  <span class="dt">color =</span> <span class="st">&quot;Black&quot;</span>) <span class="op">+</span></span>
-<span id="cb7-3"><a href="#cb7-3"></a><span class="st">  </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
-<span id="cb7-4"><a href="#cb7-4"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(death_pop)<span class="op">*</span><span class="dv">100</span>), <span class="dt">geometry =</span> geometry), <span class="dt">stat =</span> <span class="st">&quot;sf_coordinates&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
-<span id="cb7-5"><a href="#cb7-5"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
-<span id="cb7-6"><a href="#cb7-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
+<span id="cb7-2"><a href="#cb7-2"></a><span class="st">  </span><span class="kw">geom_sf</span>(<span class="kw">aes</span>(<span class="dt">geometry =</span> geometry), <span class="dt">fill =</span> <span class="ot">NA</span>, <span class="dt">color =</span> <span class="st">&quot;Black&quot;</span>) <span class="op">+</span><span class="st"> </span><span class="kw">guides</span>(<span class="dt">color =</span> <span class="ot">FALSE</span>) <span class="op">+</span><span class="st"> </span></span>
+<span id="cb7-3"><a href="#cb7-3"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(death_pop)<span class="op">*</span><span class="dv">100</span>), <span class="dt">geometry =</span> geometry), <span class="dt">stat =</span> <span class="st">&quot;sf_coordinates&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
+<span id="cb7-4"><a href="#cb7-4"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
+<span id="cb7-5"><a href="#cb7-5"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="ny_files/figure-html/mappingb-1.png" width="1152" /></p>
-<p>This plot shows the percent of the population that has died for COVID-19.</p>
+<p>This plot shows the percent of the population that has died from COVID-19.</p>
 <div id="new-york" class="section level3">
 <h3>New York</h3>
 <div class="sourceCode" id="cb8"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1"></a><span class="kw">ggplot</span>(<span class="dt">data =</span> prop_county_ny) <span class="op">+</span></span>
@@ -577,7 +560,7 @@ div.tocify {
 <span id="cb9-6"><a href="#cb9-6"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span><span class="st"> </span></span>
 <span id="cb9-7"><a href="#cb9-7"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="ny_files/figure-html/newyorkb-1.png" width="1152" /></p>
-<p>This plot shows the percent of the population that has died for COVID-19 in the counties of New York.</p>
+<p>This plot shows the percent of the population that has died from COVID-19 in the counties of New York.</p>
 </div>
 </div>
 <div id="cases-per-death" class="section level2">
@@ -588,7 +571,7 @@ div.tocify {
 <span id="cb10-4"><a href="#cb10-4"></a><span class="st">  </span><span class="kw">geom_text</span>(<span class="kw">aes</span>(<span class="dt">label =</span> (<span class="kw">as.numeric</span>(death_case)<span class="op">*</span><span class="dv">100</span>), <span class="dt">geometry =</span> geometry), <span class="dt">stat =</span> <span class="st">&quot;sf_coordinates&quot;</span>, <span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="fl">2.5</span>) <span class="op">+</span></span>
 <span id="cb10-5"><a href="#cb10-5"></a><span class="st">  </span><span class="kw">theme_bw</span>() <span class="op">+</span></span>
 <span id="cb10-6"><a href="#cb10-6"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
-<p><img src="ny_files/figure-html/mappingc-1.png" width="1152" /></p>
+<p><img src="ny_files/figure-html/mappingz-1.png" width="1152" /></p>
 <p>This plot shows the percent of the people that test positive die from COVID-19.</p>
 <div class="sourceCode" id="cb11"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1"></a><span class="kw">ggplot</span>(<span class="dt">data=</span>us, <span class="kw">aes</span>(<span class="dt">x =</span> cases<span class="op">/</span><span class="dv">1000</span>, <span class="dt">y =</span> deaths<span class="op">/</span><span class="dv">1000</span>)) <span class="op">+</span><span class="st"> </span></span>
 <span id="cb11-2"><a href="#cb11-2"></a><span class="st">  </span><span class="kw">geom_smooth</span>(<span class="dt">color =</span> <span class="st">&quot;black&quot;</span>, <span class="dt">size =</span> <span class="fl">1.5</span>, <span class="dt">method =</span> <span class="st">&quot;loess&quot;</span>, <span class="dt">formula =</span> y <span class="op">~</span><span class="st"> </span>x) <span class="op">+</span></span>
@@ -609,7 +592,7 @@ div.tocify {
 <p>This plot shows the percent of the people that test positive die from COVID-19 in the counties of New York.</p>
 <p><br /><br /></p>
 <div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">update</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;Last updated: Jul 10 2020&quot;</code></pre>
+<pre><code>## [1] &quot;Last updated: Jul 13 2020&quot;</code></pre>
 </div>
 </div>
 

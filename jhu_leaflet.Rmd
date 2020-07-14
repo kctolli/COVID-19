@@ -8,6 +8,8 @@ package::libraries()
 
 wdset("D:/COVID-project/")
 
+pal <- colorNumeric("RdYlBu", NULL)
+
 states <- states() 
 county <- county()
 ny_county <- newyork(county)
@@ -19,29 +21,23 @@ us_state <- my_read("./read-data/JHU/JHU_us_state.csv")
 
 state_us <- inner_join(inner_join(us_state, pop), states, by = ("state_name" = "state"))
 
-pal <- colorNumeric("viridis", NULL) 
-
 us <- leaflet_manip(state_us) 
 ```
 
-## Cases and Deaths
+## Cases and Deaths -- US Map
 
 ```{r leafleta}
-leaflet(data = us) %>% addTiles() %>% 
+maps <- leaflet(data = us) %>% addTiles() 
+
+maps %>% 
   addPolygons(color = ~pal(cases), fillOpacity = 1, stroke = FALSE, group = "cases") %>%
   addPolygons(color = ~pal(deaths),fillOpacity = 1, stroke = FALSE, group = "deaths") %>%
-  addLayersControl(overlayGroups = c("cases", "deaths"))
+  addPolygons(color = ~pal(per_cases), fillOpacity = 1, stroke = FALSE, group = "case %") %>%
+  addPolygons(color = ~pal(per_deaths), fillOpacity = 1, stroke = FALSE, group = "death %") %>%
+  addLayersControl(overlayGroups = c("cases", "case %", "deaths", "death %"))
 ```
 
-## Percent of Population
-
-```{r leafletb}
-leaflet(data = us) %>% addTiles() %>% 
-  addPolygons(fillColor = ~pal(per_cases), fillOpacity = 1, stroke = FALSE, group = "case %") %>%
-  addPolygons(fillColor = ~pal(per_deaths), fillOpacity = 1, stroke = FALSE, group = "death %") %>%
-  addLayersControl(overlayGroups = c("case %", "death %"))
-```
-
+This is an interactive map called a leaflet. I set up overlay groups, you can choice between cases, case percent, deaths, death percent. The color defines the value of the group you select. See [New York Times Maps](https://kctolli.github.io/COVID-19/ny.html#Maps) for exact values. 
 
 <br /><br />
 

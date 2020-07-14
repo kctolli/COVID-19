@@ -22,18 +22,13 @@ county_prop <- my_read("./read-data/nytimes/nytimes_county_proportions.csv")
 ```
 
 ```{r Wrangling}
-tops <- state %>% filter(state_abbr == c("NY", "NJ", "MA", "RI", "CT"))
-
 prop_state <- left_join(state_prop, states, by = c("state", "state_abbr")) %>% 
-  filter_yesterday() %>% 
-  select(- date) %>% 
-  covid_prop()
+  filter_yesterday() %>% select(- date) %>% covid_prop()
 
 ny_county_prop <- county_prop %>% filter_yesterday() %>% newyork()
 
 prop_county_ny <- left_join(ny_county_prop, ny_county, by = c("state", "state_abbr", "county")) %>% 
-  select(- date, - state_abbr) %>% 
-  covid_prop()
+  select(- date, - state_abbr) %>% covid_prop()
 ```
 
 ## Find Distribution 
@@ -52,51 +47,47 @@ ggplot(data = state) +
 
 These plots visualize the top five states with covid cases and deaths per population.
 
-## Top 5 states
-
-The top five states are Connecticut, Massachusetts, New Jersey, New York and Rhode Island.
-
-```{r top_5a}
-ggplot(data = tops, aes(x = date, y = cases, color = state)) +
-  geom_line() + 
-  geom_point(aes(size = `pop/mil`)) + 
-  theme_bw()
-```
-
-This plot shows cases with respect to date. It is colored by state and points are sized by million population. 
-
-```{r top_5b}
-ggplot(data = tops, aes(x = date, y = deaths, color = state)) +
-  geom_line() + 
-  geom_point(aes(size = `pop/mil`)) + 
-  theme_bw()
-```
-
-This plot shows deaths with respect to date. It is colored by state and points are sized by million population. 
-
 ## Maps
+
+```{r mappingc}
+ggplot(data = prop_state) +
+  geom_sf(aes(geometry = geometry), fill = NA, color = "Black") + guides(color = FALSE) + 
+  geom_text(aes(label = (as.numeric(cases)), geometry = geometry), stat = "sf_coordinates", color = "black", size = 2.5) +
+  theme_bw() +
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank())
+```
+
+This plot shows the exact value of cases from COVID-19.
 
 ```{r mappinga}
 ggplot(data = prop_state) +
-  geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
-  guides(color = FALSE) + 
+  geom_sf(aes(geometry = geometry), fill = NA, color = "Black") + guides(color = FALSE) + 
   geom_text(aes(label = (as.numeric(case_pop)*100), geometry = geometry), stat = "sf_coordinates", color = "black", size = 2.5) +
   theme_bw() +
   theme(axis.title.x=element_blank(), axis.title.y=element_blank())
 ```
 
-This plot shows the percent of the population that has tested positive for COVID-19.
+This plot shows the percent of the population that has tested positive from COVID-19.
+
+```{r mappingd}
+ggplot(data = prop_state) +
+  geom_sf(aes(geometry = geometry), fill = NA, color = "Black") + guides(color = FALSE) + 
+  geom_text(aes(label = (as.numeric(deaths)), geometry = geometry), stat = "sf_coordinates", color = "black", size = 2.5) +
+  theme_bw() +
+  theme(axis.title.x=element_blank(), axis.title.y=element_blank())
+```
+
+This plot shows the exact value of deaths from COVID-19.
 
 ```{r mappingb}
 ggplot(data = prop_state) +
-  geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
-  guides(color = FALSE) + 
+  geom_sf(aes(geometry = geometry), fill = NA, color = "Black") + guides(color = FALSE) + 
   geom_text(aes(label = (as.numeric(death_pop)*100), geometry = geometry), stat = "sf_coordinates", color = "black", size = 2.5) +
   theme_bw() +
   theme(axis.title.x=element_blank(), axis.title.y=element_blank())
 ```
 
-This plot shows the percent of the population that has died for COVID-19.
+This plot shows the percent of the population that has died from COVID-19.
 
 ### New York 
 
@@ -122,11 +113,11 @@ ggplot(data = prop_county_ny) +
   theme(axis.title.x=element_blank(), axis.title.y=element_blank())
 ```
 
-This plot shows the percent of the population that has died for COVID-19 in the counties of New York.
+This plot shows the percent of the population that has died from COVID-19 in the counties of New York.
 
 ## Cases Per Death
 
-```{r mappingc}
+```{r mappingz}
 ggplot(data = prop_state) +
   geom_sf(aes(geometry = geometry), fill = NA,  color = "Black") +
   guides(color = FALSE) + 
