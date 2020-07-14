@@ -4,11 +4,9 @@ author: "Kyle Tolliver"
 ---
 
 ```{r load_libraries, include=FALSE}
-library(tidyverse)
+package::libraries()
+
+# dt <- read_csv("./time_logs/overall.csv")
 ```
 
-```{r pic, fig.align='center', out.width='50%'}
-pic <- 'https://codinginfinite.com/wp-content/uploads/2019/05/documentation-where-were-going-we-dont-need-documentation.jpg'
-knitr::include_graphics(pic)
-```
-
+<!-- What research did you have to do? What are the project specifications? What tasks were required to implement your project? How long did they take? How close were your time estimates? What resources were needed? What was your test plan to verify that it worked correctly? -->

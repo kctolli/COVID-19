@@ -2,6 +2,10 @@
 title: "Project Proposal"
 ---
 
+```{r load_libraries, include=FALSE}
+package::libraries()
+```
+
 ## Purpose
 
 <!--

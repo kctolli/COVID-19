@@ -4,8 +4,7 @@ subtitle: "Week 9"
 ---
 
 ```{r libraries, include=FALSE}
-library(tidyverse)
-library(knitr)
+package::libraries()
 
 dt <- read_csv("./time_logs/pr09.csv")
 ```
