@@ -11,7 +11,8 @@ libraries <- function() {
 
 knit_options <- function(){
   pacman::p_load(pacman, knitr)
-  opts_chunk$set(echo = TRUE, message = FALSE, warning = FALSE)
-  options(scipen = 999)
-  options(warn = -1)
+  opts_chunk$set(echo = TRUE,
+                 message = FALSE,
+                 warning = FALSE)
+  options(scipen = 999, warn = -1)
 }

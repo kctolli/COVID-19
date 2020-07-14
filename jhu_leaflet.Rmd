@@ -1,5 +1,6 @@
 ---
 title: "JHU Leaflets"
+subtitle: "US"
 ---
 
 ```{r setup, include=FALSE}
@@ -7,46 +8,40 @@ package::libraries()
 
 wdset("D:/COVID-project/")
 
-states <- states()
+states <- states() 
 county <- county()
-ny_county <- county() %>% newyork()
+ny_county <- newyork(county)
 
 pop <- my_read("./read-data/USA/population_2018.csv") %>% 
   rename(state = State) %>% rename(pop = Population)
 
 us_state <- my_read("./read-data/JHU/JHU_us_state.csv") 
 
-state_us <- left_join(left_join(us_state, pop), states, by = ("state_name" = "state"))
+state_us <- inner_join(inner_join(us_state, pop), states, by = ("state_name" = "state"))
+
+pal <- colorNumeric("viridis", NULL) 
+
+us <- leaflet_manip(state_us) 
 ```
 
-```{r wrangling}
-pal <- colorNumeric("viridis", NULL)
+## Cases and Deaths
 
-us_cases <- state_us %>% 
-  filter_yesterday() %>%
-  select(state, cases, pop, geometry) %>% 
-  filter(!(state %in% c("Alaska", "Hawaii"))) %>% 
-  group_by(state) %>% 
-  mutate(percent = as.numeric((cases/pop)*100)) %>% 
-  ungroup() %>% 
-  select(-cases, -pop) 
-
-us_deaths <- state_us %>% 
-  filter_yesterday() %>%
-  select(state, deaths, pop, geometry) %>% 
-  filter(!(state %in% c("Alaska", "Hawaii"))) %>% 
-  group_by(state) %>% 
-  mutate(percent = as.numeric((deaths/pop)*100)) %>% 
-  ungroup() %>% 
-  select(-deaths, -pop)
+```{r leafleta}
+leaflet(data = us) %>% addTiles() %>% 
+  addPolygons(color = ~pal(cases), fillOpacity = 1, stroke = FALSE, group = "cases") %>%
+  addPolygons(color = ~pal(deaths),fillOpacity = 1, stroke = FALSE, group = "deaths") %>%
+  addLayersControl(overlayGroups = c("cases", "deaths"))
 ```
 
-```{r leaflet}
-leaflet() %>% addTiles() %>% 
-  addPolygons(data = us_cases, fillColor = ~pal(percent), group = "cases") %>%
-  addPolygons(data = us_deaths, fillColor = ~pal(percent), group = "deaths") %>%
-  addLayersControl(overlayGroups = c("cases", "deaths"), options = layersControlOptions(collapsed = FALSE))
+## Percent of Population
+
+```{r leafletb}
+leaflet(data = us) %>% addTiles() %>% 
+  addPolygons(fillColor = ~pal(per_cases), fillOpacity = 1, stroke = FALSE, group = "case %") %>%
+  addPolygons(fillColor = ~pal(per_deaths), fillOpacity = 1, stroke = FALSE, group = "death %") %>%
+  addLayersControl(overlayGroups = c("case %", "death %"))
 ```
+
 
 <br /><br />
 

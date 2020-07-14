@@ -120,6 +120,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Maine,ME,3460,110
 2020-07-09,Maine,ME,3486,111
 2020-07-10,Maine,ME,3499,111
+2020-07-11,Maine,ME,3520,112
+2020-07-12,Maine,ME,3539,114
 2020-01-26,Arizona,AZ,1,0
 2020-01-27,Arizona,AZ,1,0
 2020-01-28,Arizona,AZ,1,0
@@ -286,7 +288,9 @@ date,state,state_abbr,cases,deaths
 2020-07-07,Arizona,AZ,105159,1933
 2020-07-08,Arizona,AZ,108710,1973
 2020-07-09,Arizona,AZ,112783,2047
-2020-07-10,Arizona,AZ,116913,2093
+2020-07-10,Arizona,AZ,116947,2093
+2020-07-11,Arizona,AZ,119991,2158
+2020-07-12,Arizona,AZ,122479,2239
 2020-03-11,Arkansas,AR,1,0
 2020-03-12,Arkansas,AR,6,0
 2020-03-13,Arkansas,AR,7,0
@@ -409,6 +413,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Arkansas,AR,25246,305
 2020-07-09,Arkansas,AR,26052,309
 2020-07-10,Arkansas,AR,26803,313
+2020-07-11,Arkansas,AR,27864,319
+2020-07-12,Arkansas,AR,28367,321
 2020-03-11,Delaware,DE,1,0
 2020-03-12,Delaware,DE,4,0
 2020-03-13,Delaware,DE,4,0
@@ -531,6 +537,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Delaware,DE,12462,515
 2020-07-09,Delaware,DE,12531,517
 2020-07-10,Delaware,DE,12652,517
+2020-07-11,Delaware,DE,12743,517
+2020-07-12,Delaware,DE,12804,517
 2020-03-02,Georgia,GA,2,0
 2020-03-03,Georgia,GA,2,0
 2020-03-04,Georgia,GA,2,0
@@ -662,6 +670,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Georgia,GA,96538,2871
 2020-07-09,Georgia,GA,98693,2880
 2020-07-10,Georgia,GA,103597,2915
+2020-07-11,Georgia,GA,106574,2946
+2020-07-12,Georgia,GA,108389,2951
 2020-03-06,Minnesota,MN,1,0
 2020-03-07,Minnesota,MN,1,0
 2020-03-08,Minnesota,MN,2,0
@@ -789,6 +799,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Minnesota,MN,39627,1523
 2020-07-09,Minnesota,MN,40201,1528
 2020-07-10,Minnesota,MN,40805,1533
+2020-07-11,Minnesota,MN,41609,1537
+2020-07-12,Minnesota,MN,42319,1540
 2020-01-25,California,CA,1,0
 2020-01-26,California,CA,2,0
 2020-01-27,California,CA,2,0
@@ -956,7 +968,9 @@ date,state,state_abbr,cases,deaths
 2020-07-07,California,CA,287766,6563
 2020-07-08,California,CA,296304,6708
 2020-07-09,California,CA,303516,6825
-2020-07-10,California,CA,311297,6936
+2020-07-10,California,CA,311505,6936
+2020-07-11,California,CA,320030,7012
+2020-07-12,California,CA,327676,7042
 2020-03-07,District of Columbia,DC,1,0
 2020-03-08,District of Columbia,DC,1,0
 2020-03-09,District of Columbia,DC,4,0
@@ -1083,6 +1097,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,District of Columbia,DC,10642,564
 2020-07-09,District of Columbia,DC,10679,568
 2020-07-10,District of Columbia,DC,10743,568
+2020-07-11,District of Columbia,DC,10801,568
+2020-07-12,District of Columbia,DC,10847,568
 2020-03-01,Florida,FL,2,0
 2020-03-02,Florida,FL,2,0
 2020-03-03,Florida,FL,3,0
@@ -1215,6 +1231,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Florida,FL,223775,3888
 2020-07-09,Florida,FL,232710,4008
 2020-07-10,Florida,FL,244143,4101
+2020-07-11,Florida,FL,254503,4196
+2020-07-12,Florida,FL,269803,4241
 2020-03-13,Idaho,ID,1,0
 2020-03-14,Idaho,ID,5,0
 2020-03-15,Idaho,ID,5,0
@@ -1335,6 +1353,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Idaho,ID,9004,98
 2020-07-09,Idaho,ID,9598,101
 2020-07-10,Idaho,ID,10073,101
+2020-07-11,Idaho,ID,10584,102
+2020-07-12,Idaho,ID,10971,102
 2020-01-24,Illinois,IL,1,0
 2020-01-25,Illinois,IL,1,0
 2020-01-26,Illinois,IL,1,0
@@ -1504,6 +1524,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Illinois,IL,151055,7315
 2020-07-09,Illinois,IL,152188,7333
 2020-07-10,Illinois,IL,153406,7349
+2020-07-11,Illinois,IL,154523,7372
+2020-07-12,Illinois,IL,155355,7391
 2020-03-08,Iowa,IA,3,0
 2020-03-09,Iowa,IA,8,0
 2020-03-10,Iowa,IA,13,0
@@ -1628,7 +1650,9 @@ date,state,state_abbr,cases,deaths
 2020-07-07,Iowa,IA,32153,732
 2020-07-08,Iowa,IA,32716,739
 2020-07-09,Iowa,IA,33316,742
-2020-07-10,Iowa,IA,34172,743
+2020-07-10,Iowa,IA,34232,748
+2020-07-11,Iowa,IA,34695,748
+2020-07-12,Iowa,IA,35410,752
 2020-03-06,Kentucky,KY,1,0
 2020-03-07,Kentucky,KY,1,0
 2020-03-08,Kentucky,KY,4,0
@@ -1755,7 +1779,9 @@ date,state,state_abbr,cases,deaths
 2020-07-07,Kentucky,KY,17820,630
 2020-07-08,Kentucky,KY,18204,634
 2020-07-09,Kentucky,KY,18576,640
-2020-07-10,Kentucky,KY,19061,647
+2020-07-10,Kentucky,KY,19076,647
+2020-07-11,Kentucky,KY,19530,647
+2020-07-12,Kentucky,KY,19762,649
 2020-03-09,Louisiana,LA,1,0
 2020-03-10,Louisiana,LA,6,0
 2020-03-11,Louisiana,LA,13,0
@@ -1880,6 +1906,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Louisiana,LA,70259,3339
 2020-07-09,Louisiana,LA,72102,3355
 2020-07-10,Louisiana,LA,74744,3380
+2020-07-11,Louisiana,LA,76911,3403
+2020-07-12,Louisiana,LA,78230,3416
 2020-03-05,Maryland,MD,3,0
 2020-03-06,Maryland,MD,3,0
 2020-03-07,Maryland,MD,3,0
@@ -2008,6 +2036,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Maryland,MD,71455,3275
 2020-07-09,Maryland,MD,72037,3288
 2020-07-10,Maryland,MD,72503,3303
+2020-07-11,Maryland,MD,73060,3310
+2020-07-12,Maryland,MD,73705,3319
 2020-03-10,Michigan,MI,2,0
 2020-03-11,Michigan,MI,2,0
 2020-03-12,Michigan,MI,12,0
@@ -2131,6 +2161,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Michigan,MI,74660,6266
 2020-07-09,Michigan,MI,75247,6275
 2020-07-10,Michigan,MI,75871,6288
+2020-07-11,Michigan,MI,76499,6316
+2020-07-12,Michigan,MI,76936,6317
 2020-03-07,Missouri,MO,1,0
 2020-03-08,Missouri,MO,1,0
 2020-03-09,Missouri,MO,1,0
@@ -2256,7 +2288,9 @@ date,state,state_abbr,cases,deaths
 2020-07-07,Missouri,MO,25566,1083
 2020-07-08,Missouri,MO,26343,1089
 2020-07-09,Missouri,MO,27301,1095
-2020-07-10,Missouri,MO,27800,1101
+2020-07-10,Missouri,MO,28060,1107
+2020-07-11,Missouri,MO,28649,1112
+2020-07-12,Missouri,MO,29173,1113
 2020-03-13,Montana,MT,4,0
 2020-03-14,Montana,MT,6,0
 2020-03-15,Montana,MT,6,0
@@ -2377,6 +2411,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Montana,MT,1371,23
 2020-07-09,Montana,MT,1466,25
 2020-07-10,Montana,MT,1593,28
+2020-07-11,Montana,MT,1677,29
+2020-07-12,Montana,MT,1758,29
 2020-03-01,New York,NY,1,0
 2020-03-02,New York,NY,1,0
 2020-03-03,New York,NY,2,0
@@ -2509,6 +2545,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,New York,NY,403619,31945
 2020-07-09,New York,NY,404207,31979
 2020-07-10,New York,NY,404997,32004
+2020-07-11,New York,NY,405724,32019
+2020-07-12,New York,NY,406403,32029
 2020-02-28,Oregon,OR,1,0
 2020-02-29,Oregon,OR,1,0
 2020-03-01,Oregon,OR,2,0
@@ -2643,6 +2681,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Oregon,OR,10824,227
 2020-07-09,Oregon,OR,11195,233
 2020-07-10,Oregon,OR,11454,235
+2020-07-11,Oregon,OR,11851,235
+2020-07-12,Oregon,OR,12170,237
 2020-03-05,Tennessee,TN,1,0
 2020-03-06,Tennessee,TN,1,0
 2020-03-07,Tennessee,TN,1,0
@@ -2771,6 +2811,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Tennessee,TN,54756,678
 2020-07-09,Tennessee,TN,56531,700
 2020-07-10,Tennessee,TN,58224,713
+2020-07-11,Tennessee,TN,59981,728
+2020-07-12,Tennessee,TN,61106,731
 2020-02-12,Texas,TX,1,0
 2020-02-13,Texas,TX,2,0
 2020-02-14,Texas,TX,2,0
@@ -2920,7 +2962,9 @@ date,state,state_abbr,cases,deaths
 2020-07-07,Texas,TX,219164,2816
 2020-07-08,Texas,TX,229116,2935
 2020-07-09,Texas,TX,240025,3037
-2020-07-10,Texas,TX,248108,3095
+2020-07-10,Texas,TX,249948,3129
+2020-07-11,Texas,TX,258280,3206
+2020-07-12,Texas,TX,264811,3246
 2020-03-07,Virginia,VA,1,0
 2020-03-08,Virginia,VA,2,0
 2020-03-09,Virginia,VA,5,0
@@ -3047,6 +3091,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Virginia,VA,67375,1905
 2020-07-09,Virginia,VA,67988,1937
 2020-07-10,Virginia,VA,68931,1958
+2020-07-11,Virginia,VA,69782,1962
+2020-07-12,Virginia,VA,70670,1966
 2020-02-05,Wisconsin,WI,1,0
 2020-02-06,Wisconsin,WI,1,0
 2020-02-07,Wisconsin,WI,1,0
@@ -3204,6 +3250,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Wisconsin,WI,36526,818
 2020-07-09,Wisconsin,WI,37358,821
 2020-07-10,Wisconsin,WI,38414,825
+2020-07-11,Wisconsin,WI,39095,829
+2020-07-12,Wisconsin,WI,39901,828
 2020-03-10,South Dakota,SD,5,1
 2020-03-11,South Dakota,SD,8,1
 2020-03-12,South Dakota,SD,8,1
@@ -3327,6 +3375,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,South Dakota,SD,7242,98
 2020-07-09,South Dakota,SD,7336,101
 2020-07-10,South Dakota,SD,7401,107
+2020-07-11,South Dakota,SD,7454,109
+2020-07-12,South Dakota,SD,7499,109
 2020-02-25,Utah,UT,1,0
 2020-02-26,Utah,UT,1,0
 2020-02-27,Utah,UT,1,0
@@ -3464,6 +3514,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Utah,UT,26921,201
 2020-07-09,Utah,UT,27632,205
 2020-07-10,Utah,UT,28452,207
+2020-07-11,Utah,UT,29071,212
+2020-07-12,Utah,UT,29552,215
 2020-03-06,Indiana,IN,1,0
 2020-03-07,Indiana,IN,1,0
 2020-03-08,Indiana,IN,2,0
@@ -3591,6 +3643,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Indiana,IN,50309,2732
 2020-07-09,Indiana,IN,50829,2739
 2020-07-10,Indiana,IN,51567,2748
+2020-07-11,Indiana,IN,52358,2756
+2020-07-12,Indiana,IN,52892,2760
 2020-02-01,Massachusetts,MA,1,0
 2020-02-02,Massachusetts,MA,1,0
 2020-02-03,Massachusetts,MA,1,0
@@ -3752,6 +3806,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Massachusetts,MA,110602,8243
 2020-07-09,Massachusetts,MA,110897,8268
 2020-07-10,Massachusetts,MA,111110,8296
+2020-07-11,Massachusetts,MA,111398,8310
+2020-07-12,Massachusetts,MA,111597,8325
 2020-03-11,Mississippi,MS,1,0
 2020-03-12,Mississippi,MS,1,0
 2020-03-13,Mississippi,MS,6,0
@@ -3874,6 +3930,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Mississippi,MS,32888,1188
 2020-07-09,Mississippi,MS,33591,1204
 2020-07-10,Mississippi,MS,34622,1215
+2020-07-11,Mississippi,MS,35419,1230
+2020-07-12,Mississippi,MS,36287,1249
 2020-02-17,Nebraska,NE,10,0
 2020-02-18,Nebraska,NE,10,0
 2020-02-19,Nebraska,NE,10,0
@@ -4019,6 +4077,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Nebraska,NE,20437,291
 2020-07-09,Nebraska,NE,20658,294
 2020-07-10,Nebraska,NE,20834,294
+2020-07-11,Nebraska,NE,21035,296
+2020-07-12,Nebraska,NE,21214,296
 2020-03-11,New Mexico,NM,4,0
 2020-03-12,New Mexico,NM,6,0
 2020-03-13,New Mexico,NM,10,0
@@ -4141,6 +4201,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,New Mexico,NM,14017,527
 2020-07-09,New Mexico,NM,14251,533
 2020-07-10,New Mexico,NM,14549,539
+2020-07-11,New Mexico,NM,14773,543
+2020-07-12,New Mexico,NM,15028,545
 2020-03-03,North Carolina,NC,1,0
 2020-03-04,North Carolina,NC,1,0
 2020-03-05,North Carolina,NC,1,0
@@ -4271,6 +4333,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,North Carolina,NC,77735,1470
 2020-07-09,North Carolina,NC,79648,1487
 2020-07-10,North Carolina,NC,81821,1502
+2020-07-11,North Carolina,NC,84087,1519
+2020-07-12,North Carolina,NC,85924,1531
 2020-03-01,Rhode Island,RI,2,0
 2020-03-02,Rhode Island,RI,2,0
 2020-03-03,Rhode Island,RI,2,0
@@ -4403,6 +4467,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Rhode Island,RI,17204,971
 2020-07-09,Rhode Island,RI,17243,974
 2020-07-10,Rhode Island,RI,17312,976
+2020-07-11,Rhode Island,RI,17312,976
+2020-07-12,Rhode Island,RI,17312,976
 2020-03-09,Ohio,OH,3,0
 2020-03-10,Ohio,OH,3,0
 2020-03-11,Ohio,OH,4,0
@@ -4527,6 +4593,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Ohio,OH,60181,2991
 2020-07-09,Ohio,OH,61331,3006
 2020-07-10,Ohio,OH,62856,3032
+2020-07-11,Ohio,OH,64214,3036
+2020-07-12,Ohio,OH,65592,3058
 2020-03-06,Oklahoma,OK,1,0
 2020-03-07,Oklahoma,OK,1,0
 2020-03-08,Oklahoma,OK,1,0
@@ -4654,6 +4722,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Oklahoma,OK,17893,407
 2020-07-09,Oklahoma,OK,18496,410
 2020-07-10,Oklahoma,OK,19092,416
+2020-07-11,Oklahoma,OK,19779,421
+2020-07-12,Oklahoma,OK,20235,422
 2020-03-06,South Carolina,SC,2,0
 2020-03-07,South Carolina,SC,2,0
 2020-03-08,South Carolina,SC,6,0
@@ -4781,6 +4851,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,South Carolina,SC,48909,884
 2020-07-09,South Carolina,SC,50691,905
 2020-07-10,South Carolina,SC,52419,929
+2020-07-11,South Carolina,SC,54699,951
+2020-07-12,South Carolina,SC,56648,961
 2020-03-05,Colorado,CO,2,0
 2020-03-06,Colorado,CO,8,0
 2020-03-07,Colorado,CO,8,0
@@ -4908,7 +4980,9 @@ date,state,state_abbr,cases,deaths
 2020-07-07,Colorado,CO,34717,1709
 2020-07-08,Colorado,CO,35185,1707
 2020-07-09,Colorado,CO,35604,1707
-2020-07-10,Colorado,CO,36196,1724
+2020-07-10,Colorado,CO,36210,1724
+2020-07-11,Colorado,CO,36633,1725
+2020-07-12,Colorado,CO,36933,1726
 2020-03-07,Kansas,KS,1,0
 2020-03-08,Kansas,KS,1,0
 2020-03-09,Kansas,KS,1,0
@@ -5034,7 +5108,9 @@ date,state,state_abbr,cases,deaths
 2020-07-07,Kansas,KS,17157,290
 2020-07-08,Kansas,KS,17807,291
 2020-07-09,Kansas,KS,18031,294
-2020-07-10,Kansas,KS,18762,294
+2020-07-10,Kansas,KS,18799,294
+2020-07-11,Kansas,KS,18983,294
+2020-07-12,Kansas,KS,19295,300
 2020-03-08,Connecticut,CT,1,0
 2020-03-09,Connecticut,CT,2,0
 2020-03-10,Connecticut,CT,2,0
@@ -5160,6 +5236,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Connecticut,CT,47108,4343
 2020-07-09,Connecticut,CT,47209,4348
 2020-07-10,Connecticut,CT,47287,4348
+2020-07-11,Connecticut,CT,47287,4348
+2020-07-12,Connecticut,CT,47287,4348
 2020-03-05,Nevada,NV,2,0
 2020-03-06,Nevada,NV,2,0
 2020-03-07,Nevada,NV,2,0
@@ -5288,6 +5366,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Nevada,NV,24378,556
 2020-07-09,Nevada,NV,25055,574
 2020-07-10,Nevada,NV,25961,581
+2020-07-11,Nevada,NV,26912,592
+2020-07-12,Nevada,NV,27745,593
 2020-01-21,Washington,WA,1,0
 2020-01-22,Washington,WA,1,0
 2020-01-23,Washington,WA,1,0
@@ -5459,7 +5539,9 @@ date,state,state_abbr,cases,deaths
 2020-07-07,Washington,WA,39063,1385
 2020-07-08,Washington,WA,39661,1395
 2020-07-09,Washington,WA,40369,1410
-2020-07-10,Washington,WA,41002,1412
+2020-07-10,Washington,WA,41090,1426
+2020-07-11,Washington,WA,41326,1426
+2020-07-12,Washington,WA,42181,1438
 2020-03-17,West Virginia,WV,1,0
 2020-03-18,West Virginia,WV,2,0
 2020-03-19,West Virginia,WV,5,0
@@ -5576,6 +5658,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,West Virginia,WV,3707,95
 2020-07-09,West Virginia,WV,3826,95
 2020-07-10,West Virginia,WV,3983,95
+2020-07-11,West Virginia,WV,4146,96
+2020-07-12,West Virginia,WV,4244,96
 2020-03-11,Wyoming,WY,1,0
 2020-03-12,Wyoming,WY,1,0
 2020-03-13,Wyoming,WY,2,0
@@ -5698,6 +5782,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Wyoming,WY,1740,21
 2020-07-09,Wyoming,WY,1774,21
 2020-07-10,Wyoming,WY,1790,21
+2020-07-11,Wyoming,WY,1839,21
+2020-07-12,Wyoming,WY,1862,21
 2020-03-13,Alabama,AL,6,0
 2020-03-14,Alabama,AL,12,0
 2020-03-15,Alabama,AL,23,0
@@ -5818,6 +5904,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Alabama,AL,46962,1058
 2020-07-09,Alabama,AL,49174,1068
 2020-07-10,Alabama,AL,50508,1104
+2020-07-11,Alabama,AL,51947,1114
+2020-07-12,Alabama,AL,53587,1121
 2020-03-02,New Hampshire,NH,1,0
 2020-03-03,New Hampshire,NH,2,0
 2020-03-04,New Hampshire,NH,2,0
@@ -5949,6 +6037,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,New Hampshire,NH,5952,386
 2020-07-09,New Hampshire,NH,5973,387
 2020-07-10,New Hampshire,NH,5991,390
+2020-07-11,New Hampshire,NH,6024,391
+2020-07-12,New Hampshire,NH,6054,391
 2020-03-04,New Jersey,NJ,1,0
 2020-03-05,New Jersey,NJ,2,0
 2020-03-06,New Jersey,NJ,4,0
@@ -6078,6 +6168,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,New Jersey,NJ,175986,15423
 2020-07-09,New Jersey,NJ,176217,15448
 2020-07-10,New Jersey,NJ,176575,15479
+2020-07-11,New Jersey,NJ,176906,15525
+2020-07-12,New Jersey,NJ,177245,15525
 2020-03-11,North Dakota,ND,1,0
 2020-03-12,North Dakota,ND,1,0
 2020-03-13,North Dakota,ND,1,0
@@ -6200,6 +6292,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,North Dakota,ND,3975,89
 2020-07-09,North Dakota,ND,4074,89
 2020-07-10,North Dakota,ND,4158,89
+2020-07-11,North Dakota,ND,4247,91
+2020-07-12,North Dakota,ND,4338,91
 2020-03-06,Pennsylvania,PA,2,0
 2020-03-07,Pennsylvania,PA,4,0
 2020-03-08,Pennsylvania,PA,6,0
@@ -6327,6 +6421,8 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Pennsylvania,PA,96817,6864
 2020-07-09,Pennsylvania,PA,97634,6895
 2020-07-10,Pennsylvania,PA,98574,6929
+2020-07-11,Pennsylvania,PA,99252,6945
+2020-07-12,Pennsylvania,PA,99794,6950
 2020-03-07,Vermont,VT,1,0
 2020-03-08,Vermont,VT,1,0
 2020-03-09,Vermont,VT,1,0
@@ -6453,3 +6549,5 @@ date,state,state_abbr,cases,deaths
 2020-07-08,Vermont,VT,1256,56
 2020-07-09,Vermont,VT,1272,56
 2020-07-10,Vermont,VT,1277,56
+2020-07-11,Vermont,VT,1283,56
+2020-07-12,Vermont,VT,1296,56

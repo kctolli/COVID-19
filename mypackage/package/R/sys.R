@@ -8,8 +8,7 @@ getinstallr <- function(){
 }
 
 Rtools <- function(){
-  pacman::p_load(pacman, installr)
-  install.Rtools()
+  pacman::p_load(installr); install.Rtools()
 }
 
 pacupdate <- function(){
@@ -32,11 +31,17 @@ updater <- function(){
 }
 
 network <- function(){
-  pacman::p_load(pacman,installr)
+  pacman::p_load(pacman, installr)
   myip(); cranometer()
 }
 
 gitinstall <- function(){
-  pacman::p_load(pacman,installr)
+  pacman::p_load(pacman, installr)
   install.git(); install.GitHub()
+}
+
+usa_install <- function(){
+  pacman::p_load(pacman, installr, devtools)
+  install_github("ropensci/USAboundaries")
+  install_github("ropensci/USAboundariesData")
 }

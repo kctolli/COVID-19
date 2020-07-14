@@ -73,3 +73,12 @@ covid_prop <- function(df){
     mutate(death_pop = round(as.numeric(death_pop),4)) %>%
     mutate(death_case = round(as.numeric(death_case),4))
 }
+
+leaflet_manip <- function(df){
+  df %>% filter_yesterday() %>%
+    filter(!state %in% c("Alaska", "Hawaii")) %>%
+    st_as_sf() %>%
+    ungroup() %>%
+    mutate(per_cases = as.numeric((cases/pop)*100)) %>%
+    mutate(per_deaths = as.numeric((deaths/pop)*100))
+}
