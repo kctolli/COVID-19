@@ -14,7 +14,27 @@ navbar:
     #- text: "Our World in Data"
       #href: ./owid.html                
     - text: "Reports"   
-      href:  ./reports/index.html 
+      menu: 
+      - text: "Project Proposal"
+        href: ./proposal-project.html 
+      - text: "---------------"                        
+      - text: "Progress Reports"   
+        menu:
+        - text: "Week 3"
+          href: ./pr03.html 
+        - text: "---------------"  
+        - text: "Week 6"
+          href: ./pr06.html 
+        - text: "---------------" 
+        - text: "Week 9"
+          href: ./pr09.html 
+        - text: "---------------" 
+        - text: "Week 12"
+          href: ./pr12.html 
+      - text: "---------------"    
+      - text: "Final Report"
+        href: ./final-report.html    
+  right:  
     - text: "Contact Me"
       href: ./contact.html
         

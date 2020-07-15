@@ -1,0 +1,87 @@
+---
+title: "Progress Report"
+subtitle: "Week 9"
+---
+
+```{r libraries, include=FALSE}
+package::libraries()
+
+dt <- read_csv("./time_logs/pr09.csv")
+```
+
+
+## Work Schedule --- Updated
+
+Below I have divided the tasks in three-week interval which a line progress reports. 
+
+### Progress Report 4 (Due 7/11)
+
+* Last steps website
+  + Finalize visualizations 
+  + Finalize YML
+  + Finalize tibbles
+* Start report
+
+### Final Delivery (7/22)
+
+* Finish data presentation website
+* Peer reviewed 
+  + Make edits/modifications
+* Complete report
+
+### Whole Semester (4/20 - 7/22)
+
+Throughout the semester I will spend time gaining knowledge on the follow as it relates to my project:  
+
+&emsp; (Notes and Resources will be posted in the organizations github repos)
+
+* Ethics in Data
+* Consulting in Statistics and Data Science
+* Analysis - Poor, [Good, Better, Best](https://www.churchofjesuschrist.org/study/general-conference/2007/10/good-better-best?lang=eng)
+* R packages
+* Making Inferences with Data
+* Learn more about the 
+  + [ggplot](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0)
+  + [sf plots](https://r-spatial.github.io/sf/articles/sf1.html)
+  + [leaflet](https://leafletjs.com/)
+  + [dygraphs](https://rstudio.github.io/dygraphs/)
+  + other plot tools
+* and more
+
+## Accomplishments 
+
+### Progress Report 1 (Due 5/9)
+
+* Start Project
+  + Proposal
+* Do some data research
+* Find data sets to work with
+  + Such as [JHUs github](https://github.com/CSSEGISandData/COVID-19)
+  + Or [CDC](https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/whoAllregt_phl15.html) flu data
+* Create github organization
+* Host the website in main repo
+
+### Progress Report 2 (Due 5/30)
+
+* Load in the data sets
+  + Look through the data set
+* Data_Push R package (Data host repo)  
+* Start wrangling
+* Make basic visualizations to see the data
+* Develop YML file 
+
+### Progress Report 3 (Due 6/20)
+
+* Wrangle and Visualize data
+  + Non-interactive plots
+  + Interactive plots
+
+### Hour Break Down
+
+```{r display}
+kable(dt)
+```
+
+## Observations 
+
+I was able to complete the framework of the YAML file. I was able to complete the visualizations for NYTimes and got started with both JHU and OWID. I did a mini project called tidy tuesday about sleep patterns. I was able to learn more about Tableau and get Data. I learned about the R package installr. I also learned more about data-driven learning and research. I believe still that I am on schedule to complete the project by the end of the week. 

@@ -9,10 +9,9 @@
 <meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
 
 
-<meta name="author" content="Kyle Tolliver" />
 
 
-<title>COVID-19</title>
+<title>Progress Report</title>
 
 <script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -516,153 +515,165 @@ div.tocify {
 
 
 
-<h1 class="title toc-ignore">COVID-19</h1>
-<h3 class="subtitle">Research and Consulting Project</h3>
-<h4 class="author">Kyle Tolliver</h4>
-<h4 class="date">BYUI - ECEN 490R</h4>
+<h1 class="title toc-ignore">Progress Report</h1>
+<h3 class="subtitle">Week 9</h3>
 
 </div>
 
 
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>yesterday_us &lt;-<span class="st"> </span>us <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">cases =</span> us_cases) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">deaths =</span> us_deaths) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="st">  </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span><span class="kw">Sys.Week</span>()) </span>
-<span id="cb1-5"><a href="#cb1-5"></a></span>
-<span id="cb1-6"><a href="#cb1-6"></a>jhu_world &lt;-<span class="st"> </span>jhu <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-7"><a href="#cb1-7"></a><span class="st">  </span><span class="kw">group_by</span>(date) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-8"><a href="#cb1-8"></a><span class="st">  </span><span class="kw">summarize</span>(<span class="dt">cases =</span> <span class="kw">sum</span>(cases), </span>
-<span id="cb1-9"><a href="#cb1-9"></a>            <span class="dt">deaths =</span> <span class="kw">sum</span>(deaths), </span>
-<span id="cb1-10"><a href="#cb1-10"></a>            <span class="dt">active =</span> <span class="kw">sum</span>(active), </span>
-<span id="cb1-11"><a href="#cb1-11"></a>            <span class="dt">recovered =</span> <span class="kw">sum</span>(recovered))</span>
-<span id="cb1-12"><a href="#cb1-12"></a></span>
-<span id="cb1-13"><a href="#cb1-13"></a>yesterday_jhu_world &lt;-<span class="st"> </span>jhu_world <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter</span>(date <span class="op">&gt;=</span><span class="st"> </span><span class="kw">Sys.Week</span>())</span></code></pre></div>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">include_graphics</span>(<span class="st">&#39;https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg&#39;</span>)</span></code></pre></div>
-<p><img src="https://images.newscientist.com/wp-content/uploads/2020/02/11165812/c0481846-wuhan_novel_coronavirus_illustration-spl.jpg" width="50%" style="display: block; margin: auto;" /></p>
-<div id="current-data-in-the-usa" class="section level2">
-<h2>Current Data in the USA</h2>
-<p>Below is a table of current data from the last week in the US using New York Times data.</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a><span class="kw">kable</span>(yesterday_us)</span></code></pre></div>
+<div id="work-schedule-updated" class="section level2">
+<h2>Work Schedule — Updated</h2>
+<p>Below I have divided the tasks in three-week interval which a line progress reports.</p>
+<div id="progress-report-4-due-711" class="section level3">
+<h3>Progress Report 4 (Due 7/11)</h3>
+<ul>
+<li>Last steps website
+<ul>
+<li>Finalize visualizations</li>
+<li>Finalize YML</li>
+<li>Finalize tibbles</li>
+</ul></li>
+<li>Start report</li>
+</ul>
+</div>
+<div id="final-delivery-722" class="section level3">
+<h3>Final Delivery (7/22)</h3>
+<ul>
+<li>Finish data presentation website</li>
+<li>Peer reviewed
+<ul>
+<li>Make edits/modifications</li>
+</ul></li>
+<li>Complete report</li>
+</ul>
+</div>
+<div id="whole-semester-420---722" class="section level3">
+<h3>Whole Semester (4/20 - 7/22)</h3>
+<p>Throughout the semester I will spend time gaining knowledge on the follow as it relates to my project:</p>
+<p>  (Notes and Resources will be posted in the organizations github repos)</p>
+<ul>
+<li>Ethics in Data</li>
+<li>Consulting in Statistics and Data Science</li>
+<li>Analysis - Poor, <a href="https://www.churchofjesuschrist.org/study/general-conference/2007/10/good-better-best?lang=eng">Good, Better, Best</a></li>
+<li>R packages</li>
+<li>Making Inferences with Data</li>
+<li>Learn more about the
+<ul>
+<li><a href="https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0">ggplot</a></li>
+<li><a href="https://r-spatial.github.io/sf/articles/sf1.html">sf plots</a></li>
+<li><a href="https://leafletjs.com/">leaflet</a></li>
+<li><a href="https://rstudio.github.io/dygraphs/">dygraphs</a></li>
+<li>other plot tools</li>
+</ul></li>
+<li>and more</li>
+</ul>
+</div>
+</div>
+<div id="accomplishments" class="section level2">
+<h2>Accomplishments</h2>
+<div id="progress-report-1-due-59" class="section level3">
+<h3>Progress Report 1 (Due 5/9)</h3>
+<ul>
+<li>Start Project
+<ul>
+<li>Proposal</li>
+</ul></li>
+<li>Do some data research</li>
+<li>Find data sets to work with
+<ul>
+<li>Such as <a href="https://github.com/CSSEGISandData/COVID-19">JHUs github</a></li>
+<li>Or <a href="https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/whoAllregt_phl15.html">CDC</a> flu data</li>
+</ul></li>
+<li>Create github organization</li>
+<li>Host the website in main repo</li>
+</ul>
+</div>
+<div id="progress-report-2-due-530" class="section level3">
+<h3>Progress Report 2 (Due 5/30)</h3>
+<ul>
+<li>Load in the data sets
+<ul>
+<li>Look through the data set</li>
+</ul></li>
+<li>Data_Push R package (Data host repo)<br />
+</li>
+<li>Start wrangling</li>
+<li>Make basic visualizations to see the data</li>
+<li>Develop YML file</li>
+</ul>
+</div>
+<div id="progress-report-3-due-620" class="section level3">
+<h3>Progress Report 3 (Due 6/20)</h3>
+<ul>
+<li>Wrangle and Visualize data
+<ul>
+<li>Non-interactive plots</li>
+<li>Interactive plots</li>
+</ul></li>
+</ul>
+</div>
+<div id="hour-break-down" class="section level3">
+<h3>Hour Break Down</h3>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">kable</span>(dt)</span></code></pre></div>
 <table>
 <thead>
 <tr class="header">
-<th align="left">date</th>
-<th align="right">cases</th>
-<th align="right">deaths</th>
+<th align="left">Description</th>
+<th align="right">Time (decimal)</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">2020-07-07</td>
-<td align="right">3012210</td>
-<td align="right">131289</td>
+<td align="left">Progress Report</td>
+<td align="right">7.667</td>
 </tr>
 <tr class="even">
-<td align="left">2020-07-08</td>
-<td align="right">3071663</td>
-<td align="right">132237</td>
+<td align="left">Tidy Tuesday</td>
+<td align="right">5.500</td>
 </tr>
 <tr class="odd">
-<td align="left">2020-07-09</td>
-<td align="right">3131549</td>
-<td align="right">133079</td>
+<td align="left">Website</td>
+<td align="right">4.750</td>
 </tr>
 <tr class="even">
-<td align="left">2020-07-10</td>
-<td align="right">3199790</td>
-<td align="right">133907</td>
+<td align="left">Proposal</td>
+<td align="right">8.333</td>
 </tr>
 <tr class="odd">
-<td align="left">2020-07-11</td>
-<td align="right">3260558</td>
-<td align="right">134582</td>
+<td align="left">Data Driven</td>
+<td align="right">9.500</td>
 </tr>
 <tr class="even">
-<td align="left">2020-07-12</td>
-<td align="right">3318347</td>
-<td align="right">134977</td>
+<td align="left">Viz</td>
+<td align="right">13.667</td>
 </tr>
 <tr class="odd">
-<td align="left">2020-07-13</td>
-<td align="right">3379839</td>
-<td align="right">135402</td>
+<td align="left">Datasets</td>
+<td align="right">23.833</td>
+</tr>
+<tr class="even">
+<td align="left">Jobs</td>
+<td align="right">19.667</td>
+</tr>
+<tr class="odd">
+<td align="left">ePortfolio/Resume</td>
+<td align="right">12.083</td>
+</tr>
+<tr class="even">
+<td align="left">GitHub</td>
+<td align="right">0.583</td>
+</tr>
+<tr class="odd">
+<td align="left">Total</td>
+<td align="right">105.583</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="current-data-for-the-world" class="section level2">
-<h2>Current Data for the World</h2>
-<p>Below is a table of current data from the last week for the whole world using JHU data.</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1"></a><span class="kw">kable</span>(yesterday_jhu_world)</span></code></pre></div>
-<table>
-<thead>
-<tr class="header">
-<th align="left">date</th>
-<th align="right">cases</th>
-<th align="right">deaths</th>
-<th align="right">active</th>
-<th align="right">recovered</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td align="left">2020-07-07</td>
-<td align="right">104725</td>
-<td align="right">4940</td>
-<td align="right">5364</td>
-<td align="right">94421</td>
-</tr>
-<tr class="even">
-<td align="left">2020-07-08</td>
-<td align="right">105228</td>
-<td align="right">4941</td>
-<td align="right">5499</td>
-<td align="right">94788</td>
-</tr>
-<tr class="odd">
-<td align="left">2020-07-09</td>
-<td align="right">105707</td>
-<td align="right">4944</td>
-<td align="right">5727</td>
-<td align="right">95036</td>
-</tr>
-<tr class="even">
-<td align="left">2020-07-10</td>
-<td align="right">106071</td>
-<td align="right">4947</td>
-<td align="right">5701</td>
-<td align="right">95423</td>
-</tr>
-<tr class="odd">
-<td align="left">2020-07-11</td>
-<td align="right">106651</td>
-<td align="right">4951</td>
-<td align="right">6012</td>
-<td align="right">95688</td>
-</tr>
-<tr class="even">
-<td align="left">2020-07-12</td>
-<td align="right">106896</td>
-<td align="right">4951</td>
-<td align="right">6184</td>
-<td align="right">95761</td>
-</tr>
-<tr class="odd">
-<td align="left">2020-07-13</td>
-<td align="right">107411</td>
-<td align="right">4954</td>
-<td align="right">6395</td>
-<td align="right">96062</td>
-</tr>
-</tbody>
-</table>
-<p><br /> <br /></p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a><span class="kw">update</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;Last updated: Jul 14 2020&quot;</code></pre>
-<p>© Copyright Kyle Tolliver, 2020</p>
-<div id="licensed-under-gnu-general-public-license-v3.0" class="section level6">
-<h6><em>— <a href="https://github.com/BYUI-COVID/BYUI-COVID.github.io/blob/master/LICENSE">Licensed</a> under <a href="./site_libs/LICENSE.txt">GNU General Public License v3.0</a> </em></h6>
 </div>
+<div id="observations" class="section level2">
+<h2>Observations</h2>
+<p>I was able to complete the framework of the YAML file. I was able to complete the visualizations for NYTimes and got started with both JHU and OWID. I did a mini project called tidy tuesday about sleep patterns. I was able to learn more about Tableau and get Data. I learned about the R package installr. I also learned more about data-driven learning and research. I believe still that I am on schedule to complete the project by the end of the week.</p>
 </div>
 
 

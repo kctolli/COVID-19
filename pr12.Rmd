@@ -1,0 +1,86 @@
+---
+title: "Progress Report"
+subtitle: "Week 12"
+---
+
+```{r setup, include=FALSE}
+package::libraries()
+
+dt <- read_csv("./time_logs/pr12.csv")
+```
+
+## Work Schedule --- Updated
+
+Below I have divided the tasks in three-week interval which a line progress reports. 
+
+### Final Delivery (7/22)
+
+* Finish data presentation website
+* Peer reviewed 
+  + Make edits/modifications
+* Complete report
+
+### Whole Semester (4/20 - 7/22)
+
+Throughout the semester I will spend time gaining knowledge on the follow as it relates to my project:  
+
+&emsp; (Notes and Resources will be posted in the organizations github repos)
+
+* Ethics in Data
+* Consulting in Statistics and Data Science
+* Analysis - Poor, [Good, Better, Best](https://www.churchofjesuschrist.org/study/general-conference/2007/10/good-better-best?lang=eng)
+* R packages
+* Making Inferences with Data
+* Learn more about the 
+  + [ggplot](https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0)
+  + [sf plots](https://r-spatial.github.io/sf/articles/sf1.html)
+  + [leaflet](https://leafletjs.com/)
+  + [dygraphs](https://rstudio.github.io/dygraphs/)
+  + other plot tools
+* and more
+
+## Accomplishments 
+
+### Progress Report 1 (Due 5/9)
+
+* Start Project
+  + Proposal
+* Do some data research
+* Find data sets to work with
+  + Such as [JHUs github](https://github.com/CSSEGISandData/COVID-19)
+  + Or [CDC](https://www.cdc.gov/flu/weekly/weeklyarchives2019-2020/data/whoAllregt_phl15.html) flu data
+* Create github organization
+* Host the website in main repo
+
+### Progress Report 2 (Due 5/30)
+
+* Load in the data sets
+  + Look through the data set
+* Data_Push R package (Data host repo)  
+* Start wrangling
+* Make basic visualizations to see the data
+* Develop YML file 
+
+### Progress Report 3 (Due 6/20)
+
+* Wrangle and Visualize data
+  + Non-interactive plots
+  + Interactive plots
+  
+### Progress Report 4 (Due 7/11)
+
+* Last steps website
+  + Finalize visualizations 
+  + Finalize YML
+  + Finalize tibbles
+* Start report  
+
+### Hour Break Down
+
+```{r display}
+kable(dt)
+```
+
+## Observations
+
+I was able to finish tibbles and am almost done with the Visualizations. I am getting an error with my leaflets. The error says: *Error in polygonData.default(data) : Don't know how to get path data from object of class tbl_df*. I am also almost completed with the yaml. I have also started with Yaml file for the website. I believe I am on track to finish if I can figure out my error, I posted the error on BYUI-datascience slack channel. I will fix my error when I find out what the solution is.      
