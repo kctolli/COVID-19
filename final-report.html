@@ -528,20 +528,176 @@ div.tocify {
 <!-- You have been working this semester on a significant hardware or software project related to your major. You have submitted bi-weekly progress reports to document that you have adhered to your schedule and worked at least 100 hours on your project. -->
 <!-- This week you will submit your Final Project Report. It must reflect the knowledge and skills expected from a senior-level student in your major. Those include writing skills as well as technical skills. In addition to being graded on your technical project work, you will be graded on your organization, your spelling, your grammar, and how well you followed the instructions for preparing your report. -->
 <!-- Your Final Project Report must be at least six or eight single-spaced pages long, not including references. (It will take at least that much to adequately document your 100-hour project.) It must include the following sections and information. -->
+<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>dt &lt;-<span class="st"> </span>time <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="st">`</span><span class="dt">Time (decimal)</span><span class="st">`</span> =<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="st">`</span><span class="dt">Time (decimal)</span><span class="st">`</span>, <span class="dt">digits =</span> <span class="dv">2</span>))) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Time =</span> <span class="st">`</span><span class="dt">Time (decimal)</span><span class="st">`</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="st">  </span><span class="kw">select</span>(Description, Time)</span></code></pre></div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <!--
 What problem or need does your project address? What does your project do? How does it solve the problem or fulfill the need? What has been done in the past by others to solve the problem or fulfill the need? Why is your project a better solution than what already existed?
 -->
 <p>I am a Software Engineering Major. Additionally I am getting an Applied Associates in Data Science. So this project is a data science type project and will include software design and development. Some of the Data Science courses I have taken include the following: <a href="https://www.byui.edu/catalog#/courses/view/a7c647e4-9dbd-43ab-9f13-882ab279c65c">Introduction to Databases</a>; <a href="https://www.byui.edu/catalog#/courses/view/5c868402f98eff24000cd2c4">Data Intuition and Insight</a>; <a href="https://www.byui.edu/catalog#/courses/view/5ce60ff8ecb90c2400a235c1">Data Wrangling, Exploration, and Visualization</a>; <a href="https://www.byui.edu/catalog#/courses/view/5c8baaf92679352400c8ad86">Database Design &amp; Development</a>; <a href="https://www.byui.edu/catalog#/courses/view/5e1628b2f98ee825009625cc">Discrete Mathematics I</a>. This project helped me strengthen the knowledge I gained from these classes, while learning new tools, techniques and technologies of Data Science.</p>
-<p>I addressed the problem of unclear data on COVID-19. Many people see the data and can’t make sense of it and what the values mean. I also figured how much of the population has been tested. I compared the techniques used to fight COVID-19, methods may include comparing the countries’ data due to each using different methods to control the spread. My project helped people better understand COVID-19 precautions, influence and data. Each plot or data table has an impact on addressing the problem of unclear COVID-19 data. There are COVID-19 dashboards already created by multiple different companies. See <a href="#Dashboards">Dashboards</a> under the references section, to see what has already been created and developed.</p>
+<p>I addressed the problem of unclear data on COVID-19. Many people see the data and can’t make sense of it and what the values mean. I also figured how much of the population has been tested. I compared the techniques used to fight COVID-19, methods may include comparing the countries’ data due to each using different methods to control the spread. My project helped people better understand COVID-19 precautions, influence and data. Each plot or data table has an impact on addressing the problem of unclear COVID-19 data. There are COVID-19 dashboards already created by multiple different companies. See <a href="https://kctolli.github.io/COVID-19/final-report.html#References">Dashboards</a> under the references section, to see what has already been created and developed.</p>
 <p>My project wasn’t just used for my personal learning, but also to provide useful data visualizations to help people understand COVID-19 and the data. My data presentation is a great solution due to the fact of using multiple different datasets to address the problem of COVID-19 data. Using different datasets allows people to compare and contrast the datasets. It also allows for new understanding and an expansion of data and visualizations.</p>
 </div>
 <div id="methods-and-procedures" class="section level2">
 <h2>Methods and Procedures</h2>
 <!-- What research did you have to do? What are the project specifications? What tasks were required to implement your project? How long did they take? How close were your time estimates? What resources were needed? What was your test plan to verify that it worked correctly? -->
-<p>I found datasets that were useful for this project. I found three useful dataset hosts; they are NYTimes, Our World in Data and JHU CSSEGIS. See <a href="#Dataset_References">Dataset References</a> under the references section, to learn about the datasets used. The data wrangling and visualization is done in R. The data analytics is presented in a github hosted website. I used Rmd with R-chunks, and YML file to organize my data. I have many plots to test the same dataset and values.</p>
+<p>I found datasets that were useful for this project. I found three useful dataset hosts; they are NYTimes, Our World in Data and JHU CSSEGIS. See <a href="https://kctolli.github.io/COVID-19/final-report.html#References">Dataset References</a> under the references section, to learn about the datasets used. The data wrangling and visualization is done in R. The data analytics is presented in a github hosted website. I used Rmd with R-chunks, and YML file to organize my data. I have many plots to test the same dataset and values.</p>
 <p>I used many R packages which include knitr, tidyverse, leaflet, sf (simple figures), dygraphs, USAboundaries, devtools, and more are used to implement the project. I also created my own R package to have functions used remotely. The package can be found on this projects <a href="https://github.com/kctolli/COVID-19/tree/master/mypackage/package">github repo</a>.</p>
+<div id="hour-breakdown" class="section level3">
+<h3>Hour Breakdown</h3>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">kable</span>(dt)</span></code></pre></div>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Description</th>
+<th align="right">Time</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Viz</td>
+<td align="right">37.33</td>
+</tr>
+<tr class="even">
+<td align="left">Progress Report</td>
+<td align="right">9.17</td>
+</tr>
+<tr class="odd">
+<td align="left">Proposal</td>
+<td align="right">8.33</td>
+</tr>
+<tr class="even">
+<td align="left">Website</td>
+<td align="right">5.33</td>
+</tr>
+<tr class="odd">
+<td align="left">GitHub</td>
+<td align="right">1.75</td>
+</tr>
+<tr class="even">
+<td align="left">Data Driven</td>
+<td align="right">9.50</td>
+</tr>
+<tr class="odd">
+<td align="left">Jobs</td>
+<td align="right">19.67</td>
+</tr>
+<tr class="even">
+<td align="left">Tidy Tuesday</td>
+<td align="right">5.50</td>
+</tr>
+<tr class="odd">
+<td align="left">Ethics</td>
+<td align="right">4.08</td>
+</tr>
+<tr class="even">
+<td align="left">Package</td>
+<td align="right">2.00</td>
+</tr>
+<tr class="odd">
+<td align="left">Datasets</td>
+<td align="right">29.08</td>
+</tr>
+<tr class="even">
+<td align="left">Final Report</td>
+<td align="right">6.50</td>
+</tr>
+<tr class="odd">
+<td align="left">ePortfolio/Resume</td>
+<td align="right">13.08</td>
+</tr>
+</tbody>
+</table>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x &lt;-<span class="st"> </span>dt<span class="op">$</span>Time</span>
+<span id="cb3-2"><a href="#cb3-2"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="kw">sum</span>(x), <span class="dt">digits =</span> <span class="dv">2</span>))</span>
+<span id="cb3-3"><a href="#cb3-3"></a></span>
+<span id="cb3-4"><a href="#cb3-4"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Total hours equal:&quot;</span>, x))</span></code></pre></div>
+<pre><code>## [1] &quot;Total hours equal: 151.32&quot;</code></pre>
+</div>
+<div id="schedule" class="section level3">
+<h3>Schedule</h3>
+<p>Below I have divided the tasks in three-week interval which a line progress reports.   I used <a href="https://clockify.me/">clockify</a> to track hours.</p>
+<div id="whole-semester" class="section level4">
+<h4>Whole Semester</h4>
+<p>Throughout the semester I spent time gaining knowledge on the follow as it relates to my project:</p>
+<ul>
+<li>R packages</li>
+<li>Making Inferences with Data</li>
+<li>Analysis - Poor, <a href="https://www.churchofjesuschrist.org/study/general-conference/2007/10/good-better-best?lang=eng">Good, Better, Best</a></li>
+<li>Data Driven Learning</li>
+<li>Data Science Technologies</li>
+<li>Resumes, Portfolios and Linkedin</li>
+</ul>
+</div>
+<div id="progress-report-1-due-59" class="section level4">
+<h4>Progress Report 1 (Due 5/9)</h4>
+<ul>
+<li>Start Project
+<ul>
+<li>Proposal</li>
+</ul></li>
+<li>Do some data research</li>
+<li>Found data sets to work with
+<ul>
+<li>Such as <a href="https://github.com/CSSEGISandData/COVID-19">JHUs github</a></li>
+</ul></li>
+<li>Created github organization</li>
+<li>Hosted the website in main repo</li>
+</ul>
+</div>
+<div id="progress-report-2-due-530" class="section level4">
+<h4>Progress Report 2 (Due 5/30)</h4>
+<ul>
+<li>Loaded in the data sets
+<ul>
+<li>Looked through the data set</li>
+</ul></li>
+<li>Started wrangling</li>
+<li>Made basic visualizations to see the data</li>
+<li>Developed YML file</li>
+</ul>
+</div>
+<div id="progress-report-3-due-620" class="section level4">
+<h4>Progress Report 3 (Due 6/20)</h4>
+<ul>
+<li>Wrangled and Visualized data
+<ul>
+<li>Non-interactive plots</li>
+<li>Interactive plots</li>
+</ul></li>
+<li>Learned more about the
+<ul>
+<li><a href="https://www.rdocumentation.org/packages/ggplot2/versions/3.3.0">ggplot</a></li>
+<li><a href="https://r-spatial.github.io/sf/articles/sf1.html">sf plots</a></li>
+<li><a href="https://leafletjs.com/">leaflet</a></li>
+<li><a href="https://rstudio.github.io/dygraphs/">dygraphs</a></li>
+<li>other plot tools</li>
+</ul></li>
+</ul>
+</div>
+<div id="progress-report-4-due-711" class="section level4">
+<h4>Progress Report 4 (Due 7/11)</h4>
+<ul>
+<li>Last website steps
+<ul>
+<li>Finalize visualizations</li>
+<li>Finalize YML</li>
+<li>Finalize tibbles</li>
+</ul></li>
+<li>Start report</li>
+</ul>
+</div>
+<div id="final-delivery-due-722" class="section level4">
+<h4>Final Delivery (Due 7/22)</h4>
+<ul>
+<li>Finish data presentation website</li>
+<li>Complete report</li>
+</ul>
+</div>
+</div>
 </div>
 <div id="results" class="section level2">
 <h2>Results</h2>
@@ -555,8 +711,8 @@ What problem or need does your project address? What does your project do? How d
 <code>addPolygons(color = ~pal(per_deaths), fillOpacity = 1, stroke = FALSE, group = "death %") %&gt;%</code><br />
 <code>addLayersControl(baseGroups = c("cases", "case %", "deaths", "death %"))</code></p>
 <p>The visualization, I would like to highlight is found on the <a href="https://kctolli.github.io/COVID-19/jhu_leaflet.html">JHU Leaflet page</a> and the code is displayed above. If you aren’t familiar with leaflet, it is a R package that is used to make interactive maps. I have four overlay groups which are cases, case percent, deaths, death percent. There are colors for the overall data of COVID-19 for the group you select. The colors are green and red, with green being low value and red being high value, which is set with the pal variable <code>pal &lt;- colorNumeric(c("green", "red"), NULL)</code>, and is implemented by the <code>~pal(value)</code>. The data of prop_states is found on this projects <a href="https://github.com/kctolli/COVID-19/tree/master/read-data/JHU">github repo</a>.</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>map &lt;-<span class="st"> &#39;./ny_files/figure-html/mappinga-1.png&#39;</span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">include_graphics</span>(map)</span></code></pre></div>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>map &lt;-<span class="st"> &#39;./ny_files/figure-html/mappinga-1.png&#39;</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a><span class="kw">include_graphics</span>(map)</span></code></pre></div>
 <p><img src="ny_files/figure-html/mappinga-1.png" width="100%" style="display: block; margin: auto;" /></p>
 <p><code>ggplot(data = prop_state) +</code><br />
 <code>geom_sf(aes(geometry = geometry), fill = NA, color = "Black") + guides(color = FALSE) +</code><br />
