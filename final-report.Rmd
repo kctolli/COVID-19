@@ -21,7 +21,7 @@ package::libraries()
 What problem or need does your project address? What does your project do? How does it solve the problem or fulfill the need? What has been done in the past by others to solve the problem or fulfill the need? Why is your project a better solution than what already existed?
 -->
 
-I am a Software Engineering Major. Additionally I am getting an Applied Associates in Data Science. So this project is a data science type project and will include software design and development. The Data Science courses I have taken include some of the following: [Introduction to Databases](https://www.byui.edu/catalog#/courses/view/a7c647e4-9dbd-43ab-9f13-882ab279c65c); [Data Intuition and Insight](https://www.byui.edu/catalog#/courses/view/5c868402f98eff24000cd2c4); [Data Wrangling, Exploration, and Visualization](https://www.byui.edu/catalog#/courses/view/5ce60ff8ecb90c2400a235c1); [Database Design & Development](https://www.byui.edu/catalog#/courses/view/5c8baaf92679352400c8ad86); [Discrete Mathematics I](https://www.byui.edu/catalog#/courses/view/5e1628b2f98ee825009625cc). This project helped me strengthen the knowledge I gained from these classes, while learning new tools and techniques of Data Science. 
+I am a Software Engineering Major. Additionally I am getting an Applied Associates in Data Science. So this project is a data science type project and will include software design and development. Some of the Data Science courses I have taken include the following: [Introduction to Databases](https://www.byui.edu/catalog#/courses/view/a7c647e4-9dbd-43ab-9f13-882ab279c65c); [Data Intuition and Insight](https://www.byui.edu/catalog#/courses/view/5c868402f98eff24000cd2c4); [Data Wrangling, Exploration, and Visualization](https://www.byui.edu/catalog#/courses/view/5ce60ff8ecb90c2400a235c1); [Database Design & Development](https://www.byui.edu/catalog#/courses/view/5c8baaf92679352400c8ad86); [Discrete Mathematics I](https://www.byui.edu/catalog#/courses/view/5e1628b2f98ee825009625cc). This project helped me strengthen the knowledge I gained from these classes, while learning new tools, techniques and technologies of Data Science. 
 
 I addressed the problem of unclear data on COVID-19. Many people see the data and can't make sense of it and what the values mean. I also figured how much of the population has been tested. I compared the techniques used to fight COVID-19, methods may include comparing the countries' data due to each using different methods to control the spread. My project helped people better understand COVID-19 precautions, influence and data. Each plot or data table has an impact on addressing the problem of unclear COVID-19 data. There are COVID-19 dashboards already created by multiple different companies. See [Dashboards](#Dashboards) under the references section, to see what has already been created and developed.
   
@@ -35,17 +35,28 @@ I found datasets that were useful for this project. I found three useful dataset
 
 I used many R packages which include knitr, tidyverse, leaflet, sf (simple figures), dygraphs, USAboundaries, devtools, and more are used to implement the project. I also created my own R package to have functions used remotely. The package can be found on this projects [github repo](https://github.com/kctolli/COVID-19/tree/master/mypackage/package).  
 
+
+
 ## Results
 
 <!-- Include, as appropriate: schematics and wiring diagrams, assembly diagrams or photos, computer code, and results of the test plan (often including a screen shot or two, and a URL for a video). -->
 
 I have created multiple different data visualizations to help address the problem of people unable to understand COVID-19 data. The website that presents the data visualizations is hosted on github: https://kctolli.github.io/COVID-19/index.html. This website shows visualizations for Johns Hopkins University and New York Times data.  
 
-The visualization, I would like to highlight is found on the [JHU Leaflet page](https://kctolli.github.io/COVID-19/jhu_leaflet.html). If you aren't familiar with leaflet, it is a R package that is used to make interactive maps. I have four overlay groups which are cases, case percent, deaths, death percent. There are colors for the overall data of COVID-19 for the group you select. The colors are green and red, with green being low value and red being high value.
+`maps <- leaflet(data = us) %>% addTiles()` 
+
+`maps %>% `    
+`  addPolygons(color = ~pal(cases), fillOpacity = 1, stroke = FALSE, group = "cases") %>%`    
+`  addPolygons(color = ~pal(deaths),fillOpacity = 1, stroke = FALSE, group = "deaths") %>%`    
+`  addPolygons(color = ~pal(per_cases), fillOpacity = 1, stroke = FALSE, group = "case %") %>%`    
+`  addPolygons(color = ~pal(per_deaths), fillOpacity = 1, stroke = FALSE, group = "death %") %>%`    
+`  addLayersControl(baseGroups = c("cases", "case %", "deaths", "death %"))`    
+
+The visualization, I would like to highlight is found on the [JHU Leaflet page](https://kctolli.github.io/COVID-19/jhu_leaflet.html) and the code is displayed above. If you aren't familiar with leaflet, it is a R package that is used to make interactive maps. I have four overlay groups which are cases, case percent, deaths, death percent. There are colors for the overall data of COVID-19 for the group you select. The colors are green and red, with green being low value and red being high value, which is set with the pal variable `pal <- colorNumeric(c("green", "red"), NULL)`, and is implemented by the `~pal(value)`. The data of prop_states is found on this projects [github repo](https://github.com/kctolli/COVID-19/tree/master/read-data/JHU).
 
 ```{r map, fig.align='center', out.width='100%'}
 map <- './ny_files/figure-html/mappinga-1.png'
-knitr::include_graphics(map)
+include_graphics(map)
 ```
 
 `ggplot(data = prop_state) +`    
@@ -54,7 +65,7 @@ knitr::include_graphics(map)
 `  theme_bw() +`    
 `  theme(axis.title.x=element_blank(), axis.title.y=element_blank())` 
 
-Above is another visualization, I'm going to highlight is found on the [New York Times page](https://kctolli.github.io/COVID-19/ny.html).  The data of prop_states is found on this projects [github repo](https://github.com/kctolli/COVID-19/tree/master/read-data/JHU). The code is also above used to create the map. The code is using the R packages sf (simple figures), USAboundaries and ggplot2 (part of the tidyverse package) to create the map.  
+Above is another visualization, I'm going to highlight is found on the [New York Times page](https://kctolli.github.io/COVID-19/ny.html). The data of prop_states is found on this projects [github repo](https://github.com/kctolli/COVID-19/tree/master/read-data/nytimes). The code is also above used to create the map. The code is using the R packages sf (simple figures), USAboundaries and ggplot2 (part of the tidyverse package) to create the map.  
 
 ## Conclusions
 
@@ -92,5 +103,5 @@ Owid. (2020). Owid/covid-19-data. Retrieved 2020,
 Babies - Netflix. (2020). Retrieved  2020,                
 &emsp; &emsp; from https://www.netflix.com/watch/80117834?trackId=13752289
 
-The Fallen of World War II - Data-driven documentary about war & peace. (n.d.). Retrieved 2020,                
+The Fallen of World War II - Data-driven documentary about war & peace. (n.d.). Retrieved 2020,             
 &emsp; &emsp; from http://www.fallen.io/ww2/
