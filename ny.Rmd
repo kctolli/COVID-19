@@ -151,6 +151,38 @@ ggplot(data = prop_county_ny) +
 
 This plot shows the percent of the people that test positive die from COVID-19 in the counties of New York.
 
+## Data Tables
+
+### States
+```{r tibblea}
+prop_state %>% 
+  select(state, cases, deaths, pop, case_death, case_pop, death_pop, death_pop, death_case) %>% 
+datatable(caption = 'This Tibble shows COVID-19 data in the states in the USA for yesterday',
+          class = 'cell-border stripe', 
+          rownames = FALSE, 
+          filter = 'top', 
+          extensions = 'Buttons',
+          options = list(buttons = c('copy', 'csv', 'pdf'), 
+                         pageLength = 5, 
+                         autoWidth = TRUE, 
+                         dom = 'Bfrtip'))
+```
+
+### Past Two Weeks
+
+```{r tibbleb}
+us %>% filter_biweek() %>% 
+datatable(caption = 'This Tibble shows COVID-19 data in the USA for the last 2 weeks',
+          class = 'cell-border stripe', 
+          rownames = FALSE, 
+          filter = 'top', 
+          extensions = 'Buttons',
+          options = list(buttons = c('copy', 'csv', 'pdf'), 
+                         pageLength = 5, 
+                         autoWidth = TRUE, 
+                         dom = 'Bfrtip'))
+```
+
 <br /><br />
 
 ```{r update}

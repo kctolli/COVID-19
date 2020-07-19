@@ -1,5 +1,5 @@
 ---
-title: "JHU Leaflets"
+title: "JHU Leaflets and Data Tables"
 ---
 
 ```{r setup, include=FALSE}
@@ -23,7 +23,7 @@ state_us <- inner_join(inner_join(us_state, pop), states, by = ("state_name" = "
 us <- leaflet_manip(state_us) 
 ```
 
-## Cases and Deaths - US Map
+## US Map
 
 ```{r leaflet}
 maps <- leaflet(data = us) %>% addTiles() 
@@ -39,6 +39,21 @@ maps %>%
 This is an interactive map called a leaflet. I set up overlay groups, you can choice between cases, case percent, deaths, death percent. The color defines the overall value of the group you select. The colors are green and red, with green being low value and red being high value.
 
 See [New York Times Maps](https://kctolli.github.io/COVID-19/ny.html#Maps) for exact values. 
+
+## Data Table
+
+```{r tibblea}
+us %>% select(state, cases, deaths, pop, per_cases, per_deaths) %>% 
+datatable(caption = 'This Tibble shows COVID-19 data in the states in the USA for yesterday',
+          class = 'cell-border stripe', 
+          rownames = FALSE, 
+          filter = 'top', 
+          extensions = 'Buttons',
+          options = list(buttons = c('copy', 'csv', 'pdf'), 
+                         pageLength = 5, 
+                         autoWidth = TRUE, 
+                         dom = 'Bfrtip'))
+```
 
 <br /><br />
 

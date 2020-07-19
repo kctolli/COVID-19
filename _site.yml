@@ -7,7 +7,7 @@ navbar:
       - text: "Plots"
         href: ./jhu_plot.html
       - text: "---------------" 
-      - text: "Maps"
+      - text: "Maps and Tables"
         href: ./jhu_leaflet.html
     - text: "New York Times"
       href: ./ny.html     

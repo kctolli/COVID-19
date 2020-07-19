@@ -13,7 +13,7 @@
 
 <title>New York Times</title>
 
-<script src="site_libs/jquery-1.11.3/jquery.min.js"></script>
+<script src="site_libs/jquery-1.12.4/jquery.min.js"></script>
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <link href="site_libs/bootstrap-3.3.5/css/readable.min.css" rel="stylesheet" />
 <script src="site_libs/bootstrap-3.3.5/js/bootstrap.min.js"></script>
@@ -25,6 +25,26 @@
 <script src="site_libs/navigation-1.1/tabsets.js"></script>
 <script src="site_libs/navigation-1.1/codefolding.js"></script>
 <script src="site_libs/accessible-code-block-0.0.1/empty-anchor.js"></script>
+<script src="site_libs/htmlwidgets-1.5.1/htmlwidgets.js"></script>
+<link href="site_libs/datatables-css-0.0.0/datatables-crosstalk.css" rel="stylesheet" />
+<script src="site_libs/datatables-binding-0.14/datatables.js"></script>
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.min.css" rel="stylesheet" />
+<link href="site_libs/dt-core-1.10.20/css/jquery.dataTables.extra.css" rel="stylesheet" />
+<script src="site_libs/dt-core-1.10.20/js/jquery.dataTables.min.js"></script>
+<script src="site_libs/pdfmake-1.10.20/pdfmake.js"></script>
+<script src="site_libs/pdfmake-1.10.20/vfs_fonts.js"></script>
+<link href="site_libs/dt-ext-buttons-1.10.20/css/buttons.dataTables.min.css" rel="stylesheet" />
+<script src="site_libs/dt-ext-buttons-1.10.20/js/dataTables.buttons.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.flash.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.html5.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.colVis.min.js"></script>
+<script src="site_libs/dt-ext-buttons-1.10.20/js/buttons.print.min.js"></script>
+<link href="site_libs/nouislider-7.0.10/jquery.nouislider.min.css" rel="stylesheet" />
+<script src="site_libs/nouislider-7.0.10/jquery.nouislider.min.js"></script>
+<link href="site_libs/selectize-0.12.0/selectize.bootstrap3.css" rel="stylesheet" />
+<script src="site_libs/selectize-0.12.0/selectize.min.js"></script>
+<link href="site_libs/crosstalk-1.1.0.1/css/crosstalk.css" rel="stylesheet" />
+<script src="site_libs/crosstalk-1.1.0.1/js/crosstalk.min.js"></script>
 
 
 <style type="text/css">code{white-space: pre;}</style>
@@ -449,22 +469,55 @@ div.tocify {
     </li>
     <li class="divider"></li>
     <li>
-      <a href="./jhu_leaflet.html">Maps</a>
+      <a href="./jhu_leaflet.html">Maps and Tables</a>
     </li>
   </ul>
 </li>
 <li>
   <a href="./ny.html">New York Times</a>
 </li>
-<li>
-  <a href="./reports/index.html">Reports</a>
-</li>
-<li>
-  <a href="./contact.html">Contact Me</a>
+<li class="dropdown">
+  <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+    Reports
+     
+    <span class="caret"></span>
+  </a>
+  <ul class="dropdown-menu" role="menu">
+    <li>
+      <a href="./proposal-project.html">Project Proposal</a>
+    </li>
+    <li class="divider"></li>
+    <li class="dropdown-submenu">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Progress Reports</a>
+      <ul class="dropdown-menu" role="menu">
+        <li>
+          <a href="./pr03.html">Week 3</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="./pr06.html">Week 6</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="./pr09.html">Week 9</a>
+        </li>
+        <li class="divider"></li>
+        <li>
+          <a href="./pr12.html">Week 12</a>
+        </li>
+      </ul>
+    </li>
+    <li class="divider"></li>
+    <li>
+      <a href="./final-report.html">Final Report</a>
+    </li>
+  </ul>
 </li>
       </ul>
       <ul class="nav navbar-nav navbar-right">
-        
+        <li>
+  <a href="./contact.html">Contact Me</a>
+</li>
       </ul>
     </div><!--/.nav-collapse -->
   </div><!--/.container -->
@@ -587,9 +640,43 @@ div.tocify {
 <span id="cb12-7"><a href="#cb12-7"></a><span class="st">  </span><span class="kw">theme</span>(<span class="dt">axis.title.x=</span><span class="kw">element_blank</span>(), <span class="dt">axis.title.y=</span><span class="kw">element_blank</span>())</span></code></pre></div>
 <p><img src="ny_files/figure-html/newyorkc-1.png" width="1152" /></p>
 <p>This plot shows the percent of the people that test positive die from COVID-19 in the counties of New York.</p>
+</div>
+</div>
+<div id="data-tables" class="section level2">
+<h2>Data Tables</h2>
+<div id="states" class="section level3">
+<h3>States</h3>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a>prop_state <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb13-2"><a href="#cb13-2"></a><span class="st">  </span><span class="kw">select</span>(state, cases, deaths, pop, case_death, case_pop, death_pop, death_pop, death_case) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb13-3"><a href="#cb13-3"></a><span class="kw">datatable</span>(<span class="dt">caption =</span> <span class="st">&#39;This Tibble shows COVID-19 data in the states in the USA for yesterday&#39;</span>,</span>
+<span id="cb13-4"><a href="#cb13-4"></a>          <span class="dt">class =</span> <span class="st">&#39;cell-border stripe&#39;</span>, </span>
+<span id="cb13-5"><a href="#cb13-5"></a>          <span class="dt">rownames =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb13-6"><a href="#cb13-6"></a>          <span class="dt">filter =</span> <span class="st">&#39;top&#39;</span>, </span>
+<span id="cb13-7"><a href="#cb13-7"></a>          <span class="dt">extensions =</span> <span class="st">&#39;Buttons&#39;</span>,</span>
+<span id="cb13-8"><a href="#cb13-8"></a>          <span class="dt">options =</span> <span class="kw">list</span>(<span class="dt">buttons =</span> <span class="kw">c</span>(<span class="st">&#39;copy&#39;</span>, <span class="st">&#39;csv&#39;</span>, <span class="st">&#39;pdf&#39;</span>), </span>
+<span id="cb13-9"><a href="#cb13-9"></a>                         <span class="dt">pageLength =</span> <span class="dv">5</span>, </span>
+<span id="cb13-10"><a href="#cb13-10"></a>                         <span class="dt">autoWidth =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb13-11"><a href="#cb13-11"></a>                         <span class="dt">dom =</span> <span class="st">&#39;Bfrtip&#39;</span>))</span></code></pre></div>
+<div id="htmlwidget-653f15694be1c7f92d88" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-653f15694be1c7f92d88">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"character\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1325\" data-max=\"409476\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"24\" data-max=\"32133\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"573720\" data-max=\"39776830\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"10.8795\" data-max=\"136.359\" data-scale=\"4\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.0021\" data-max=\"0.0206\" data-scale=\"4\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0\" data-max=\"0.0017\" data-scale=\"4\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"0.0073\" data-max=\"0.0919\" data-scale=\"4\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption>This Tibble shows COVID-19 data in the states in the USA for yesterday<\/caption>","data":[["Maine","Arizona","Arkansas","Delaware","Georgia","Minnesota","California","District of Columbia","Florida","Idaho","Illinois","Iowa","Kentucky","Louisiana","Maryland","Michigan","Missouri","Montana","New York","Oregon","Tennessee","Texas","Virginia","Wisconsin","South Dakota","Utah","Indiana","Massachusetts","Mississippi","Nebraska","New Mexico","North Carolina","Rhode Island","Ohio","Oklahoma","South Carolina","Colorado","Kansas","Connecticut","Nevada","Washington","West Virginia","Wyoming","Alabama","New Hampshire","New Jersey","North Dakota","Pennsylvania","Vermont"],[3598,134730,31114,13114,120848,44387,364761,11076,315767,13261,159605,37414,21617,86521,76237,79977,32596,2265,409476,13516,69827,310489,74431,43361,7694,31908,55413,112581,39797,22178,16138,93769,17711,70601,23441,64083,38817,21273,47750,32024,46268,4657,2026,61088,6139,178475,4672,103169,1325],[114,2506,341,521,3043,1566,7490,574,4676,114,7457,781,675,3485,3347,6351,1145,35,32133,251,786,3728,2007,839,115,234,2795,8380,1308,307,562,1617,988,3103,438,1070,1746,309,4389,627,1492,99,24,1230,395,15665,93,7039,56],[1341582,7123898,3020327,971180,10545138,5628162,39776830,703608,21312211,1753860,12768320,3160553,4472265,4682509,6079602,9991177,6135888,1062330,19862512,4199563,6782564,28704330,8525660,5818049,877790,3159345,6699629,6895917,2982785,1932549,2090708,10390149,1061712,11694664,3940521,5088916,5684203,2918515,3588683,3056824,7530552,1803077,573720,4888949,1350575,9032872,755238,12823989,623960],[31.5614,53.763,91.2434,25.1708,39.7134,28.3442,48.6997,19.2962,67.5293,116.3246,21.4034,47.9052,32.0252,24.8267,22.7777,12.5928,28.4681,64.7143,12.7432,53.8486,88.8384,83.2857,37.0857,51.6818,66.9043,136.359,19.8258,13.4345,30.4258,72.241,28.7153,57.9895,17.9261,22.7525,53.5183,59.8907,22.232,68.8447,10.8795,51.075,31.0107,47.0404,84.4167,49.665,15.5418,11.3932,50.2366,14.6568,23.6607],[0.0027,0.0189,0.0103,0.0135,0.0115,0.0079,0.0092,0.0157,0.0148,0.0076,0.0125,0.0118,0.0048,0.0185,0.0125,0.008,0.0053,0.0021,0.0206,0.0032,0.0103,0.0108,0.0087,0.0075,0.0088,0.0101,0.0083,0.0163,0.0133,0.0115,0.0077,0.009,0.0167,0.006,0.0059,0.0126,0.0068,0.0073,0.0133,0.0105,0.0061,0.0026,0.0035,0.0125,0.0045,0.0198,0.0062,0.008,0.0021],[0.0001,0.0004,0.0001,0.0005,0.0003,0.0003,0.0002,0.0008,0.0002,0.0001,0.0006,0.0002,0.0002,0.0007,0.0006,0.0006,0.0002,0,0.0016,0.0001,0.0001,0.0001,0.0002,0.0001,0.0001,0.0001,0.0004,0.0012,0.0004,0.0002,0.0003,0.0002,0.0009,0.0003,0.0001,0.0002,0.0003,0.0001,0.0012,0.0002,0.0002,0.0001,0,0.0003,0.0003,0.0017,0.0001,0.0005,0.0001],[0.0317,0.0186,0.011,0.0397,0.0252,0.0353,0.0205,0.0518,0.0148,0.0086,0.0467,0.0209,0.0312,0.0403,0.0439,0.0794,0.0351,0.0155,0.0785,0.0186,0.0113,0.012,0.027,0.0193,0.0149,0.0073,0.0504,0.0744,0.0329,0.0138,0.0348,0.0172,0.0558,0.044,0.0187,0.0167,0.045,0.0145,0.0919,0.0196,0.0322,0.0213,0.0118,0.0201,0.0643,0.0878,0.0199,0.0682,0.0423]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th>state<\/th>\n      <th>cases<\/th>\n      <th>deaths<\/th>\n      <th>pop<\/th>\n      <th>case_death<\/th>\n      <th>case_pop<\/th>\n      <th>death_pop<\/th>\n      <th>death_case<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"buttons":["copy","csv","pdf"],"pageLength":5,"autoWidth":true,"dom":"Bfrtip","columnDefs":[{"className":"dt-right","targets":[1,2,3,4,5,6,7]}],"order":[],"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="past-two-weeks" class="section level3">
+<h3>Past Two Weeks</h3>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1"></a>us <span class="op">%&gt;%</span><span class="st"> </span><span class="kw">filter_biweek</span>() <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb14-2"><a href="#cb14-2"></a><span class="kw">datatable</span>(<span class="dt">caption =</span> <span class="st">&#39;This Tibble shows COVID-19 data in the USA for the last 2 weeks&#39;</span>,</span>
+<span id="cb14-3"><a href="#cb14-3"></a>          <span class="dt">class =</span> <span class="st">&#39;cell-border stripe&#39;</span>, </span>
+<span id="cb14-4"><a href="#cb14-4"></a>          <span class="dt">rownames =</span> <span class="ot">FALSE</span>, </span>
+<span id="cb14-5"><a href="#cb14-5"></a>          <span class="dt">filter =</span> <span class="st">&#39;top&#39;</span>, </span>
+<span id="cb14-6"><a href="#cb14-6"></a>          <span class="dt">extensions =</span> <span class="st">&#39;Buttons&#39;</span>,</span>
+<span id="cb14-7"><a href="#cb14-7"></a>          <span class="dt">options =</span> <span class="kw">list</span>(<span class="dt">buttons =</span> <span class="kw">c</span>(<span class="st">&#39;copy&#39;</span>, <span class="st">&#39;csv&#39;</span>, <span class="st">&#39;pdf&#39;</span>), </span>
+<span id="cb14-8"><a href="#cb14-8"></a>                         <span class="dt">pageLength =</span> <span class="dv">5</span>, </span>
+<span id="cb14-9"><a href="#cb14-9"></a>                         <span class="dt">autoWidth =</span> <span class="ot">TRUE</span>, </span>
+<span id="cb14-10"><a href="#cb14-10"></a>                         <span class="dt">dom =</span> <span class="st">&#39;Bfrtip&#39;</span>))</span></code></pre></div>
+<div id="htmlwidget-0dc0d164ffa43018d2d8" style="width:100%;height:auto;" class="datatables html-widget"></div>
+<script type="application/json" data-for="htmlwidget-0dc0d164ffa43018d2d8">{"x":{"filter":"top","filterHTML":"<tr>\n  <td data-type=\"date\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"1593734400000\" data-max=\"1594857600000\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"2815374\" data-max=\"3588462\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n  <td data-type=\"number\" style=\"vertical-align: top;\">\n    <div class=\"form-group has-feedback\" style=\"margin-bottom: auto;\">\n      <input type=\"search\" placeholder=\"All\" class=\"form-control\" style=\"width: 100%;\"/>\n      <span class=\"glyphicon glyphicon-remove-circle form-control-feedback\"><\/span>\n    <\/div>\n    <div style=\"display: none; position: absolute; width: 200px;\">\n      <div data-min=\"129415\" data-max=\"138268\"><\/div>\n      <span style=\"float: left;\"><\/span>\n      <span style=\"float: right;\"><\/span>\n    <\/div>\n  <\/td>\n<\/tr>","extensions":["Buttons"],"caption":"<caption>This Tibble shows COVID-19 data in the USA for the last 2 weeks<\/caption>","data":[["2020-07-03","2020-07-04","2020-07-05","2020-07-06","2020-07-07","2020-07-08","2020-07-09","2020-07-10","2020-07-11","2020-07-12","2020-07-13","2020-07-14","2020-07-15","2020-07-16"],[2815374,2866013,2910780,2958080,3012210,3071663,3131549,3199790,3260565,3318347,3379859,3445483,3512791,3588462],[129415,129679,129941,130332,131289,132237,133079,133907,134582,134977,135402,136356,137319,138268]],"container":"<table class=\"cell-border stripe\">\n  <thead>\n    <tr>\n      <th>date<\/th>\n      <th>cases<\/th>\n      <th>deaths<\/th>\n    <\/tr>\n  <\/thead>\n<\/table>","options":{"buttons":["copy","csv","pdf"],"pageLength":5,"autoWidth":true,"dom":"Bfrtip","columnDefs":[{"className":"dt-right","targets":[1,2]}],"order":[],"orderClasses":false,"orderCellsTop":true,"lengthMenu":[5,10,25,50,100]}},"evals":[],"jsHooks":[]}</script>
 <p><br /><br /></p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1"></a><span class="kw">update</span>()</span></code></pre></div>
-<pre><code>## [1] &quot;Last updated: Jul 14 2020&quot;</code></pre>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1"></a><span class="kw">update</span>()</span></code></pre></div>
+<pre><code>## [1] &quot;Last updated: Jul 17 2020&quot;</code></pre>
 </div>
 </div>
 

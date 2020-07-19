@@ -10,8 +10,8 @@ Sys.Biweek <- function(date = Sys.Date()){date - 14}
 Sys.Nextweek <- function(date = Sys.Date()){date + 7}
 
 filter_yesterday <- function(df){df %>% filter(date == Sys.Yesterday())}
-filter_week <- function(df){df %>% filter(date == Sys.Week())}
-filter_biweek <- function(df){df %>% filter(date == Sys.Biweek())}
+filter_week <- function(df){df %>% filter(date >= Sys.Week())}
+filter_biweek <- function(df){df %>% filter(date >= Sys.Biweek())}
 
 my_owid_wrangle <- function(df){
   summarise(df,
