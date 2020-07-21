@@ -537,25 +537,37 @@ div.tocify {
 <!--
 What problem or need does your project address? What does your project do? How does it solve the problem or fulfill the need? What has been done in the past by others to solve the problem or fulfill the need? Why is your project a better solution than what already existed?
 -->
-<p>I am a Software Engineering Major. Additionally I am getting an Applied Associates in Data Science. So this project is a data science type project and will include software design and development. Some of the Data Science courses I have taken include the following:</p>
+<p>I am a senior majoring in Software Engineering, I plan to graduate in December of 2020. Additionally I am getting an Applied Associates in Data Science. So this project is a data science type project and includes a software design and development aspect. Some of the Data Science courses I have taken include the following:</p>
 <ul>
 <li><a href="https://www.byui.edu/catalog#/courses/view/a7c647e4-9dbd-43ab-9f13-882ab279c65c">Introduction to Databases</a></li>
+<li><a href="https://www.byui.edu/catalog#/courses/4yzgxnx3ob?bc=true&amp;bcCurrent=Survey%20Object-Oriented%20Programming%2FData%20Structures&amp;bcGroup=Computer%20Science&amp;bcItemType=Courses">Survey Object-Oriented Programming/Data Structures</a></li>
 <li><a href="https://www.byui.edu/catalog#/courses/view/5c868402f98eff24000cd2c4">Data Intuition and Insight</a></li>
 <li><a href="https://www.byui.edu/catalog#/courses/view/5ce60ff8ecb90c2400a235c1">Data Wrangling, and Visualization</a></li>
 <li><a href="https://www.byui.edu/catalog#/courses/view/5c8baaf92679352400c8ad86">Database Design and Development</a></li>
 <li><a href="https://www.byui.edu/catalog#/courses/view/5e1628b2f98ee825009625cc">Discrete Mathematics 1</a></li>
 <li><a href="https://www.byui.edu/catalog#/courses/4ybHLhehob?bc=true&amp;bcCurrent=Calculus%20I&amp;bcGroup=Mathematics&amp;bcItemType=Courses">Calculus 1</a></li>
 <li><a href="https://www.byui.edu/catalog#/courses/Nyx8-l-3ib?bc=true&amp;bcCurrent=Linear%20Algebra&amp;bcGroup=Mathematics&amp;bcItemType=Courses">Linear Algebra</a></li>
+<li><a href="https://www.byui.edu/catalog#/courses/4ke4pgWniW?bc=true&amp;bcCurrent=Introduction%20to%20Web%20Design%20and%20Development&amp;bcGroup=Web%20Design%20and%20Development&amp;bcItemType=Courses">Introduction to Web Design and Development</a></li>
 </ul>
-<p>This project helped me strengthen the knowledge I gained from these classes, while learning new tools, techniques and technologies of Data Science.</p>
+<p>This project helped me strengthen the knowledge I gained from these classes, while learning new tools, techniques and technologies of Data Science and Web Development.</p>
 <p>I addressed the problem of unclear data on COVID-19. Many people see the data and can’t make sense of it and what the values mean. I also figured how much of the population has been tested. I compared the techniques used to fight COVID-19, methods may include comparing the countries’ data due to each using different methods to control the spread. My project helped people better understand COVID-19 precautions, influence and data. Each plot or data table has an impact on addressing the problem of unclear COVID-19 data. There are COVID-19 dashboards already created by multiple different companies. Two companies including Our World in Data and JHU CSSE have great dashboards already created. See <a href="https://kctolli.github.io/COVID-19/final-report.html#References">Dashboards</a> under the references section, to get links to those dashboards.</p>
 <p>My project wasn’t just used for my personal learning, but also to provide useful data visualizations to help people understand COVID-19 and the data. My data presentation is a great solution due to the fact of using multiple different datasets to address the problem of COVID-19 data. Using different datasets allows people to compare and contrast the datasets. It also allows for new understanding and an expansion of data and visualizations.</p>
+<div id="summary" class="section level3">
+<h3>Summary</h3>
+<ul>
+<li>Developed a data website using R, Rmds and Yaml</li>
+<li>Explored different datasets to determine viable information</li>
+<li>Wrote my own COVID-19 R package to wrangle data</li>
+<li>Visualized the data to make the data easily understood</li>
+</ul>
+</div>
 </div>
 <div id="methods-and-procedures" class="section level2">
 <h2>Methods and Procedures</h2>
 <!-- What research did you have to do? What are the project specifications? What tasks were required to implement your project? How long did they take? How close were your time estimates? What resources were needed? What was your test plan to verify that it worked correctly? -->
 <p>I found datasets that were useful for this project. I found three useful dataset hosts; they are NYTimes, Our World in Data and JHU CSSEGIS. See <a href="https://kctolli.github.io/COVID-19/final-report.html#References">Dataset References</a> under the references section, to learn about the datasets used. The data wrangling and visualization is done in R. The data analytics is presented in a github hosted website. I used Rmd with R-chunks, and YML file to organize my data. I have many plots to test the same dataset and values.</p>
 <p>I used many R packages which include knitr, tidyverse, leaflet, sf (simple figures), dygraphs, USAboundaries, devtools, and more are used to implement the project. I also created my own R package to have functions used remotely. The package can be found on this projects <a href="https://github.com/kctolli/COVID-19/tree/master/mypackage/package">github repo</a>.</p>
+<p>Below is my completed work schedule and hour breakdown. I feel like I have was super close to my time estimates, but I worked more than the required time on this project which I expected. I was able to complete the each of the tasks in the specific interval.</p>
 <div id="hour-breakdown" class="section level3">
 <h3>Hour Breakdown</h3>
 <div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">kable</span>(dt)</span></code></pre></div>
@@ -621,15 +633,15 @@ What problem or need does your project address? What does your project do? How d
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x &lt;-<span class="st"> </span>dt<span class="op">$</span>Time</span>
-<span id="cb3-2"><a href="#cb3-2"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="kw">sum</span>(x), <span class="dt">digits =</span> <span class="dv">2</span>))</span>
-<span id="cb3-3"><a href="#cb3-3"></a></span>
-<span id="cb3-4"><a href="#cb3-4"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Total hours equal:&quot;</span>, x))</span></code></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="kw">sum</span>(dt<span class="op">$</span>Time), <span class="dt">digits =</span> <span class="dv">2</span>))</span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Total hours equal:&quot;</span>, x))</span></code></pre></div>
 <pre><code>## [1] &quot;Total hours equal: 151.32&quot;</code></pre>
 </div>
 <div id="schedule" class="section level3">
 <h3>Schedule</h3>
-<p>Below I have divided the tasks in three-week interval which a line progress reports.   I used <a href="https://clockify.me/">clockify</a> to track hours.</p>
+<p>Below I have divided the tasks in three-week interval which a line progress reports.<br />
+  I used <a href="https://clockify.me/">clockify</a> to track hours.</p>
 <div id="whole-semester" class="section level4">
 <h4>Whole Semester</h4>
 <p>Throughout the semester I spent time gaining knowledge on the follow as it relates to my project:</p>
@@ -640,6 +652,7 @@ What problem or need does your project address? What does your project do? How d
 <li>Data Driven Learning</li>
 <li>Data Science Technologies</li>
 <li>Resumes, Portfolios and Linkedin</li>
+<li>Engineering and Data Science Ethics</li>
 </ul>
 </div>
 <div id="progress-report-1-due-59" class="section level4">
@@ -734,8 +747,18 @@ What problem or need does your project address? What does your project do? How d
 <div id="conclusions" class="section level2">
 <h2>Conclusions</h2>
 <!-- How well does your project satisfy its intended purpose? How can it be applied or used by others? How can it be improved in the future? -->
-<p>My expected outcomes were to use data visualizations and documentation that is shown on a github website. I used have leaflets, dygraphs, ggplots and more visualization tools, to explain the data. The results are be shown using Rmd (RMarkdown) files that are put through knitr to get html. Yaml files are used to create the headers and javascript for the data website. This website helps people understand the data of COVID-19 using data tools such as visualizations. As people are aware and understand the data they can take appropriate actions.</p>
-<p><br /> <br /></p>
+<p>My expected outcomes were to use data visualizations and documentation that is shown on a <a href="https://github.com/kctolli/COVID-19">github website</a>. I used have leaflets, dygraphs, ggplots and more visualization tools, to explain the data. The results are being shown using Rmd (RMarkdown) files that are put through knitr to get html. Yaml files were used to create the headers and javascript for the data website. This website helps people understand the data of COVID-19 using data tools such as visualizations. As people are aware and understand the data they can take appropriate actions.</p>
+<p>A few things I learned in this project. First, working with continuously updating data is hard unless you have an automatic run script. In the future I would setup a automatic run script to allow to always have up to date data. Second, sometime the provider of data corrupts the data. This I find is really strange, why would someone corrupt their own data? This happened in the process of this project, Our World In Data corrupted their own data causing my visualizations to stop working. This was only fixable by removing the data page from the website. Another thing I learned and implemented in the end of the project was to create an R package to create global functions that can be used in every page of the data website. I the future I would create the R package at the beginning, then update it as the project progresses. This motatived me to create my own general use <a href="https://github.com/kctolli/Useful-R">package</a> full of useful functions. This project was a great learning experience for me and point to reflect on my data science skills.</p>
+<p><br /></p>
+<div id="feedback" class="section level3">
+<h3>Feedback</h3>
+<p>I was able to share my project with some family member and friends.<br />
+They gave me some insist and feedback for the project and what to do moving forward.</p>
+<ul>
+<li></li>
+</ul>
+<p><br /> <br /> <br /></p>
+</div>
 </div>
 <div id="references" class="section level2">
 <h2>References</h2>
@@ -765,12 +788,13 @@ What problem or need does your project address? What does your project do? How d
 </div>
 <div id="additional-resourses" class="section level3">
 <h3>Additional Resourses</h3>
-<p>Grolemund, G., &amp; Wickham, H. (n.d.). R for Data Science. Retrieved 2020,     from <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></p>
+<p>Grolemund, G. &amp; Wickham, H. (n.d.). R for Data Science. Retrieved 2020,<br />
+    from <a href="https://r4ds.had.co.nz/" class="uri">https://r4ds.had.co.nz/</a></p>
 <p>Hathaway, J. (n.d.). Consulting Articles. Retrieved 2020,<br />
     from <a href="https://byuistats.github.io/M488/readings.html" class="uri">https://byuistats.github.io/M488/readings.html</a></p>
 <p>Hathaway, J. (n.d.). R Visualization. Retrieved 2020,<br />
     from <a href="https://byuistats.github.io/M335/r_visualization.html" class="uri">https://byuistats.github.io/M335/r_visualization.html</a></p>
-<p>Henry, L., &amp; Wickham, H. (n.d.). Tidy evaluation. Retrieved 2020,<br />
+<p>Henry, L. &amp; Wickham, H. (n.d.). Tidy evaluation. Retrieved 2020,<br />
     from <a href="https://tidyeval.tidyverse.org/" class="uri">https://tidyeval.tidyverse.org/</a></p>
 <p>Jenny Bryan, T. (n.d.). Happy Git and GitHub for the useR. Retrieved 2020,<br />
     from <a href="https://happygitwithr.com/" class="uri">https://happygitwithr.com/</a></p>
@@ -778,7 +802,7 @@ What problem or need does your project address? What does your project do? How d
     from <a href="https://plotly-r.com/index.html" class="uri">https://plotly-r.com/index.html</a></p>
 <p>Wickham, H. (n.d.). Advanced R. Retrieved 2020,<br />
     from <a href="https://adv-r.hadley.nz/" class="uri">https://adv-r.hadley.nz/</a></p>
-<p>Wickham, H., &amp; Bryan, J. (n.d.). R Packages. Retrieved 2020,<br />
+<p>Wickham, H. &amp; Bryan, J. (n.d.). R Packages. Retrieved 2020,<br />
     from <a href="https://r-pkgs.org/" class="uri">https://r-pkgs.org/</a></p>
 <p>Wilke, C. (n.d.). Fundamentals of Data Visualization. Retrieved 2020,<br />
     from <a href="https://serialmentor.com/dataviz/" class="uri">https://serialmentor.com/dataviz/</a></p>
