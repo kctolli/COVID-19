@@ -71,7 +71,7 @@ Below is my completed work schedule and hour breakdown. I feel like I have was s
 ```{r time}
 kable(dt)
 
-x <- as.numeric(round(sum(dt$Time), digits = 2))
+x <- as.numeric(round(sum(abs(dt$Time)), digits = 1))
 
 sent <- "Total hours equal:"
 
@@ -109,7 +109,7 @@ Throughout the semester I spent time gaining knowledge on the follow as it relat
 
 In my data research for this COVID-19 Data Project I have come across many useful data sets. However, because Git hub restricts files to be no larger than 100MB, another problem arises, most of the 100MB will be taken up by reading in the different data sets. My proposed solution is to create my own data library. Be assured this problem and acquired solution wouldn't effect my work schedule.
 
---- Created a separate folder structure to store the data and scripts 
+--- Created a separate folder structure to store the data and scripts instead of creating a data package 
 
 #### Progress Report 2 (Due 5/30)
 
@@ -121,7 +121,7 @@ In my data research for this COVID-19 Data Project I have come across many usefu
 
 ##### Accomplishments
 
-This period I came across that my datasets can be hosted on a separate github repo. This allow me to wrangle my data elsewhere then on the main Rmd files and R chucks. This is a faster and more modifiable solution in the solution, which is needed to cause the data is still being updated. I was able to find that the two hosts of datasets are [NYTimes](https://github.com/CSSEGISandData/COVID-19) and [JHU-CSSE](https://github.com/nytimes/covid-19-data). I have developed basics of the yaml for both the main and report websites. I also learned some R packages. I learned about the page-down package which allowed me to update my [resume](https://kctolli.github.io/images/resume.html). I also learned a little bit about the pacman package and knitr package. I feel like I am on track to complete this project by the end of the semester.
+This period I came across that my datasets can be hosted on a separate github repo. This allow me to wrangle my data elsewhere then on the main Rmd files and R chucks. This is a faster and more modifiable solution in the solution, which is needed to cause the data is still being updated. I was able to find that the two hosts of datasets are [NYTimes](https://github.com/CSSEGISandData/COVID-19) and [JHU-CSSE](https://github.com/nytimes/covid-19-data). I have developed basics of the yaml for both the main and report websites. I also learned some R packages. I learned about the page-down package which allowed me to update my [resume](https://kctolli.github.io/site_libs/resume.html). I also learned a little bit about the pacman package and knitr package. I feel like I am on track to complete this project by the end of the semester.
 
 #### Progress Report 3 (Due 6/20)
 
@@ -149,7 +149,7 @@ I was able to complete the framework of the YAML file. I was able to complete th
 
 ##### Accomplishments
 
-I was able to finish tibbles and am almost done with the Visualizations. I am getting an error with my leaflets. The error says: *Error in polygonData.default(data) : Don't know how to get path data from object of class tbl_df*. I am also almost completed with the yaml. I have also started with Yaml file for the website. I believe I am on track to finish if I can figure out my error, I posted the error on BYUI-datascience slack channel. I will fix my error when I find out what the solution is.  
+I was able to finish tibbles and am almost done with the Visualizations. I am getting an error with my leaflets. The error says: `Error in polygonData.default(data) : Don't know how to get path data from object of class tbl_df`. I am also almost completed with the yaml. I have also started with Yaml file for the website. I believe I am on track to finish if I can figure out my error, I posted the error on BYUI-datascience slack channel. I will fix my error when I find out what the solution is.  
 
 --- Fixed the error for the leaflet. 
 
@@ -188,8 +188,8 @@ include_graphics(map)
 
 Above is another visualization, I'm going to highlight is found on the [New York Times page](https://kctolli.github.io/COVID-19/ny.html). The data of prop_states is found on this projects [github repo](https://github.com/kctolli/COVID-19/tree/master/read-data/nytimes). The code is also above used to create the map. The code is using the R packages sf (simple figures), USAboundaries and ggplot2 (part of the tidyverse package) to create the map.  
 
-`filter = 'top', `
-`extensions = 'Buttons',`
+`filter = 'top', `      
+`extensions = 'Buttons',`        
 `options = list(buttons = c('copy', 'csv', 'pdf'), #...`
 
 For both data sources I created a data table. They are found at in the [Johns Hopkins University Leaflet page](./jhu_leaflet.html) and [New York Times page](./ny.html). Above is example code for the included features of my data table. The command filter = 'top' allow the data table to be filtered to view specific data. The buttons extension was allow the user to copy the data table or download the data table as a csv or pdf. The data tables are used to show the data used to create the visualizations and can be downloaded by the user to be used to recreate the visualizations. 
@@ -202,7 +202,7 @@ My expected outcomes were to use data visualizations and documentation that is s
 
 ### Future Improvement
 
-A few things I learned in this project. First, working with continuously updating data is hard unless you have an automatic run script. In the future I would setup a automatic run script to allow to always have up to date data. Another thing I learned and implemented in the end of the project was to create an R package to create global functions that can be used in every page of the data website. I the future I would create the R package at the beginning, then update it as the project progresses. This motivated me to create my own general use [package](https://github.com/kctolli/Useful-R) full of useful functions. This project was a great learning experience for me and point to reflect on my data science skills.       
+A few things I learned in this project. First, working with continuously updating data is hard unless you have an automatic run script. In the future I would setup a automatic run script to allow to always have up to date data. Another thing I learned and implemented in the end of the project was to create an R package to create global functions that can be used in every page of the data website. I the future I would create the R package at the beginning, then update it as the project progresses. This motivated me to create my own general use [package](https://github.com/kctolli/Useful-R) full of useful functions, use `install_github("kctolli/Useful")` to install package. This project was a great learning experience for me and point to reflect on my data science skills.       
 
 ### Follow-up Questions
 

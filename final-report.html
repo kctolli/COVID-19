@@ -579,65 +579,65 @@ What problem or need does your project address? What does your project do? How d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Viz</td>
-<td align="right">37.33</td>
-</tr>
-<tr class="even">
-<td align="left">Progress Report</td>
-<td align="right">9.17</td>
-</tr>
-<tr class="odd">
 <td align="left">Proposal</td>
 <td align="right">8.33</td>
 </tr>
 <tr class="even">
-<td align="left">Website</td>
-<td align="right">5.33</td>
-</tr>
-<tr class="odd">
-<td align="left">GitHub</td>
-<td align="right">1.75</td>
-</tr>
-<tr class="even">
-<td align="left">Data Driven</td>
-<td align="right">9.50</td>
-</tr>
-<tr class="odd">
-<td align="left">Jobs</td>
-<td align="right">19.67</td>
-</tr>
-<tr class="even">
-<td align="left">Tidy Tuesday</td>
-<td align="right">5.50</td>
-</tr>
-<tr class="odd">
 <td align="left">Ethics</td>
 <td align="right">4.08</td>
 </tr>
+<tr class="odd">
+<td align="left">ePortfolio/Resume</td>
+<td align="right">16.08</td>
+</tr>
 <tr class="even">
+<td align="left">Viz</td>
+<td align="right">37.33</td>
+</tr>
+<tr class="odd">
 <td align="left">Package</td>
-<td align="right">2.00</td>
+<td align="right">8.00</td>
+</tr>
+<tr class="even">
+<td align="left">Final Report</td>
+<td align="right">10.25</td>
 </tr>
 <tr class="odd">
 <td align="left">Datasets</td>
 <td align="right">29.08</td>
 </tr>
 <tr class="even">
-<td align="left">Final Report</td>
-<td align="right">6.50</td>
+<td align="left">Data Driven</td>
+<td align="right">9.50</td>
 </tr>
 <tr class="odd">
-<td align="left">ePortfolio/Resume</td>
-<td align="right">13.08</td>
+<td align="left">GitHub</td>
+<td align="right">1.75</td>
+</tr>
+<tr class="even">
+<td align="left">Jobs</td>
+<td align="right">19.67</td>
+</tr>
+<tr class="odd">
+<td align="left">Progress Report</td>
+<td align="right">9.17</td>
+</tr>
+<tr class="even">
+<td align="left">Tidy Tuesday</td>
+<td align="right">5.50</td>
+</tr>
+<tr class="odd">
+<td align="left">Website</td>
+<td align="right">5.33</td>
 </tr>
 </tbody>
 </table>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="kw">sum</span>(dt<span class="op">$</span>Time), <span class="dt">digits =</span> <span class="dv">2</span>))</span>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="kw">sum</span>(<span class="kw">abs</span>(dt<span class="op">$</span>Time)), <span class="dt">digits =</span> <span class="dv">1</span>))</span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
 <span id="cb3-3"><a href="#cb3-3"></a>sent &lt;-<span class="st"> &quot;Total hours equal:&quot;</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a></span>
 <span id="cb3-5"><a href="#cb3-5"></a><span class="kw">print</span>(<span class="kw">paste</span>(sent, x))</span></code></pre></div>
-<pre><code>## [1] &quot;Total hours equal: 151.32&quot;</code></pre>
+<pre><code>## [1] &quot;Total hours equal: 164.1&quot;</code></pre>
 </div>
 <div id="schedule" class="section level3">
 <h3>Schedule</h3>
@@ -674,7 +674,7 @@ What problem or need does your project address? What does your project do? How d
 <div id="accomplishments" class="section level5">
 <h5>Accomplishments</h5>
 <p>In my data research for this COVID-19 Data Project I have come across many useful data sets. However, because Git hub restricts files to be no larger than 100MB, another problem arises, most of the 100MB will be taken up by reading in the different data sets. My proposed solution is to create my own data library. Be assured this problem and acquired solution wouldn’t effect my work schedule.</p>
-<p>— Created a separate folder structure to store the data and scripts</p>
+<p>— Created a separate folder structure to store the data and scripts instead of creating a data package</p>
 </div>
 </div>
 <div id="progress-report-2-due-530" class="section level4">
@@ -690,7 +690,7 @@ What problem or need does your project address? What does your project do? How d
 </ul>
 <div id="accomplishments-1" class="section level5">
 <h5>Accomplishments</h5>
-<p>This period I came across that my datasets can be hosted on a separate github repo. This allow me to wrangle my data elsewhere then on the main Rmd files and R chucks. This is a faster and more modifiable solution in the solution, which is needed to cause the data is still being updated. I was able to find that the two hosts of datasets are <a href="https://github.com/CSSEGISandData/COVID-19">NYTimes</a> and <a href="https://github.com/nytimes/covid-19-data">JHU-CSSE</a>. I have developed basics of the yaml for both the main and report websites. I also learned some R packages. I learned about the page-down package which allowed me to update my <a href="https://kctolli.github.io/images/resume.html">resume</a>. I also learned a little bit about the pacman package and knitr package. I feel like I am on track to complete this project by the end of the semester.</p>
+<p>This period I came across that my datasets can be hosted on a separate github repo. This allow me to wrangle my data elsewhere then on the main Rmd files and R chucks. This is a faster and more modifiable solution in the solution, which is needed to cause the data is still being updated. I was able to find that the two hosts of datasets are <a href="https://github.com/CSSEGISandData/COVID-19">NYTimes</a> and <a href="https://github.com/nytimes/covid-19-data">JHU-CSSE</a>. I have developed basics of the yaml for both the main and report websites. I also learned some R packages. I learned about the page-down package which allowed me to update my <a href="https://kctolli.github.io/site_libs/resume.html">resume</a>. I also learned a little bit about the pacman package and knitr package. I feel like I am on track to complete this project by the end of the semester.</p>
 </div>
 </div>
 <div id="progress-report-3-due-620" class="section level4">
@@ -728,7 +728,7 @@ What problem or need does your project address? What does your project do? How d
 </ul>
 <div id="accomplishments-3" class="section level5">
 <h5>Accomplishments</h5>
-<p>I was able to finish tibbles and am almost done with the Visualizations. I am getting an error with my leaflets. The error says: <em>Error in polygonData.default(data) : Don’t know how to get path data from object of class tbl_df</em>. I am also almost completed with the yaml. I have also started with Yaml file for the website. I believe I am on track to finish if I can figure out my error, I posted the error on BYUI-datascience slack channel. I will fix my error when I find out what the solution is.</p>
+<p>I was able to finish tibbles and am almost done with the Visualizations. I am getting an error with my leaflets. The error says: <code>Error in polygonData.default(data) : Don't know how to get path data from object of class tbl_df</code>. I am also almost completed with the yaml. I have also started with Yaml file for the website. I believe I am on track to finish if I can figure out my error, I posted the error on BYUI-datascience slack channel. I will fix my error when I find out what the solution is.</p>
 <p>— Fixed the error for the leaflet.</p>
 </div>
 </div>
@@ -762,7 +762,9 @@ What problem or need does your project address? What does your project do? How d
 <code>theme_bw() +</code><br />
 <code>theme(axis.title.x=element_blank(), axis.title.y=element_blank())</code></p>
 <p>Above is another visualization, I’m going to highlight is found on the <a href="https://kctolli.github.io/COVID-19/ny.html">New York Times page</a>. The data of prop_states is found on this projects <a href="https://github.com/kctolli/COVID-19/tree/master/read-data/nytimes">github repo</a>. The code is also above used to create the map. The code is using the R packages sf (simple figures), USAboundaries and ggplot2 (part of the tidyverse package) to create the map.</p>
-<p><code>filter = 'top',</code> <code>extensions = 'Buttons',</code> <code>options = list(buttons = c('copy', 'csv', 'pdf'), #...</code></p>
+<p><code>filter = 'top',</code><br />
+<code>extensions = 'Buttons',</code><br />
+<code>options = list(buttons = c('copy', 'csv', 'pdf'), #...</code></p>
 <p>For both data sources I created a data table. They are found at in the <a href="./jhu_leaflet.html">Johns Hopkins University Leaflet page</a> and <a href="./ny.html">New York Times page</a>. Above is example code for the included features of my data table. The command filter = ‘top’ allow the data table to be filtered to view specific data. The buttons extension was allow the user to copy the data table or download the data table as a csv or pdf. The data tables are used to show the data used to create the visualizations and can be downloaded by the user to be used to recreate the visualizations.</p>
 </div>
 <div id="conclusions" class="section level2">
@@ -771,7 +773,7 @@ What problem or need does your project address? What does your project do? How d
 <p>My expected outcomes were to use data visualizations and documentation that is shown on a <a href="https://github.com/kctolli/COVID-19">github website</a>. I used have leaflets, dygraphs, ggplots and more visualization tools, to explain the data. The results are being shown using Rmd (RMarkdown) files that are put through knitr to get html. Yaml files were used to create the headers and javascript for the data website. This website helps people understand the data of COVID-19 using data tools such as visualizations. As people are aware and understand the data they can take appropriate actions.</p>
 <div id="future-improvement" class="section level3">
 <h3>Future Improvement</h3>
-<p>A few things I learned in this project. First, working with continuously updating data is hard unless you have an automatic run script. In the future I would setup a automatic run script to allow to always have up to date data. Another thing I learned and implemented in the end of the project was to create an R package to create global functions that can be used in every page of the data website. I the future I would create the R package at the beginning, then update it as the project progresses. This motivated me to create my own general use <a href="https://github.com/kctolli/Useful-R">package</a> full of useful functions. This project was a great learning experience for me and point to reflect on my data science skills.</p>
+<p>A few things I learned in this project. First, working with continuously updating data is hard unless you have an automatic run script. In the future I would setup a automatic run script to allow to always have up to date data. Another thing I learned and implemented in the end of the project was to create an R package to create global functions that can be used in every page of the data website. I the future I would create the R package at the beginning, then update it as the project progresses. This motivated me to create my own general use <a href="https://github.com/kctolli/Useful-R">package</a> full of useful functions, use <code>install_github("kctolli/Useful")</code> to install package. This project was a great learning experience for me and point to reflect on my data science skills.</p>
 </div>
 <div id="follow-up-questions" class="section level3">
 <h3>Follow-up Questions</h3>
