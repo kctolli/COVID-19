@@ -115,7 +115,7 @@ ggplot(data = prop_county_ny) +
 
 This plot shows the percent of the population that has died from COVID-19 in the counties of New York.
 
-## Cases Per Death
+## Percentage of cases who died
 
 ```{r mappingz}
 ggplot(data = prop_state) +

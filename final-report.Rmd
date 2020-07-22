@@ -2,7 +2,7 @@
 title: "Final Report"
 subtitle: "BYUI - ECEN 490R"
 author: "Kyle Tolliver"
-date: "July 22, 2020"
+date: "Brother Rex Fisher <br /> July 22, 2020"
 ---
 
 <!-- You have been working this semester on a significant hardware or software project related to your major. You have submitted bi-weekly progress reports to document that you have adhered to your schedule and worked at least 100 hours on your project. -->
@@ -173,7 +173,7 @@ I have created multiple different data visualizations to help address the proble
 `  addPolygons(color = ~pal(per_deaths), fillOpacity = 1, stroke = FALSE, group = "death %") %>%`    
 `  addLayersControl(baseGroups = c("cases", "case %", "deaths", "death %"))`    
 
-The visualization, I would like to highlight is found on the [JHU Leaflet page](https://kctolli.github.io/COVID-19/jhu_leaflet.html) and the code is displayed above. If you aren't familiar with leaflet, it is a R package that is used to make interactive maps. I have four overlay groups which are cases, case percent, deaths, death percent. There are colors for the overall data of COVID-19 for the group you select. The colors are green and red, with green being low value and red being high value, which is set with the pal variable `pal <- colorNumeric(c("green", "red"), NULL)`, and is implemented by the `~pal(value)`. The data of prop_states is found on this projects [github repo](https://github.com/kctolli/COVID-19/tree/master/read-data/JHU).
+The visualization, I would like to highlight is found on the [JHU Leaflet page](https://kctolli.github.io/COVID-19/jhu_leaflet.html) and the code is displayed above. If you aren't familiar with leaflet, it is a R package that is used to make interactive maps. I have four overlay groups which are cases, case percent, deaths, death percent to choose from. There are colors for the overall data of COVID-19 for the group you select. The colors are green and red, with green being low value and red being high value, which is set with the pal variable `pal <- colorNumeric(c("green", "red"), NULL)`, and is implemented by the `~pal(value)`. The data of prop_states is found on this projects [github repo](https://github.com/kctolli/COVID-19/tree/master/read-data/JHU).
 
 ```{r map, fig.align='center', out.width='100%'}
 map <- './ny_files/figure-html/mappinga-1.png'
@@ -236,12 +236,17 @@ I was able to share my project with some family member and friends. They gave me
 * Enjoyed the project 
 * Thought it looks good
 * Impressive project
+* Graphs are very good
+* Deaths flattening in the USA is encouraging
 
 ### Dislikes 
 
 * Data visualizations and report was dynamic instead of static
 * See current hot spots instead of overall hot spots
-* Work with current data instead of overall data
+* Work with current data instead of overall data 
+* Bad explanation of the [trend line](./ny.html#Cases_Per_Death) of cases vs deaths
+* List the actual dates not just ranges 
+  + Example: Total cases this week should be total cases this week, July10-17
 
 ### Wish I Saws
 
@@ -249,6 +254,7 @@ I was able to share my project with some family member and friends. They gave me
 * Set up a trend line to determine current trends
 * Have a data alert system such as a data notification app or email
 * What causes the spikes in cases and deaths
+* Clearer titles
 
 <br /> <br /> <br />
 
@@ -314,3 +320,7 @@ Wickham, H. & Bryan, J. (n.d.). R Packages. Retrieved 2020,
 
 Wilke, C. (n.d.). Fundamentals of Data Visualization. Retrieved 2020,       
 &emsp; &emsp; from https://serialmentor.com/dataviz/
+
+<br /><br />
+
+--- Personal [Clockify](https://clockify.me/) API: XuhTtOx0CWcDM3ki

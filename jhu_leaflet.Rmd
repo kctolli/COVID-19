@@ -36,7 +36,7 @@ maps %>%
   addLayersControl(baseGroups = c("cases", "case %", "deaths", "death %"))
 ```
 
-This is an interactive map called a leaflet. I set up overlay groups, you can choice between cases, case percent, deaths, death percent. The color defines the overall value of the group you select. The colors are green and red, with green being low value and red being high value.
+This is an interactive map called a leaflet. I set up overlay groups, you can choose between cases, case percent, deaths, death percent. The color defines the overall value of the group you select. The colors are green and red, with green being low value and red being high value.
 
 See [New York Times Maps](https://kctolli.github.io/COVID-19/ny.html#Maps) for exact values. 
 

@@ -11,7 +11,6 @@
 
 <meta name="author" content="Kyle Tolliver" />
 
-<meta name="date" content="2020-07-22" />
 
 <title>Final Report</title>
 
@@ -520,7 +519,7 @@ div.tocify {
 <h1 class="title toc-ignore">Final Report</h1>
 <h3 class="subtitle">BYUI - ECEN 490R</h3>
 <h4 class="author">Kyle Tolliver</h4>
-<h4 class="date">July 22, 2020</h4>
+<h4 class="date">Brother Rex Fisher <br /> July 22, 2020</h4>
 
 </div>
 
@@ -579,40 +578,16 @@ What problem or need does your project address? What does your project do? How d
 </thead>
 <tbody>
 <tr class="odd">
-<td align="left">Proposal</td>
-<td align="right">8.33</td>
-</tr>
-<tr class="even">
-<td align="left">Ethics</td>
-<td align="right">4.08</td>
-</tr>
-<tr class="odd">
-<td align="left">ePortfolio/Resume</td>
-<td align="right">16.08</td>
-</tr>
-<tr class="even">
-<td align="left">Viz</td>
-<td align="right">37.33</td>
-</tr>
-<tr class="odd">
-<td align="left">Package</td>
-<td align="right">8.00</td>
-</tr>
-<tr class="even">
-<td align="left">Final Report</td>
-<td align="right">10.25</td>
-</tr>
-<tr class="odd">
 <td align="left">Datasets</td>
 <td align="right">29.08</td>
 </tr>
 <tr class="even">
-<td align="left">Data Driven</td>
-<td align="right">9.50</td>
-</tr>
-<tr class="odd">
 <td align="left">GitHub</td>
 <td align="right">1.75</td>
+</tr>
+<tr class="odd">
+<td align="left">Data Driven</td>
+<td align="right">9.50</td>
 </tr>
 <tr class="even">
 <td align="left">Jobs</td>
@@ -630,6 +605,30 @@ What problem or need does your project address? What does your project do? How d
 <td align="left">Website</td>
 <td align="right">5.33</td>
 </tr>
+<tr class="even">
+<td align="left">Proposal</td>
+<td align="right">8.33</td>
+</tr>
+<tr class="odd">
+<td align="left">Ethics</td>
+<td align="right">4.08</td>
+</tr>
+<tr class="even">
+<td align="left">ePortfolio/Resume</td>
+<td align="right">16.08</td>
+</tr>
+<tr class="odd">
+<td align="left">Viz</td>
+<td align="right">37.33</td>
+</tr>
+<tr class="even">
+<td align="left">Package</td>
+<td align="right">8.00</td>
+</tr>
+<tr class="odd">
+<td align="left">Final Report</td>
+<td align="right">11.25</td>
+</tr>
 </tbody>
 </table>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="kw">sum</span>(<span class="kw">abs</span>(dt<span class="op">$</span>Time)), <span class="dt">digits =</span> <span class="dv">1</span>))</span>
@@ -637,7 +636,7 @@ What problem or need does your project address? What does your project do? How d
 <span id="cb3-3"><a href="#cb3-3"></a>sent &lt;-<span class="st"> &quot;Total hours equal:&quot;</span></span>
 <span id="cb3-4"><a href="#cb3-4"></a></span>
 <span id="cb3-5"><a href="#cb3-5"></a><span class="kw">print</span>(<span class="kw">paste</span>(sent, x))</span></code></pre></div>
-<pre><code>## [1] &quot;Total hours equal: 164.1&quot;</code></pre>
+<pre><code>## [1] &quot;Total hours equal: 165.1&quot;</code></pre>
 </div>
 <div id="schedule" class="section level3">
 <h3>Schedule</h3>
@@ -752,7 +751,7 @@ What problem or need does your project address? What does your project do? How d
 <code>addPolygons(color = ~pal(per_cases), fillOpacity = 1, stroke = FALSE, group = "case %") %&gt;%</code><br />
 <code>addPolygons(color = ~pal(per_deaths), fillOpacity = 1, stroke = FALSE, group = "death %") %&gt;%</code><br />
 <code>addLayersControl(baseGroups = c("cases", "case %", "deaths", "death %"))</code></p>
-<p>The visualization, I would like to highlight is found on the <a href="https://kctolli.github.io/COVID-19/jhu_leaflet.html">JHU Leaflet page</a> and the code is displayed above. If you aren’t familiar with leaflet, it is a R package that is used to make interactive maps. I have four overlay groups which are cases, case percent, deaths, death percent. There are colors for the overall data of COVID-19 for the group you select. The colors are green and red, with green being low value and red being high value, which is set with the pal variable <code>pal &lt;- colorNumeric(c("green", "red"), NULL)</code>, and is implemented by the <code>~pal(value)</code>. The data of prop_states is found on this projects <a href="https://github.com/kctolli/COVID-19/tree/master/read-data/JHU">github repo</a>.</p>
+<p>The visualization, I would like to highlight is found on the <a href="https://kctolli.github.io/COVID-19/jhu_leaflet.html">JHU Leaflet page</a> and the code is displayed above. If you aren’t familiar with leaflet, it is a R package that is used to make interactive maps. I have four overlay groups which are cases, case percent, deaths, death percent to choose from. There are colors for the overall data of COVID-19 for the group you select. The colors are green and red, with green being low value and red being high value, which is set with the pal variable <code>pal &lt;- colorNumeric(c("green", "red"), NULL)</code>, and is implemented by the <code>~pal(value)</code>. The data of prop_states is found on this projects <a href="https://github.com/kctolli/COVID-19/tree/master/read-data/JHU">github repo</a>.</p>
 <div class="sourceCode" id="cb5"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1"></a>map &lt;-<span class="st"> &#39;./ny_files/figure-html/mappinga-1.png&#39;</span></span>
 <span id="cb5-2"><a href="#cb5-2"></a><span class="kw">include_graphics</span>(map)</span></code></pre></div>
 <p><img src="ny_files/figure-html/mappinga-1.png" width="100%" style="display: block; margin: auto;" /></p>
@@ -808,6 +807,8 @@ What problem or need does your project address? What does your project do? How d
 <li>Enjoyed the project</li>
 <li>Thought it looks good</li>
 <li>Impressive project</li>
+<li>Graphs are very good</li>
+<li>Deaths flattening in the USA is encouraging</li>
 </ul>
 </div>
 <div id="dislikes" class="section level3">
@@ -816,6 +817,11 @@ What problem or need does your project address? What does your project do? How d
 <li>Data visualizations and report was dynamic instead of static</li>
 <li>See current hot spots instead of overall hot spots</li>
 <li>Work with current data instead of overall data</li>
+<li>Bad explanation of the <a href="./ny.html#Cases_Per_Death">trend line</a> of cases vs deaths</li>
+<li>List the actual dates not just ranges
+<ul>
+<li>Example: Total cases this week should be total cases this week, July10-17</li>
+</ul></li>
 </ul>
 </div>
 <div id="wish-i-saws" class="section level3">
@@ -825,6 +831,7 @@ What problem or need does your project address? What does your project do? How d
 <li>Set up a trend line to determine current trends</li>
 <li>Have a data alert system such as a data notification app or email</li>
 <li>What causes the spikes in cases and deaths</li>
+<li>Clearer titles</li>
 </ul>
 <p><br /> <br /> <br /></p>
 </div>
@@ -877,6 +884,8 @@ What problem or need does your project address? What does your project do? How d
     from <a href="https://r-pkgs.org/" class="uri">https://r-pkgs.org/</a></p>
 <p>Wilke, C. (n.d.). Fundamentals of Data Visualization. Retrieved 2020,<br />
     from <a href="https://serialmentor.com/dataviz/" class="uri">https://serialmentor.com/dataviz/</a></p>
+<p><br /><br /></p>
+<p>— Personal <a href="https://clockify.me/">Clockify</a> API: XuhTtOx0CWcDM3ki</p>
 </div>
 </div>
 
