@@ -529,9 +529,8 @@ div.tocify {
 <!-- This week you will submit your Final Project Report. It must reflect the knowledge and skills expected from a senior-level student in your major. Those include writing skills as well as technical skills. In addition to being graded on your technical project work, you will be graded on your organization, your spelling, your grammar, and how well you followed the instructions for preparing your report. -->
 <!-- Your Final Project Report must be at least six or eight single-spaced pages long, not including references. (It will take at least that much to adequately document your 100-hour project.) It must include the following sections and information. -->
 <div class="sourceCode" id="cb1"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1"></a>dt &lt;-<span class="st"> </span>time <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-2"><a href="#cb1-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="st">`</span><span class="dt">Time (decimal)</span><span class="st">`</span> =<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="st">`</span><span class="dt">Time (decimal)</span><span class="st">`</span>, <span class="dt">digits =</span> <span class="dv">2</span>))) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-3"><a href="#cb1-3"></a><span class="st">  </span><span class="kw">rename</span>(<span class="dt">Time =</span> <span class="st">`</span><span class="dt">Time (decimal)</span><span class="st">`</span>) <span class="op">%&gt;%</span><span class="st"> </span></span>
-<span id="cb1-4"><a href="#cb1-4"></a><span class="st">  </span><span class="kw">select</span>(Description, Time)</span></code></pre></div>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="st">  </span><span class="kw">mutate</span>(<span class="dt">Time =</span> <span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="st">`</span><span class="dt">Time (decimal)</span><span class="st">`</span>, <span class="dt">digits =</span> <span class="dv">2</span>))) <span class="op">%&gt;%</span><span class="st"> </span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="st">  </span><span class="kw">select</span>(Description, Time)</span></code></pre></div>
 <div id="introduction" class="section level2">
 <h2>Introduction</h2>
 <!--
@@ -635,7 +634,9 @@ What problem or need does your project address? What does your project do? How d
 </table>
 <div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1"></a>x &lt;-<span class="st"> </span><span class="kw">as.numeric</span>(<span class="kw">round</span>(<span class="kw">sum</span>(dt<span class="op">$</span>Time), <span class="dt">digits =</span> <span class="dv">2</span>))</span>
 <span id="cb3-2"><a href="#cb3-2"></a></span>
-<span id="cb3-3"><a href="#cb3-3"></a><span class="kw">print</span>(<span class="kw">paste</span>(<span class="st">&quot;Total hours equal:&quot;</span>, x))</span></code></pre></div>
+<span id="cb3-3"><a href="#cb3-3"></a>sent &lt;-<span class="st"> &quot;Total hours equal:&quot;</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a></span>
+<span id="cb3-5"><a href="#cb3-5"></a><span class="kw">print</span>(<span class="kw">paste</span>(sent, x))</span></code></pre></div>
 <pre><code>## [1] &quot;Total hours equal: 151.32&quot;</code></pre>
 </div>
 <div id="schedule" class="section level3">
@@ -670,6 +671,11 @@ What problem or need does your project address? What does your project do? How d
 <li>Created github organization</li>
 <li>Hosted the website in main repo</li>
 </ul>
+<div id="accomplishments" class="section level5">
+<h5>Accomplishments</h5>
+<p>In my data research for this COVID-19 Data Project I have come across many useful data sets. However, because Git hub restricts files to be no larger than 100MB, another problem arises, most of the 100MB will be taken up by reading in the different data sets. My proposed solution is to create my own data library. Be assured this problem and acquired solution wouldn’t effect my work schedule.</p>
+<p>— Created a separate folder structure to store the data and scripts</p>
+</div>
 </div>
 <div id="progress-report-2-due-530" class="section level4">
 <h4>Progress Report 2 (Due 5/30)</h4>
@@ -682,6 +688,10 @@ What problem or need does your project address? What does your project do? How d
 <li>Made basic visualizations to see the data</li>
 <li>Developed YML file</li>
 </ul>
+<div id="accomplishments-1" class="section level5">
+<h5>Accomplishments</h5>
+<p>This period I came across that my datasets can be hosted on a separate github repo. This allow me to wrangle my data elsewhere then on the main Rmd files and R chucks. This is a faster and more modifiable solution in the solution, which is needed to cause the data is still being updated. I was able to find that the two hosts of datasets are <a href="https://github.com/CSSEGISandData/COVID-19">NYTimes</a> and <a href="https://github.com/nytimes/covid-19-data">JHU-CSSE</a>. I have developed basics of the yaml for both the main and report websites. I also learned some R packages. I learned about the page-down package which allowed me to update my <a href="https://kctolli.github.io/images/resume.html">resume</a>. I also learned a little bit about the pacman package and knitr package. I feel like I am on track to complete this project by the end of the semester.</p>
+</div>
 </div>
 <div id="progress-report-3-due-620" class="section level4">
 <h4>Progress Report 3 (Due 6/20)</h4>
@@ -700,6 +710,10 @@ What problem or need does your project address? What does your project do? How d
 <li>other plot tools</li>
 </ul></li>
 </ul>
+<div id="accomplishments-2" class="section level5">
+<h5>Accomplishments</h5>
+<p>I was able to complete the framework of the YAML file. I was able to complete the visualizations for NYTimes and got started with both JHU and OWID. I did a mini project called tidy tuesday about sleep patterns. I was able to learn more about Tableau and get Data. I learned about the R package installr. I also learned more about data-driven learning and research. I believe still that I am on schedule to complete the project by the end of the week.</p>
+</div>
 </div>
 <div id="progress-report-4-due-711" class="section level4">
 <h4>Progress Report 4 (Due 7/11)</h4>
@@ -712,6 +726,11 @@ What problem or need does your project address? What does your project do? How d
 </ul></li>
 <li>Start report</li>
 </ul>
+<div id="accomplishments-3" class="section level5">
+<h5>Accomplishments</h5>
+<p>I was able to finish tibbles and am almost done with the Visualizations. I am getting an error with my leaflets. The error says: <em>Error in polygonData.default(data) : Don’t know how to get path data from object of class tbl_df</em>. I am also almost completed with the yaml. I have also started with Yaml file for the website. I believe I am on track to finish if I can figure out my error, I posted the error on BYUI-datascience slack channel. I will fix my error when I find out what the solution is.</p>
+<p>— Fixed the error for the leaflet.</p>
+</div>
 </div>
 <div id="final-delivery-due-722" class="section level4">
 <h4>Final Delivery (Due 7/22)</h4>
@@ -743,19 +762,67 @@ What problem or need does your project address? What does your project do? How d
 <code>theme_bw() +</code><br />
 <code>theme(axis.title.x=element_blank(), axis.title.y=element_blank())</code></p>
 <p>Above is another visualization, I’m going to highlight is found on the <a href="https://kctolli.github.io/COVID-19/ny.html">New York Times page</a>. The data of prop_states is found on this projects <a href="https://github.com/kctolli/COVID-19/tree/master/read-data/nytimes">github repo</a>. The code is also above used to create the map. The code is using the R packages sf (simple figures), USAboundaries and ggplot2 (part of the tidyverse package) to create the map.</p>
+<p><code>filter = 'top',</code> <code>extensions = 'Buttons',</code> <code>options = list(buttons = c('copy', 'csv', 'pdf'), #...</code></p>
+<p>For both data sources I created a data table. They are found at in the <a href="./jhu_leaflet.html">Johns Hopkins University Leaflet page</a> and <a href="./ny.html">New York Times page</a>. Above is example code for the included features of my data table. The command filter = ‘top’ allow the data table to be filtered to view specific data. The buttons extension was allow the user to copy the data table or download the data table as a csv or pdf. The data tables are used to show the data used to create the visualizations and can be downloaded by the user to be used to recreate the visualizations.</p>
 </div>
 <div id="conclusions" class="section level2">
 <h2>Conclusions</h2>
 <!-- How well does your project satisfy its intended purpose? How can it be applied or used by others? How can it be improved in the future? -->
 <p>My expected outcomes were to use data visualizations and documentation that is shown on a <a href="https://github.com/kctolli/COVID-19">github website</a>. I used have leaflets, dygraphs, ggplots and more visualization tools, to explain the data. The results are being shown using Rmd (RMarkdown) files that are put through knitr to get html. Yaml files were used to create the headers and javascript for the data website. This website helps people understand the data of COVID-19 using data tools such as visualizations. As people are aware and understand the data they can take appropriate actions.</p>
-<p>A few things I learned in this project. First, working with continuously updating data is hard unless you have an automatic run script. In the future I would setup a automatic run script to allow to always have up to date data. Second, sometime the provider of data corrupts the data. This I find is really strange, why would someone corrupt their own data? This happened in the process of this project, Our World In Data corrupted their own data causing my visualizations to stop working. This was only fixable by removing the data page from the website. Another thing I learned and implemented in the end of the project was to create an R package to create global functions that can be used in every page of the data website. I the future I would create the R package at the beginning, then update it as the project progresses. This motatived me to create my own general use <a href="https://github.com/kctolli/Useful-R">package</a> full of useful functions. This project was a great learning experience for me and point to reflect on my data science skills.</p>
-<p><br /></p>
-<div id="feedback" class="section level3">
-<h3>Feedback</h3>
-<p>I was able to share my project with some family member and friends.<br />
-They gave me some insist and feedback for the project and what to do moving forward.</p>
+<div id="future-improvement" class="section level3">
+<h3>Future Improvement</h3>
+<p>A few things I learned in this project. First, working with continuously updating data is hard unless you have an automatic run script. In the future I would setup a automatic run script to allow to always have up to date data. Another thing I learned and implemented in the end of the project was to create an R package to create global functions that can be used in every page of the data website. I the future I would create the R package at the beginning, then update it as the project progresses. This motivated me to create my own general use <a href="https://github.com/kctolli/Useful-R">package</a> full of useful functions. This project was a great learning experience for me and point to reflect on my data science skills.</p>
+</div>
+<div id="follow-up-questions" class="section level3">
+<h3>Follow-up Questions</h3>
+<p>These are some questions I had when working on the project but was unable due to time or data restrictions.</p>
+<ol style="list-style-type: decimal">
+<li>What is the what effects the distribution of cases or deaths by COVID-19?
 <ul>
-<li></li>
+<li>Age</li>
+<li>Gender</li>
+<li>Career/Job</li>
+</ul></li>
+<li>Has the number of people wearing a mask increased or decreased over the course of the virus?</li>
+<li>At the beginning toilet paper was in high demand. What is the supply and demand trend of toilet paper over the course of the virus?</li>
+<li>Does having preexisting conditions give a greater chance of dying or testing positive?</li>
+</ol>
+</div>
+<div id="data-integrity" class="section level3">
+<h3>Data Integrity</h3>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1"></a>plot &lt;-<span class="st"> &#39;./jhu_plot_files/figure-html/chinab-1.png&#39;</span></span>
+<span id="cb6-2"><a href="#cb6-2"></a><span class="kw">include_graphics</span>(plot)</span></code></pre></div>
+<p><img src="jhu_plot_files/figure-html/chinab-1.png" width="100%" style="display: block; margin: auto;" /></p>
+<p>There was some flaws in the data over the course of the project. One flaw is was that Our World in Data corrupted the data. I find that really weird, why would they corrupt their own data. Another flaw is that I came across is that different datasets get updated at different times. Another flaw is shown in the graph above (China’s deaths over time) found on <a href="./jhu_plot.html#China">Johns Hopkins University Plot page</a>. There is a great spike in death in the middle of April. China must of changed how they determine what is considered deaths which caused the great spike, it doesn’t seem realist to have such a jump in deaths. This is the integrity of my data I found.</p>
+<p><br /> <br /></p>
+</div>
+</div>
+<div id="feedback" class="section level2">
+<h2>Feedback</h2>
+<p>I was able to share my project with some family member and friends. They gave me some insists and feedback for the project and what to do moving forward. This feedback includes likes, dislikes, and wish I saws. This feedback format is based on the Visualization Critiquing structure in chapter 9 of Scott Berinato’s book, Good Charts, and taught in CSE 150, Data Intuition and Insight.</p>
+<div id="likes" class="section level3">
+<h3>Likes</h3>
+<ul>
+<li>Enjoyed the project</li>
+<li>Thought it looks good</li>
+<li>Impressive project</li>
+</ul>
+</div>
+<div id="dislikes" class="section level3">
+<h3>Dislikes</h3>
+<ul>
+<li>Data visualizations and report was dynamic instead of static</li>
+<li>See current hot spots instead of overall hot spots</li>
+<li>Work with current data instead of overall data</li>
+</ul>
+</div>
+<div id="wish-i-saws" class="section level3">
+<h3>Wish I Saws</h3>
+<ul>
+<li>Have a R script or chunk to automate choosing the top 5 states on cases and deaths</li>
+<li>Set up a trend line to determine current trends</li>
+<li>Have a data alert system such as a data notification app or email</li>
+<li>What causes the spikes in cases and deaths</li>
 </ul>
 <p><br /> <br /> <br /></p>
 </div>
@@ -783,6 +850,8 @@ They gave me some insist and feedback for the project and what to do moving forw
 <h3>Data Driven Learning</h3>
 <p>Babies - Netflix. (2020). Retrieved 2020,<br />
     from <a href="https://www.netflix.com/watch/80117834?trackId=13752289" class="uri">https://www.netflix.com/watch/80117834?trackId=13752289</a></p>
+<p>Berinato, S. (2016). Good charts: The HBR guide to making smarter, more persuasive data visualizations.<br />
+    Boston, MA: Harvard Business Review Press.</p>
 <p>The Fallen of World War II - Data-driven documentary about war &amp; peace. (n.d.). Retrieved 2020,<br />
     from <a href="http://www.fallen.io/ww2/" class="uri">http://www.fallen.io/ww2/</a></p>
 </div>
