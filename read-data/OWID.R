@@ -4,7 +4,7 @@ package::libraries()
 
 ## set working directory
 
-wdset("D:/COVID-project/read-data/OWID")
+wdset("D:/COVID-19/read-data/OWID")
 
 # Get Data & Wrangling
 

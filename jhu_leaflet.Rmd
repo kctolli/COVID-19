@@ -5,7 +5,7 @@ title: "JHU Leaflets and Data Tables"
 ```{r setup, include=FALSE}
 package::libraries()
 
-wdset("D:/COVID-project/")
+wdset("D:/COVID-19/")
 
 pal <- colorNumeric(c("green", "red"), NULL)
 
