@@ -5,7 +5,7 @@ title: "New York Times"
 ```{r setup, include=FALSE}
 package::libraries()
 
-wdset("D:/COVID-project/")
+wdset("D:/COVID-19/")
 
 states <- states()
 county <- county()
